@@ -1,20 +1,24 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>堆 · GitBook</title>
+        <title>堆 · jvm</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Victor <victorfengming@163.com>">
         
         
     
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
@@ -41,11 +45,15 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
                 
             
                 
@@ -105,7 +113,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -116,7 +124,16 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://victorfengming.gitee.io/index/gitbook/" target="_blank" class="custom-link">文档索引页</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -5756,7 +5773,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -5789,7 +5806,7 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
@@ -5797,7 +5814,7 @@
                                 <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x5806;"><b></b>&#x5806;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5806;&#x7684;&#x6838;&#x5FC3;&#x6982;&#x5FF5;"><b></b>&#x5806;&#x7684;&#x6838;&#x5FC3;&#x6982;&#x5FF5;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5806;&#x5185;&#x5B58;&#x7EC6;&#x5206;"><b></b>&#x5806;&#x5185;&#x5B58;&#x7EC6;&#x5206;</a></li></ul><li><span class="title-icon "></span><a href="#&#x8BBE;&#x7F6E;&#x5806;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x4E0E;oom"><b></b>&#x8BBE;&#x7F6E;&#x5806;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x4E0E;OOM</a></li><ul><li><span class="title-icon "></span><a href="#outofmemory&#x4E3E;&#x4F8B;"><b></b>OutOfMemory&#x4E3E;&#x4F8B;</a></li></ul><li><span class="title-icon "></span><a href="#&#x5E74;&#x8F7B;&#x4EE3;&#x4E0E;&#x8001;&#x5E74;&#x4EE3;"><b></b>&#x5E74;&#x8F7B;&#x4EE3;&#x4E0E;&#x8001;&#x5E74;&#x4EE3;</a></li><li><span class="title-icon "></span><a href="#&#x56FE;&#x89E3;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x8FC7;&#x7A0B;"><b></b>&#x56FE;&#x89E3;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x8FC7;&#x7A0B;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6982;&#x5FF5;"><b></b>&#x6982;&#x5FF5;</a></li><li><span class="title-icon "></span><a href="#&#x56FE;&#x89E3;&#x8FC7;&#x7A0B;"><b></b>&#x56FE;&#x89E3;&#x8FC7;&#x7A0B;</a></li><li><span class="title-icon "></span><a href="#&#x601D;&#x8003;&#xFF1A;&#x5E78;&#x5B58;&#x533A;&#x533A;&#x6EE1;&#x4E86;&#x540E;&#xFF1F;"><b></b>&#x601D;&#x8003;&#xFF1A;&#x5E78;&#x5B58;&#x533A;&#x533A;&#x6EE1;&#x4E86;&#x540E;&#xFF1F;</a></li><li><span class="title-icon "></span><a href="#&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x7684;&#x7279;&#x6B8A;&#x60C5;&#x51B5;"><b></b>&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x7684;&#x7279;&#x6B8A;&#x60C5;&#x51B5;</a></li><li><span class="title-icon "></span><a href="#&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x8FC7;&#x7A0B;"><b></b>&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x8FC7;&#x7A0B;</a></li><li><span class="title-icon "></span><a href="#&#x5E38;&#x7528;&#x7684;&#x8C03;&#x4F18;&#x5DE5;&#x5177;"><b></b>&#x5E38;&#x7528;&#x7684;&#x8C03;&#x4F18;&#x5DE5;&#x5177;</a></li><li><span class="title-icon "></span><a href="#&#x603B;&#x7ED3;"><b></b>&#x603B;&#x7ED3;</a></li></ul><li><span class="title-icon "></span><a href="#minor-gc&#xFF0C;majorgc&#x3001;full-gc"><b></b>Minor GC&#xFF0C;MajorGC&#x3001;Full GC</a></li><ul><li><span class="title-icon "></span><a href="#minor-gc"><b></b>Minor GC</a></li><li><span class="title-icon "></span><a href="#major-gc"><b></b>Major GC</a></li><li><span class="title-icon "></span><a href="#full-gc"><b></b>Full GC</a></li><li><span class="title-icon "></span><a href="#gc-&#x4E3E;&#x4F8B;"><b></b>GC &#x4E3E;&#x4F8B;</a></li></ul><li><span class="title-icon "></span><a href="#&#x5806;&#x7A7A;&#x95F4;&#x5206;&#x4EE3;&#x601D;&#x60F3;"><b></b>&#x5806;&#x7A7A;&#x95F4;&#x5206;&#x4EE3;&#x601D;&#x60F3;</a></li><li><span class="title-icon "></span><a href="#&#x5185;&#x5B58;&#x5206;&#x914D;&#x7B56;&#x7565;"><b></b>&#x5185;&#x5B58;&#x5206;&#x914D;&#x7B56;&#x7565;</a></li><li><span class="title-icon "></span><a href="#&#x4E3A;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x5185;&#x5B58;&#xFF1A;tlab"><b></b>&#x4E3A;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x5185;&#x5B58;&#xFF1A;TLAB</a></li><ul><li><span class="title-icon "></span><a href="#&#x95EE;&#x9898;&#xFF1A;&#x5806;&#x7A7A;&#x95F4;&#x90FD;&#x662F;&#x5171;&#x4EAB;&#x7684;&#x4E48;&#xFF1F;"><b></b>&#x95EE;&#x9898;&#xFF1A;&#x5806;&#x7A7A;&#x95F4;&#x90FD;&#x662F;&#x5171;&#x4EAB;&#x7684;&#x4E48;&#xFF1F;</a></li><li><span class="title-icon "></span><a href="#&#x4E3A;&#x4EC0;&#x4E48;&#x6709;tlab&#xFF1F;"><b></b>&#x4E3A;&#x4EC0;&#x4E48;&#x6709;TLAB&#xFF1F;</a></li><li><span class="title-icon "></span><a href="#&#x4EC0;&#x4E48;&#x662F;tlab"><b></b>&#x4EC0;&#x4E48;&#x662F;TLAB</a></li><li><span class="title-icon "></span><a href="#tlab&#x5206;&#x914D;&#x8FC7;&#x7A0B;"><b></b>TLAB&#x5206;&#x914D;&#x8FC7;&#x7A0B;</a></li></ul><li><span class="title-icon "></span><a href="#&#x5C0F;&#x7ED3;&#xFF1A;&#x5806;&#x7A7A;&#x95F4;&#x7684;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;"><b></b>&#x5C0F;&#x7ED3;&#xFF1A;&#x5806;&#x7A7A;&#x95F4;&#x7684;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;</a></li><li><span class="title-icon "></span><a href="#&#x5806;&#x662F;&#x5206;&#x914D;&#x5BF9;&#x8C61;&#x7684;&#x552F;&#x4E00;&#x9009;&#x62E9;&#x4E48;&#xFF1F;"><b></b>&#x5806;&#x662F;&#x5206;&#x914D;&#x5BF9;&#x8C61;&#x7684;&#x552F;&#x4E00;&#x9009;&#x62E9;&#x4E48;&#xFF1F;</a></li><ul><li><span class="title-icon "></span><a href="#&#x9003;&#x9038;&#x5206;&#x6790;"><b></b>&#x9003;&#x9038;&#x5206;&#x6790;</a></li><li><span class="title-icon "></span><a href="#&#x6808;&#x4E0A;&#x5206;&#x914D;"><b></b>&#x6808;&#x4E0A;&#x5206;&#x914D;</a></li><li><span class="title-icon "></span><a href="#&#x540C;&#x6B65;&#x7701;&#x7565;"><b></b>&#x540C;&#x6B65;&#x7701;&#x7565;</a></li><li><span class="title-icon "></span><a href="#&#x5206;&#x79BB;&#x5BF9;&#x8C61;&#x548C;&#x6807;&#x91CF;&#x66FF;&#x6362;"><b></b>&#x5206;&#x79BB;&#x5BF9;&#x8C61;&#x548C;&#x6807;&#x91CF;&#x66FF;&#x6362;</a></li><li><span class="title-icon "></span><a href="#&#x4EE3;&#x7801;&#x4F18;&#x5316;&#x4E4B;&#x6807;&#x91CF;&#x66FF;&#x6362;"><b></b>&#x4EE3;&#x7801;&#x4F18;&#x5316;&#x4E4B;&#x6807;&#x91CF;&#x66FF;&#x6362;</a></li><li><span class="title-icon "></span><a href="#&#x9003;&#x9038;&#x5206;&#x6790;&#x7684;&#x4E0D;&#x8DB3;"><b></b>&#x9003;&#x9038;&#x5206;&#x6790;&#x7684;&#x4E0D;&#x8DB3;</a></li></ul><li><span class="title-icon "></span><a href="#&#x5C0F;&#x7ED3;"><b></b>&#x5C0F;&#x7ED3;</a></li></ul></ul></div><a href="#&#x5806;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5806;"><a name="&#x5806;" class="anchor-navigation-ex-anchor" href="#&#x5806;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5806;</h1>
 <h2 id="&#x5806;&#x7684;&#x6838;&#x5FC3;&#x6982;&#x5FF5;"><a name="&#x5806;&#x7684;&#x6838;&#x5FC3;&#x6982;&#x5FF5;" class="anchor-navigation-ex-anchor" href="#&#x5806;&#x7684;&#x6838;&#x5FC3;&#x6982;&#x5FF5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5806;&#x7684;&#x6838;&#x5FC3;&#x6982;&#x5FF5;</h2>
 <p>&#x5806;&#x9488;&#x5BF9;&#x4E00;&#x4E2A;JVM&#x8FDB;&#x7A0B;&#x6765;&#x8BF4;&#x662F;&#x552F;&#x4E00;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x53EA;&#x6709;&#x4E00;&#x4E2A;JVM&#xFF0C;&#x4F46;&#x662F;&#x8FDB;&#x7A0B;&#x5305;&#x542B;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x4ED6;&#x4EEC;&#x662F;&#x5171;&#x4EAB;&#x540C;&#x4E00;&#x5806;&#x7A7A;&#x95F4;&#x7684;&#x3002;</p>
-<p><a href="images/image-20200706195127740.png" data-lightbox="d4a2e52c-c20d-43a0-a260-b219ab8e1c11" data-title="image-20200706195127740"><img src="images/image-20200706195127740.png" alt="image-20200706195127740"></a></p>
+<p><a href="images/image-20200706195127740.png" data-lightbox="03913cac-c07c-440e-acac-39caabcf726c" data-title="image-20200706195127740"><img src="images/image-20200706195127740.png" alt="image-20200706195127740"></a></p>
 <p>&#x4E00;&#x4E2A;JVM&#x5B9E;&#x4F8B;&#x53EA;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x5806;&#x5185;&#x5B58;&#xFF0C;&#x5806;&#x4E5F;&#x662F;Java&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x7684;&#x6838;&#x5FC3;&#x533A;&#x57DF;&#x3002;</p>
 <p>Java&#x5806;&#x533A;&#x5728;JVM&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x5373;&#x88AB;&#x521B;&#x5EFA;&#xFF0C;&#x5176;&#x7A7A;&#x95F4;&#x5927;&#x5C0F;&#x4E5F;&#x5C31;&#x786E;&#x5B9A;&#x4E86;&#x3002;&#x662F;JVM&#x7BA1;&#x7406;&#x7684;&#x6700;&#x5927;&#x4E00;&#x5757;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x3002;</p>
 <ul>
@@ -5810,7 +5827,7 @@
 <p>-Xmx10m&#xFF1A;&#x6700;&#x5927;&#x5806;&#x5185;&#x5B58;</p>
 </blockquote>
 <p>&#x4E0B;&#x56FE;&#x5C31;&#x662F;&#x4F7F;&#x7528;&#xFF1A;Java VisualVM&#x67E5;&#x770B;&#x5806;&#x7A7A;&#x95F4;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x901A;&#x8FC7; jdk bin&#x63D0;&#x4F9B;&#x7684;&#x63D2;&#x4EF6;</p>
-<p><a href="images/image-20200706200739392.png" data-lightbox="0129c8f6-a5ef-443a-b097-53fefe8ab9f4" data-title="image-20200706200739392"><img src="images/image-20200706200739392.png" alt="image-20200706200739392"></a></p>
+<p><a href="images/image-20200706200739392.png" data-lightbox="fb02eeb2-e2e7-46d4-8660-675b59084823" data-title="image-20200706200739392"><img src="images/image-20200706200739392.png" alt="image-20200706200739392"></a></p>
 <p>&#x300A;Java&#x865A;&#x62DF;&#x673A;&#x89C4;&#x8303;&#x300B;&#x4E2D;&#x5BF9;Java&#x5806;&#x7684;&#x63CF;&#x8FF0;&#x662F;&#xFF1A;&#x6240;&#x6709;&#x7684;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#x4EE5;&#x53CA;&#x6570;&#x7EC4;&#x90FD;&#x5E94;&#x5F53;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x5206;&#x914D;&#x5728;&#x5806;&#x4E0A;&#x3002;&#xFF08;The heap is the run-time data area from which memory for all class instances and arrays is allocated&#xFF09;</p>
 <p>&#x6211;&#x8981;&#x8BF4;&#x7684;&#x662F;&#xFF1A;&#x201C;&#x51E0;&#x4E4E;&#x201D;&#x6240;&#x6709;&#x7684;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#x90FD;&#x5728;&#x8FD9;&#x91CC;&#x5206;&#x914D;&#x5185;&#x5B58;&#x3002;&#x2014;&#x4ECE;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x89D2;&#x5EA6;&#x770B;&#x7684;&#x3002;</p>
 <ul>
@@ -5823,7 +5840,7 @@
 <li>&#x5982;&#x679C;&#x5806;&#x4E2D;&#x5BF9;&#x8C61;&#x9A6C;&#x4E0A;&#x88AB;&#x56DE;&#x6536;&#xFF0C;&#x90A3;&#x4E48;&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#x5C31;&#x4F1A;&#x6536;&#x5230;&#x5F71;&#x54CD;&#xFF0C;&#x56E0;&#x4E3A;&#x6709;stop the word</li>
 </ul>
 <p>&#x5806;&#xFF0C;&#x662F;GC&#xFF08;Garbage Collection&#xFF0C;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#xFF09;&#x6267;&#x884C;&#x5783;&#x573E;&#x56DE;&#x6536;&#x7684;&#x91CD;&#x70B9;&#x533A;&#x57DF;&#x3002;</p>
-<p><a href="images/image-20200706201904057.png" data-lightbox="ad66d0b3-0c33-4358-ad4e-930d960d6347" data-title="image-20200706201904057"><img src="images/image-20200706201904057.png" alt="image-20200706201904057"></a></p>
+<p><a href="images/image-20200706201904057.png" data-lightbox="9e1b5849-356e-4c65-9fec-81815b2e087e" data-title="image-20200706201904057"><img src="images/image-20200706201904057.png" alt="image-20200706201904057"></a></p>
 <h3 id="&#x5806;&#x5185;&#x5B58;&#x7EC6;&#x5206;"><a name="&#x5806;&#x5185;&#x5B58;&#x7EC6;&#x5206;" class="anchor-navigation-ex-anchor" href="#&#x5806;&#x5185;&#x5B58;&#x7EC6;&#x5206;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5806;&#x5185;&#x5B58;&#x7EC6;&#x5206;</h3>
 <p>Java 7&#x53CA;&#x4E4B;&#x524D;&#x5806;&#x5185;&#x5B58;&#x903B;&#x8F91;&#x4E0A;&#x5206;&#x4E3A;&#x4E09;&#x90E8;&#x5206;&#xFF1A;&#x65B0;&#x751F;&#x533A;+&#x517B;&#x8001;&#x533A;+&#x6C38;&#x4E45;&#x533A;</p>
 <ul>
@@ -5838,9 +5855,9 @@
 <li>Meta Space  &#x5143;&#x7A7A;&#x95F4;   Meta</li>
 </ul>
 <p>&#x7EA6;&#x5B9A;&#xFF1A;&#x65B0;&#x751F;&#x533A; -&gt; &#x65B0;&#x751F;&#x4EE3; -&gt; &#x5E74;&#x8F7B;&#x4EE3;   &#x3001;  &#x517B;&#x8001;&#x533A; -&gt; &#x8001;&#x5E74;&#x533A; -&gt; &#x8001;&#x5E74;&#x4EE3;&#x3001; &#x6C38;&#x4E45;&#x533A; -&gt; &#x6C38;&#x4E45;&#x4EE3;</p>
-<p><a href="images/image-20200706203419496.png" data-lightbox="b98fdaee-47d2-4136-9d72-71716a970ff9" data-title="image-20200706203419496"><img src="images/image-20200706203419496.png" alt="image-20200706203419496"></a></p>
+<p><a href="images/image-20200706203419496.png" data-lightbox="64cec3e4-4e4c-452d-a498-d946bb1d54c7" data-title="image-20200706203419496"><img src="images/image-20200706203419496.png" alt="image-20200706203419496"></a></p>
 <p>&#x5806;&#x7A7A;&#x95F4;&#x5185;&#x90E8;&#x7ED3;&#x6784;&#xFF0C;JDK1.8&#x4E4B;&#x524D;&#x4ECE;&#x6C38;&#x4E45;&#x4EE3;  &#x66FF;&#x6362;&#x6210; &#x5143;&#x7A7A;&#x95F4;</p>
-<p><a href="images/image-20200706203835403.png" data-lightbox="361e2661-a97d-4be4-9160-297da35d0963" data-title="image-20200706203835403"><img src="images/image-20200706203835403.png" alt="image-20200706203835403"></a></p>
+<p><a href="images/image-20200706203835403.png" data-lightbox="7654ff4d-4c8e-4a23-92e6-68dcc3040b94" data-title="image-20200706203835403"><img src="images/image-20200706203835403.png" alt="image-20200706203835403"></a></p>
 <h2 id="&#x8BBE;&#x7F6E;&#x5806;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x4E0E;oom"><a name="&#x8BBE;&#x7F6E;&#x5806;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x4E0E;oom" class="anchor-navigation-ex-anchor" href="#&#x8BBE;&#x7F6E;&#x5806;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x4E0E;oom"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BBE;&#x7F6E;&#x5806;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x4E0E;OOM</h2>
 <p>Java&#x5806;&#x533A;&#x7528;&#x4E8E;&#x5B58;&#x50A8;Java&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#xFF0C;&#x90A3;&#x4E48;&#x5806;&#x7684;&#x5927;&#x5C0F;&#x5728;JVM&#x542F;&#x52A8;&#x65F6;&#x5C31;&#x5DF2;&#x7ECF;&#x8BBE;&#x5B9A;&#x597D;&#x4E86;&#xFF0C;&#x5927;&#x5BB6;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x9009;&#x9879;&quot;-Xmx&quot;&#x548C;&quot;-Xms&quot;&#x6765;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#x3002;</p>
 <ul>
@@ -5856,57 +5873,57 @@
 <li><p>&#x6700;&#x5927;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF1A;&#x7269;&#x7406;&#x7535;&#x8111;&#x5185;&#x5B58;&#x5927;&#x5C0F;/4</p>
 </li>
 </ul>
-<pre><code class="lang-java"><span class="hljs-comment">/**
+<pre class="language-"><code class="lang-java"><span class="token comment">/**
  * -Xms &#x7528;&#x6765;&#x8BBE;&#x7F6E;&#x5806;&#x7A7A;&#x95F4;&#xFF08;&#x5E74;&#x8F7B;&#x4EE3;+&#x8001;&#x5E74;&#x4EE3;&#xFF09;&#x7684;&#x521D;&#x59CB;&#x5185;&#x5B58;&#x5927;&#x5C0F;
  *  -X&#xFF1A;&#x662F;jvm&#x8FD0;&#x884C;&#x53C2;&#x6570;
  *  ms&#xFF1A;memory start
  * -Xmx&#xFF1A;&#x7528;&#x6765;&#x8BBE;&#x7F6E;&#x5806;&#x7A7A;&#x95F4;&#xFF08;&#x5E74;&#x8F7B;&#x4EE3;+&#x8001;&#x5E74;&#x4EE3;&#xFF09;&#x7684;&#x6700;&#x5927;&#x5185;&#x5B58;&#x5927;&#x5C0F;
  *
- * <span class="hljs-doctag">@author</span>: Victor
- * <span class="hljs-doctag">@create</span>: 2020-07-06-20:44
+ * @author: Victor
+ * @create: 2020-07-06-20:44
  */</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HeapSpaceInitial</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        <span class="hljs-comment">// &#x8FD4;&#x56DE;Java&#x865A;&#x62DF;&#x673A;&#x4E2D;&#x7684;&#x5806;&#x5185;&#x5B58;&#x603B;&#x91CF;</span>
-        <span class="hljs-keyword">long</span> initialMemory = Runtime.getRuntime().totalMemory() / <span class="hljs-number">1024</span> / <span class="hljs-number">1024</span>;
-        <span class="hljs-comment">// &#x8FD4;&#x56DE;Java&#x865A;&#x62DF;&#x673A;&#x8BD5;&#x56FE;&#x4F7F;&#x7528;&#x7684;&#x6700;&#x5927;&#x5806;&#x5185;&#x5B58;</span>
-        <span class="hljs-keyword">long</span> maxMemory = Runtime.getRuntime().maxMemory() / <span class="hljs-number">1024</span> / <span class="hljs-number">1024</span>;
-        System.out.println(<span class="hljs-string">&quot;-Xms:&quot;</span> + initialMemory + <span class="hljs-string">&quot;M&quot;</span>);
-        System.out.println(<span class="hljs-string">&quot;-Xmx:&quot;</span> + maxMemory + <span class="hljs-string">&quot;M&quot;</span>);
-    }
-}
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HeapSpaceInitial</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x8FD4;&#x56DE;Java&#x865A;&#x62DF;&#x673A;&#x4E2D;&#x7684;&#x5806;&#x5185;&#x5B58;&#x603B;&#x91CF;</span>
+        <span class="token keyword">long</span> initialMemory <span class="token operator">=</span> <span class="token class-name">Runtime</span><span class="token punctuation">.</span><span class="token function">getRuntime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">totalMemory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">/</span> <span class="token number">1024</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x8FD4;&#x56DE;Java&#x865A;&#x62DF;&#x673A;&#x8BD5;&#x56FE;&#x4F7F;&#x7528;&#x7684;&#x6700;&#x5927;&#x5806;&#x5185;&#x5B58;</span>
+        <span class="token keyword">long</span> maxMemory <span class="token operator">=</span> <span class="token class-name">Runtime</span><span class="token punctuation">.</span><span class="token function">getRuntime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">maxMemory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">/</span> <span class="token number">1024</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;-Xms:&quot;</span> <span class="token operator">+</span> initialMemory <span class="token operator">+</span> <span class="token string">&quot;M&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;-Xmx:&quot;</span> <span class="token operator">+</span> maxMemory <span class="token operator">+</span> <span class="token string">&quot;M&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
-<pre><code>-Xms:245M
+<pre class="language-"><code>-Xms:245M
 -Xmx:3614M
 </code></pre><p>&#x5982;&#x4F55;&#x67E5;&#x770B;&#x5806;&#x5185;&#x5B58;&#x7684;&#x5185;&#x5B58;&#x5206;&#x914D;&#x60C5;&#x51B5;</p>
-<pre><code>jps  -&gt;  jstat -gc &#x8FDB;&#x7A0B;id
-</code></pre><p><a href="images/image-20200706205756045.png" data-lightbox="641844a2-fe6a-4905-9f95-002929bdd842" data-title="image-20200706205756045"><img src="images/image-20200706205756045.png" alt="image-20200706205756045"></a></p>
-<pre><code>-XX:+PrintGCDetails
-</code></pre><p><a href="images/image-20200706205821919.png" data-lightbox="a4cb8009-23d0-4479-82d4-96f133213589" data-title="image-20200706205821919"><img src="images/image-20200706205821919.png" alt="image-20200706205821919"></a></p>
+<pre class="language-"><code>jps  -&gt;  jstat -gc &#x8FDB;&#x7A0B;id
+</code></pre><p><a href="images/image-20200706205756045.png" data-lightbox="15437ff0-07df-4aa5-8f9a-42358a1aaec0" data-title="image-20200706205756045"><img src="images/image-20200706205756045.png" alt="image-20200706205756045"></a></p>
+<pre class="language-"><code>-XX:+PrintGCDetails
+</code></pre><p><a href="images/image-20200706205821919.png" data-lightbox="db22d155-66a3-482f-a482-b82f21ad04f0" data-title="image-20200706205821919"><img src="images/image-20200706205821919.png" alt="image-20200706205821919"></a></p>
 <h3 id="outofmemory&#x4E3E;&#x4F8B;"><a name="outofmemory&#x4E3E;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#outofmemory&#x4E3E;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>OutOfMemory&#x4E3E;&#x4F8B;</h3>
-<p><a href="images/image-20200706205947535.png" data-lightbox="e39403c0-1964-4aa2-955a-443d464e708b" data-title="image-20200706205947535"><img src="images/image-20200706205947535.png" alt="image-20200706205947535"></a></p>
-<p><a href="images/image-20200706210000461.png" data-lightbox="8c6bb0bc-aac2-4def-8b3d-8c2e8acca549" data-title="image-20200706210000461"><img src="images/image-20200706210000461.png" alt="image-20200706210000461"></a></p>
+<p><a href="images/image-20200706205947535.png" data-lightbox="8b2b9a81-9c94-4676-9833-14be268053bd" data-title="image-20200706205947535"><img src="images/image-20200706205947535.png" alt="image-20200706205947535"></a></p>
+<p><a href="images/image-20200706210000461.png" data-lightbox="c08dbf6f-8399-4020-8778-4a045898ee92" data-title="image-20200706210000461"><img src="images/image-20200706210000461.png" alt="image-20200706210000461"></a></p>
 <p>&#x6211;&#x4EEC;&#x7B80;&#x5355;&#x7684;&#x5199;&#x4E00;&#x4E2A;OOM&#x4F8B;&#x5B50;</p>
-<pre><code class="lang-java"><span class="hljs-comment">/**
+<pre class="language-"><code class="lang-java"><span class="token comment">/**
  * OOM&#x6D4B;&#x8BD5;
  *
- * <span class="hljs-doctag">@author</span>: Victor
- * <span class="hljs-doctag">@create</span>: 2020-07-06-21:11
+ * @author: Victor
+ * @create: 2020-07-06-21:11
  */</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OOMTest</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        List&lt;Integer&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
-        <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>) {
-            list.add(<span class="hljs-number">999999999</span>);
-        }
-    }
-}
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">OOMTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">999999999</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x7136;&#x540E;&#x8BBE;&#x7F6E;&#x542F;&#x52A8;&#x53C2;&#x6570;</p>
-<pre><code>-Xms10m -Xmx:10m
+<pre class="language-"><code>-Xms10m -Xmx:10m
 </code></pre><p>&#x8FD0;&#x884C;&#x540E;&#xFF0C;&#x5C31;&#x51FA;&#x73B0;OOM&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; VisualVM&#x8FD9;&#x4E2A;&#x5DE5;&#x5177;&#x67E5;&#x770B;&#x5177;&#x4F53;&#x662F;&#x4EC0;&#x4E48;&#x53C2;&#x6570;&#x9020;&#x6210;&#x7684;OOM</p>
-<p><a href="images/image-20200706211652779.png" data-lightbox="0da9c3a2-33b4-455e-bce7-ed7a3ac10c0c" data-title="image-20200706211652779"><img src="images/image-20200706211652779.png" alt="image-20200706211652779"></a></p>
+<p><a href="images/image-20200706211652779.png" data-lightbox="6f7b40f9-3423-46bc-834d-538992cbea52" data-title="image-20200706211652779"><img src="images/image-20200706211652779.png" alt="image-20200706211652779"></a></p>
 <h2 id="&#x5E74;&#x8F7B;&#x4EE3;&#x4E0E;&#x8001;&#x5E74;&#x4EE3;"><a name="&#x5E74;&#x8F7B;&#x4EE3;&#x4E0E;&#x8001;&#x5E74;&#x4EE3;" class="anchor-navigation-ex-anchor" href="#&#x5E74;&#x8F7B;&#x4EE3;&#x4E0E;&#x8001;&#x5E74;&#x4EE3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E74;&#x8F7B;&#x4EE3;&#x4E0E;&#x8001;&#x5E74;&#x4EE3;</h2>
 <p>&#x5B58;&#x50A8;&#x5728;JVM&#x4E2D;&#x7684;Java&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x88AB;&#x5212;&#x5206;&#x4E3A;&#x4E24;&#x7C7B;&#xFF1A;</p>
 <ul>
@@ -5918,9 +5935,9 @@
 </ul>
 <p>Java&#x5806;&#x533A;&#x8FDB;&#x4E00;&#x6B65;&#x7EC6;&#x5206;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x5212;&#x5206;&#x4E3A;&#x5E74;&#x8F7B;&#x4EE3;&#xFF08;YoungGen&#xFF09;&#x548C;&#x8001;&#x5E74;&#x4EE3;&#xFF08;oldGen&#xFF09;</p>
 <p>&#x5176;&#x4E2D;&#x5E74;&#x8F7B;&#x4EE3;&#x53C8;&#x53EF;&#x4EE5;&#x5212;&#x5206;&#x4E3A;Eden&#x7A7A;&#x95F4;&#x3001;Survivor0&#x7A7A;&#x95F4;&#x548C;Survivor1&#x7A7A;&#x95F4;&#xFF08;&#x6709;&#x65F6;&#x4E5F;&#x53EB;&#x505A;from&#x533A;&#x3001;to&#x533A;&#xFF09;</p>
-<p><a href="images/image-20200707075847954.png" data-lightbox="ed4cf437-7248-4b82-84e1-7730a98feb39" data-title="image-20200707075847954"><img src="images/image-20200707075847954.png" alt="image-20200707075847954"></a></p>
+<p><a href="images/image-20200707075847954.png" data-lightbox="80dd41f0-941b-4d76-8549-71e931fc294b" data-title="image-20200707075847954"><img src="images/image-20200707075847954.png" alt="image-20200707075847954"></a></p>
 <p>&#x4E0B;&#x9762;&#x8FD9;&#x53C2;&#x6570;&#x5F00;&#x53D1;&#x4E2D;&#x4E00;&#x822C;&#x4E0D;&#x4F1A;&#x8C03;&#xFF1A;</p>
-<p><a href="images/image-20200707080154039.png" data-lightbox="54b842f1-9711-4ee2-961a-9a697a0275c5" data-title="image-20200707080154039"><img src="images/image-20200707080154039.png" alt="image-20200707080154039"></a></p>
+<p><a href="images/image-20200707080154039.png" data-lightbox="a1a76983-6e25-4fe0-8245-1386c704e6c7" data-title="image-20200707080154039"><img src="images/image-20200707080154039.png" alt="image-20200707080154039"></a></p>
 <ul>
 <li>Eden&#xFF1A;From&#xFF1A;to -&gt;  8:1:1</li>
 <li>&#x65B0;&#x751F;&#x4EE3;&#xFF1A;&#x8001;&#x5E74;&#x4EE3;  - &gt;  1 : 2</li>
@@ -5942,7 +5959,7 @@
 <p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x9009;&#x9879;&quot;-Xmn&quot;&#x8BBE;&#x7F6E;&#x65B0;&#x751F;&#x4EE3;&#x6700;&#x5927;&#x5185;&#x5B58;&#x5927;&#x5C0F;</p>
 <p>&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x4E00;&#x822C;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x503C;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
 </blockquote>
-<p><a href="images/image-20200707084208115.png" data-lightbox="f6e2b963-3a78-4c1b-b189-bf5453ab0f2b" data-title="image-20200707084208115"><img src="images/image-20200707084208115.png" alt="image-20200707084208115"></a></p>
+<p><a href="images/image-20200707084208115.png" data-lightbox="f44a9e19-887f-47ad-94a1-32c6f9509f8b" data-title="image-20200707084208115"><img src="images/image-20200707084208115.png" alt="image-20200707084208115"></a></p>
 <h2 id="&#x56FE;&#x89E3;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x8FC7;&#x7A0B;"><a name="&#x56FE;&#x89E3;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x8FC7;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#&#x56FE;&#x89E3;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x8FC7;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56FE;&#x89E3;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x8FC7;&#x7A0B;</h2>
 <h3 id="&#x6982;&#x5FF5;"><a name="&#x6982;&#x5FF5;" class="anchor-navigation-ex-anchor" href="#&#x6982;&#x5FF5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6982;&#x5FF5;</h3>
 <p>&#x4E3A;&#x65B0;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x5185;&#x5B58;&#x662F;&#x4E00;&#x4EF6;&#x975E;&#x5E38;&#x4E25;&#x8C28;&#x548C;&#x590D;&#x6742;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;JM&#x7684;&#x8BBE;&#x8BA1;&#x8005;&#x4EEC;&#x4E0D;&#x4EC5;&#x9700;&#x8981;&#x8003;&#x8651;&#x5185;&#x5B58;&#x5982;&#x4F55;&#x5206;&#x914D;&#x3001;&#x5728;&#x54EA;&#x91CC;&#x5206;&#x914D;&#x7B49;&#x95EE;&#x9898;&#xFF0C;&#x5E76;&#x4E14;&#x7531;&#x4E8E;&#x5185;&#x5B58;&#x5206;&#x914D;&#x7B97;&#x6CD5;&#x4E0E;&#x5185;&#x5B58;&#x56DE;&#x6536;&#x7B97;&#x6CD5;&#x5BC6;&#x5207;&#x76F8;&#x5173;&#xFF0C;&#x6240;&#x4EE5;&#x8FD8;&#x9700;&#x8981;&#x8003;&#x8651;GC&#x6267;&#x884C;&#x5B8C;&#x5185;&#x5B58;&#x56DE;&#x6536;&#x540E;&#x662F;&#x5426;&#x4F1A;&#x5728;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x4E2D;&#x4EA7;&#x751F;&#x5185;&#x5B58;&#x788E;&#x7247;&#x3002;</p>
@@ -5959,12 +5976,12 @@
 <p>&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x53C2;&#x6570;&#xFF1A;-Xx:MaxTenuringThreshold= N&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;</p>
 <h3 id="&#x56FE;&#x89E3;&#x8FC7;&#x7A0B;"><a name="&#x56FE;&#x89E3;&#x8FC7;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#&#x56FE;&#x89E3;&#x8FC7;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56FE;&#x89E3;&#x8FC7;&#x7A0B;</h3>
 <p>&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4E00;&#x822C;&#x90FD;&#x662F;&#x5B58;&#x653E;&#x5728;Eden&#x533A;&#x7684;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;Eden&#x533A;&#x6EE1;&#x4E86;&#x540E;&#xFF0C;&#x5C31;&#x4F1A;&#x89E6;&#x53D1;GC&#x64CD;&#x4F5C;&#xFF0C;&#x4E00;&#x822C;&#x88AB;&#x79F0;&#x4E3A; YGC / Minor GC&#x64CD;&#x4F5C;</p>
-<p><a href="images/image-20200707084714886.png" data-lightbox="64016378-097e-46aa-ab3c-252a8c1664d3" data-title="image-20200707084714886"><img src="images/image-20200707084714886.png" alt="image-20200707084714886"></a></p>
+<p><a href="images/image-20200707084714886.png" data-lightbox="77c02d9a-b1b3-4c3f-9f49-e33cb14011fe" data-title="image-20200707084714886"><img src="images/image-20200707084714886.png" alt="image-20200707084714886"></a></p>
 <p>&#x5F53;&#x6211;&#x4EEC;&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x5783;&#x573E;&#x6536;&#x96C6;&#x540E;&#xFF0C;&#x7EA2;&#x8272;&#x7684;&#x5C06;&#x4F1A;&#x88AB;&#x56DE;&#x6536;&#xFF0C;&#x800C;&#x7EFF;&#x8272;&#x7684;&#x8FD8;&#x4F1A;&#x88AB;&#x5360;&#x7528;&#x7740;&#xFF0C;&#x5B58;&#x653E;&#x5728;S0(Survivor From)&#x533A;&#x3002;&#x540C;&#x65F6;&#x6211;&#x4EEC;&#x7ED9;&#x6BCF;&#x4E2A;&#x5BF9;&#x8C61;&#x8BBE;&#x7F6E;&#x4E86;&#x4E00;&#x4E2A;&#x5E74;&#x9F84;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x4E00;&#x6B21;&#x56DE;&#x6536;&#x540E;&#x5C31;&#x662F;1&#x3002;</p>
 <p>&#x540C;&#x65F6;Eden&#x533A;&#x7EE7;&#x7EED;&#x5B58;&#x653E;&#x5BF9;&#x8C61;&#xFF0C;&#x5F53;Eden&#x533A;&#x518D;&#x6B21;&#x5B58;&#x6EE1;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53C8;&#x4F1A;&#x89E6;&#x53D1;&#x4E00;&#x4E2A;MinorGC&#x64CD;&#x4F5C;&#xFF0C;&#x6B64;&#x65F6;GC&#x5C06;&#x4F1A;&#x628A; Eden&#x548C;Survivor From&#x4E2D;&#x7684;&#x5BF9;&#x8C61; &#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x6536;&#x96C6;&#xFF0C;&#x628A;&#x5B58;&#x6D3B;&#x7684;&#x5BF9;&#x8C61;&#x653E;&#x5230; Survivor To&#x533A;&#xFF0C;&#x540C;&#x65F6;&#x8BA9;&#x5E74;&#x9F84; + 1</p>
-<p><a href="images/image-20200707085232646.png" data-lightbox="1f804557-27b7-402f-bb6e-adadd86de7de" data-title="image-20200707085232646"><img src="images/image-20200707085232646.png" alt="image-20200707085232646"></a></p>
+<p><a href="images/image-20200707085232646.png" data-lightbox="ade4b5fb-1cce-46dd-9969-f2eb55bea271" data-title="image-20200707085232646"><img src="images/image-20200707085232646.png" alt="image-20200707085232646"></a></p>
 <p>&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x4E0D;&#x65AD;&#x7684;&#x8FDB;&#x884C;&#x5BF9;&#x8C61;&#x751F;&#x6210; &#x548C; &#x5783;&#x573E;&#x56DE;&#x6536;&#xFF0C;&#x5F53;Survivor&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x5E74;&#x9F84;&#x8FBE;&#x5230;15&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C06;&#x4F1A;&#x89E6;&#x53D1;&#x4E00;&#x6B21; Promotion&#x664B;&#x5347;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5C06;&#x5E74;&#x8F7B;&#x4EE3;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;  &#x664B;&#x5347;&#x5230; &#x8001;&#x5E74;&#x4EE3;&#x4E2D;</p>
-<p><a href="images/image-20200707085737207.png" data-lightbox="eee1500c-d562-44ca-89e5-43dd904482f4" data-title="image-20200707085737207"><img src="images/image-20200707085737207.png" alt="image-20200707085737207"></a></p>
+<p><a href="images/image-20200707085737207.png" data-lightbox="cbb06c96-4dbf-42ad-92da-6a5f843246ca" data-title="image-20200707085737207"><img src="images/image-20200707085737207.png" alt="image-20200707085737207"></a></p>
 <h3 id="&#x601D;&#x8003;&#xFF1A;&#x5E78;&#x5B58;&#x533A;&#x533A;&#x6EE1;&#x4E86;&#x540E;&#xFF1F;"><a name="&#x601D;&#x8003;&#xFF1A;&#x5E78;&#x5B58;&#x533A;&#x533A;&#x6EE1;&#x4E86;&#x540E;&#xFF1F;" class="anchor-navigation-ex-anchor" href="#&#x601D;&#x8003;&#xFF1A;&#x5E78;&#x5B58;&#x533A;&#x533A;&#x6EE1;&#x4E86;&#x540E;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x601D;&#x8003;&#xFF1A;&#x5E78;&#x5B58;&#x533A;&#x533A;&#x6EE1;&#x4E86;&#x540E;&#xFF1F;</h3>
 <p>&#x7279;&#x522B;&#x6CE8;&#x610F;&#xFF0C;&#x5728;Eden&#x533A;&#x6EE1;&#x4E86;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x624D;&#x4F1A;&#x89E6;&#x53D1;MinorGC&#xFF0C;&#x800C;&#x5E78;&#x5B58;&#x8005;&#x533A;&#x6EE1;&#x4E86;&#x540E;&#xFF0C;&#x4E0D;&#x4F1A;&#x89E6;&#x53D1;MinorGC&#x64CD;&#x4F5C;</p>
 <p>&#x5982;&#x679C;Survivor&#x533A;&#x6EE1;&#x4E86;&#x540E;&#xFF0C;&#x5C06;&#x4F1A;&#x89E6;&#x53D1;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x53EF;&#x80FD;&#x76F4;&#x63A5;&#x664B;&#x5347;&#x8001;&#x5E74;&#x4EE3;</p>
@@ -5973,36 +5990,36 @@
 <p>&#x4F46;&#x662F;&#x4E5F;&#x6709;&#x53EF;&#x80FD;&#x6709;&#x4E9B;&#x4EBA;&#x56E0;&#x4E3A;&#x505A;&#x4E86;&#x975E;&#x5E38;&#x5927;&#x7684;&#x8D21;&#x732E;&#xFF0C;&#x76F4;&#x63A5;&#x4ECE;  &#x65B0;&#x5175; -&gt; &#x6392;&#x957F;</p>
 </blockquote>
 <h3 id="&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x7684;&#x7279;&#x6B8A;&#x60C5;&#x51B5;"><a name="&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x7684;&#x7279;&#x6B8A;&#x60C5;&#x51B5;" class="anchor-navigation-ex-anchor" href="#&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x7684;&#x7279;&#x6B8A;&#x60C5;&#x51B5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x7684;&#x7279;&#x6B8A;&#x60C5;&#x51B5;</h3>
-<p><a href="images/image-20200707091058346.png" data-lightbox="1bad0de0-5d22-4f20-b1ad-968435ee733c" data-title="image-20200707091058346"><img src="images/image-20200707091058346.png" alt="image-20200707091058346"></a></p>
+<p><a href="images/image-20200707091058346.png" data-lightbox="31712a01-3443-4e63-b1dd-9d6ea374a002" data-title="image-20200707091058346"><img src="images/image-20200707091058346.png" alt="image-20200707091058346"></a></p>
 <h3 id="&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x8FC7;&#x7A0B;"><a name="&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x8FC7;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x8FC7;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x8FC7;&#x7A0B;</h3>
 <p>&#x6211;&#x4EEC;&#x4E0D;&#x65AD;&#x7684;&#x521B;&#x5EFA;&#x5927;&#x5BF9;&#x8C61;</p>
-<pre><code class="lang-java"><span class="hljs-comment">/**
+<pre class="language-"><code class="lang-java"><span class="token comment">/**
  * &#x4EE3;&#x7801;&#x6F14;&#x793A;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;
  *
- * <span class="hljs-doctag">@author</span>: Victor
- * <span class="hljs-doctag">@create</span>: 2020-07-07-9:16
+ * @author: Victor
+ * @create: 2020-07-07-9:16
  */</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HeapInstanceTest</span> </span>{
-    <span class="hljs-keyword">byte</span> [] buffer = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-keyword">new</span> Random().nextInt(<span class="hljs-number">1024</span> * <span class="hljs-number">200</span>)];
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> InterruptedException </span>{
-        ArrayList&lt;HeapInstanceTest&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
-        <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) {
-            list.add(<span class="hljs-keyword">new</span> HeapInstanceTest());
-            Thread.sleep(<span class="hljs-number">10</span>);
-        }
-    }
-}
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HeapInstanceTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">byte</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">1024</span> <span class="token operator">*</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">InterruptedException</span> <span class="token punctuation">{</span>
+        <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">HeapInstanceTest</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">HeapInstanceTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x7136;&#x540E;&#x8BBE;&#x7F6E;JVM&#x53C2;&#x6570;</p>
-<pre><code class="lang-bash">-Xms600m -Xmx600m
+<pre class="language-"><code class="lang-bash">-Xms600m -Xmx600m
 </code></pre>
 <p>&#x7136;&#x540E;cmd&#x8F93;&#x5165;&#x4E0B;&#x9762;&#x547D;&#x4EE4;&#xFF0C;&#x6253;&#x5F00;VisualVM&#x56FE;&#x5F62;&#x5316;&#x754C;&#x9762;</p>
-<pre><code>jvisualvm
+<pre class="language-"><code>jvisualvm
 </code></pre><p>&#x7136;&#x540E;&#x901A;&#x8FC7;&#x6267;&#x884C;&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#xFF0C;&#x901A;&#x8FC7;VisualGC&#x8FDB;&#x884C;&#x52A8;&#x6001;&#x5316;&#x67E5;&#x770B;</p>
-<p><a href="images/&#x5783;&#x573E;&#x56DE;&#x6536;.gif" data-lightbox="4a6e2436-0547-4d23-b846-5400fac84ba2" data-title="&#x5783;&#x573E;&#x56DE;&#x6536;"><img src="images/&#x5783;&#x573E;&#x56DE;&#x6536;.gif" alt="&#x5783;&#x573E;&#x56DE;&#x6536;"></a></p>
+<p><a href="images/&#x5783;&#x573E;&#x56DE;&#x6536;.gif" data-lightbox="cbd51882-1542-4e04-b744-34a1f117ef64" data-title="&#x5783;&#x573E;&#x56DE;&#x6536;"><img src="images/&#x5783;&#x573E;&#x56DE;&#x6536;.gif" alt="&#x5783;&#x573E;&#x56DE;&#x6536;"></a></p>
 <p>&#x6700;&#x7EC8;&#xFF0C;&#x5728;&#x8001;&#x5E74;&#x4EE3;&#x548C;&#x65B0;&#x751F;&#x4EE3;&#x90FD;&#x6EE1;&#x4E86;&#xFF0C;&#x5C31;&#x51FA;&#x73B0;OOM</p>
-<pre><code>Exception in thread &quot;main&quot; java.lang.OutOfMemoryError: Java heap space
-    at com.atguigu.java.chapter08.HeapInstanceTest.&lt;init&gt;(HeapInstanceTest.java:13)
+<pre class="language-"><code>Exception in thread &quot;main&quot; java.lang.OutOfMemoryError: Java heap space
+    at com.atguigu.java.chapter08.HeapInstanceTest.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>init</span><span class="token punctuation">&gt;</span></span>(HeapInstanceTest.java:13)
     at com.atguigu.java.chapter08.HeapInstanceTest.main(HeapInstanceTest.java:17)
 </code></pre><h3 id="&#x5E38;&#x7528;&#x7684;&#x8C03;&#x4F18;&#x5DE5;&#x5177;"><a name="&#x5E38;&#x7528;&#x7684;&#x8C03;&#x4F18;&#x5DE5;&#x5177;" class="anchor-navigation-ex-anchor" href="#&#x5E38;&#x7528;&#x7684;&#x8C03;&#x4F18;&#x5DE5;&#x5177;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x7528;&#x7684;&#x8C03;&#x4F18;&#x5DE5;&#x5177;</h3>
 <ul>
@@ -6053,7 +6070,7 @@
 <blockquote>
 <p>STW&#xFF1A;stop the word</p>
 </blockquote>
-<p><a href="images/image-20200707095606813.png" data-lightbox="27485395-d660-4306-aeca-966b0c9a8456" data-title="image-20200707095606813"><img src="images/image-20200707095606813.png" alt="image-20200707095606813"></a></p>
+<p><a href="images/image-20200707095606813.png" data-lightbox="8847e305-fcdf-4b85-a665-d5cf6a6860d2" data-title="image-20200707095606813"><img src="images/image-20200707095606813.png" alt="image-20200707095606813"></a></p>
 <h3 id="major-gc"><a name="major-gc" class="anchor-navigation-ex-anchor" href="#major-gc"><i class="fa fa-link" aria-hidden="true"></i></a>Major GC</h3>
 <p>&#x6307;&#x53D1;&#x751F;&#x5728;&#x8001;&#x5E74;&#x4EE3;&#x7684;GC&#xFF0C;&#x5BF9;&#x8C61;&#x4ECE;&#x8001;&#x5E74;&#x4EE3;&#x6D88;&#x5931;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x8BF4; &#x201C;Major Gc&#x201D; &#x6216; &#x201C;Full GC&#x201D; &#x53D1;&#x751F;&#x4E86;</p>
 <p>&#x51FA;&#x73B0;&#x4E86;MajorGc&#xFF0C;&#x7ECF;&#x5E38;&#x4F1A;&#x4F34;&#x968F;&#x81F3;&#x5C11;&#x4E00;&#x6B21;&#x7684;Minor GC&#xFF08;&#x4F46;&#x975E;&#x7EDD;&#x5BF9;&#x7684;&#xFF0C;&#x5728;Paralle1 Scavenge&#x6536;&#x96C6;&#x5668;&#x7684;&#x6536;&#x96C6;&#x7B56;&#x7565;&#x91CC;&#x5C31;&#x6709;&#x76F4;&#x63A5;&#x8FDB;&#x884C;MajorGC&#x7684;&#x7B56;&#x7565;&#x9009;&#x62E9;&#x8FC7;&#x7A0B;&#xFF09;</p>
@@ -6073,34 +6090,34 @@
 <p>&#x8BF4;&#x660E;&#xFF1A;Full GC &#x662F;&#x5F00;&#x53D1;&#x6216;&#x8C03;&#x4F18;&#x4E2D;&#x5C3D;&#x91CF;&#x8981;&#x907F;&#x514D;&#x7684;&#x3002;&#x8FD9;&#x6837;&#x6682;&#x65F6;&#x65F6;&#x95F4;&#x4F1A;&#x77ED;&#x4E00;&#x4E9B;</p>
 <h3 id="gc-&#x4E3E;&#x4F8B;"><a name="gc-&#x4E3E;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#gc-&#x4E3E;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>GC &#x4E3E;&#x4F8B;</h3>
 <p>&#x6211;&#x4EEC;&#x7F16;&#x5199;&#x4E00;&#x4E2A;OOM&#x7684;&#x5F02;&#x5E38;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5728;&#x4E0D;&#x65AD;&#x7684;&#x521B;&#x5EFA;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x662F;&#x5B58;&#x653E;&#x5728;&#x5143;&#x7A7A;&#x95F4;&#x7684;</p>
-<pre><code class="lang-java"><span class="hljs-comment">/**
+<pre class="language-"><code class="lang-java"><span class="token comment">/**
  * GC&#x6D4B;&#x8BD5;
  *
- * <span class="hljs-doctag">@author</span>: Victor
- * <span class="hljs-doctag">@create</span>: 2020-07-07-10:01
+ * @author: Victor
+ * @create: 2020-07-07-10:01
  */</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GCTest</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
-        <span class="hljs-keyword">try</span> {
-            List&lt;String&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
-            String a = <span class="hljs-string">&quot;mogu blog&quot;</span>;
-            <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>) {
-                list.add(a);
-                a = a + a;
-                i++;
-            }
-        }<span class="hljs-keyword">catch</span> (Exception e) {
-            e.getStackTrace();
-        }
-    }
-}
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GCTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">String</span> a <span class="token operator">=</span> <span class="token string">&quot;mogu blog&quot;</span><span class="token punctuation">;</span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                a <span class="token operator">=</span> a <span class="token operator">+</span> a<span class="token punctuation">;</span>
+                i<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">getStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x8BBE;&#x7F6E;JVM&#x542F;&#x52A8;&#x53C2;&#x6570;</p>
-<pre><code class="lang-bash">-Xms10m -Xmx10m -XX:+PrintGCDetails
+<pre class="language-"><code class="lang-bash">-Xms10m -Xmx10m -XX:+PrintGCDetails
 </code></pre>
 <p>&#x6253;&#x5370;&#x51FA;&#x7684;&#x65E5;&#x5FD7;</p>
-<pre><code>[GC (Allocation Failure) [PSYoungGen: 2038K-&gt;500K(2560K)] 2038K-&gt;797K(9728K), 0.3532002 secs] [Times: user=0.01 sys=0.00, real=0.36 secs] 
+<pre class="language-"><code>[GC (Allocation Failure) [PSYoungGen: 2038K-&gt;500K(2560K)] 2038K-&gt;797K(9728K), 0.3532002 secs] [Times: user=0.01 sys=0.00, real=0.36 secs] 
 [GC (Allocation Failure) [PSYoungGen: 2108K-&gt;480K(2560K)] 2405K-&gt;1565K(9728K), 0.0014069 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
 [Full GC (Ergonomics) [PSYoungGen: 2288K-&gt;0K(2560K)] [ParOldGen: 6845K-&gt;5281K(7168K)] 9133K-&gt;5281K(9728K), [Metaspace: 3482K-&gt;3482K(1056768K)], 0.0058675 secs] [Times: user=0.00 sys=0.00, real=0.01 secs] 
 [GC (Allocation Failure) [PSYoungGen: 0K-&gt;0K(2560K)] 5281K-&gt;5281K(9728K), 0.0002857 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
@@ -6117,7 +6134,7 @@ Heap
 
   Exception in thread &quot;main&quot; java.lang.OutOfMemoryError: Java heap space
     at java.util.Arrays.copyOfRange(Arrays.java:3664)
-    at java.lang.String.&lt;init&gt;(String.java:207)
+    at java.lang.String.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>init</span><span class="token punctuation">&gt;</span></span>(String.java:207)
     at java.lang.StringBuilder.toString(StringBuilder.java:407)
     at com.atguigu.java.chapter08.GCTest.main(GCTest.java:20)
 </code></pre><p>&#x89E6;&#x53D1;OOM&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E00;&#x5B9A;&#x662F;&#x8FDB;&#x884C;&#x4E86;&#x4E00;&#x6B21;Full GC&#xFF0C;&#x56E0;&#x4E3A;&#x53EA;&#x6709;&#x5728;&#x8001;&#x5E74;&#x4EE3;&#x7A7A;&#x95F4;&#x4E0D;&#x8DB3;&#x65F6;&#x5019;&#xFF0C;&#x624D;&#x4F1A;&#x7206;&#x51FA;OOM&#x5F02;&#x5E38;</p>
@@ -6127,9 +6144,9 @@ Heap
 <p>&#x65B0;&#x751F;&#x4EE3;&#xFF1A;&#x6709;Eden&#x3001;&#x4E24;&#x5757;&#x5927;&#x5C0F;&#x76F8;&#x540C;&#x7684;survivor&#xFF08;&#x53C8;&#x79F0;&#x4E3A;from/to&#xFF0C;s0/s1&#xFF09;&#x6784;&#x6210;&#xFF0C;to&#x603B;&#x4E3A;&#x7A7A;&#x3002;
 &#x8001;&#x5E74;&#x4EE3;&#xFF1A;&#x5B58;&#x653E;&#x65B0;&#x751F;&#x4EE3;&#x4E2D;&#x7ECF;&#x5386;&#x591A;&#x6B21;GC&#x4ECD;&#x7136;&#x5B58;&#x6D3B;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
 </blockquote>
-<p><a href="images/image-20200707101511025.png" data-lightbox="3f84e27e-282a-4656-a6a9-9f46fe2c7929" data-title="image-20200707101511025"><img src="images/image-20200707101511025.png" alt="image-20200707101511025"></a></p>
+<p><a href="images/image-20200707101511025.png" data-lightbox="6a230870-040d-49b4-bc52-017ff7b31002" data-title="image-20200707101511025"><img src="images/image-20200707101511025.png" alt="image-20200707101511025"></a></p>
 <p>&#x5176;&#x5B9E;&#x4E0D;&#x5206;&#x4EE3;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#xFF0C;&#x5206;&#x4EE3;&#x7684;&#x552F;&#x4E00;&#x7406;&#x7531;&#x5C31;&#x662F;&#x4F18;&#x5316;GC&#x6027;&#x80FD;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5206;&#x4EE3;&#xFF0C;&#x90A3;&#x6240;&#x6709;&#x7684;&#x5BF9;&#x8C61;&#x90FD;&#x5728;&#x4E00;&#x5757;&#xFF0C;&#x5C31;&#x5982;&#x540C;&#x628A;&#x4E00;&#x4E2A;&#x5B66;&#x6821;&#x7684;&#x4EBA;&#x90FD;&#x5173;&#x5728;&#x4E00;&#x4E2A;&#x6559;&#x5BA4;&#x3002;GC&#x7684;&#x65F6;&#x5019;&#x8981;&#x627E;&#x5230;&#x54EA;&#x4E9B;&#x5BF9;&#x8C61;&#x6CA1;&#x7528;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4F1A;&#x5BF9;&#x5806;&#x7684;&#x6240;&#x6709;&#x533A;&#x57DF;&#x8FDB;&#x884C;&#x626B;&#x63CF;&#x3002;&#x800C;&#x5F88;&#x591A;&#x5BF9;&#x8C61;&#x90FD;&#x662F;&#x671D;&#x751F;&#x5915;&#x6B7B;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x5206;&#x4EE3;&#x7684;&#x8BDD;&#xFF0C;&#x628A;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x653E;&#x5230;&#x67D0;&#x4E00;&#x5730;&#x65B9;&#xFF0C;&#x5F53;GC&#x7684;&#x65F6;&#x5019;&#x5148;&#x628A;&#x8FD9;&#x5757;&#x5B58;&#x50A8;&#x201C;&#x671D;&#x751F;&#x5915;&#x6B7B;&#x201D;&#x5BF9;&#x8C61;&#x7684;&#x533A;&#x57DF;&#x8FDB;&#x884C;&#x56DE;&#x6536;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4F1A;&#x817E;&#x51FA;&#x5F88;&#x5927;&#x7684;&#x7A7A;&#x95F4;&#x51FA;&#x6765;&#x3002;</p>
-<p><a href="images/image-20200707101543871.png" data-lightbox="d1485c04-0aa9-48fc-9bb8-bcb0dcf4a33a" data-title="image-20200707101543871"><img src="images/image-20200707101543871.png" alt="image-20200707101543871"></a></p>
+<p><a href="images/image-20200707101543871.png" data-lightbox="400fbe50-6b85-4a0d-9575-babd1ab34886" data-title="image-20200707101543871"><img src="images/image-20200707101543871.png" alt="image-20200707101543871"></a></p>
 <h2 id="&#x5185;&#x5B58;&#x5206;&#x914D;&#x7B56;&#x7565;"><a name="&#x5185;&#x5B58;&#x5206;&#x914D;&#x7B56;&#x7565;" class="anchor-navigation-ex-anchor" href="#&#x5185;&#x5B58;&#x5206;&#x914D;&#x7B56;&#x7565;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5185;&#x5B58;&#x5206;&#x914D;&#x7B56;&#x7565;</h2>
 <p>&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x5728;Eden&#x51FA;&#x751F;&#x5E76;&#x7ECF;&#x8FC7;&#x7B2C;&#x4E00;&#x6B21;Minor GC&#x540E;&#x4ECD;&#x7136;&#x5B58;&#x6D3B;&#xFF0C;&#x5E76;&#x4E14;&#x80FD;&#x88AB;Survivor&#x5BB9;&#x7EB3;&#x7684;&#x8BDD;&#xFF0C;&#x5C06;&#x88AB;&#x79FB;&#x52A8;&#x5230;survivor&#x7A7A;&#x95F4;&#x4E2D;&#xFF0C;&#x5E76;&#x5C06;&#x5BF9;&#x8C61;&#x5E74;&#x9F84;&#x8BBE;&#x4E3A;1&#x3002;&#x5BF9;&#x8C61;&#x5728;survivor&#x533A;&#x4E2D;&#x6BCF;&#x71AC;&#x8FC7;&#x4E00;&#x6B21;MinorGC&#xFF0C;&#x5E74;&#x9F84;&#x5C31;&#x589E;&#x52A0;1&#x5C81;&#xFF0C;&#x5F53;&#x5B83;&#x7684;&#x5E74;&#x9F84;&#x589E;&#x52A0;&#x5230;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;15&#x5C81;&#xFF0C;&#x5176;&#x5B9E;&#x6BCF;&#x4E2A;JVM&#x3001;&#x6BCF;&#x4E2A;GC&#x90FD;&#x6709;&#x6240;&#x4E0D;&#x540C;&#xFF09;&#x65F6;&#xFF0C;&#x5C31;&#x4F1A;&#x88AB;&#x664B;&#x5347;&#x5230;&#x8001;&#x5E74;&#x4EE3;</p>
 <p>&#x5BF9;&#x8C61;&#x664B;&#x5347;&#x8001;&#x5E74;&#x4EE3;&#x7684;&#x5E74;&#x9F84;&#x9600;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x9009;&#x9879;-xx:MaxTenuringThreshold&#x6765;&#x8BBE;&#x7F6E;</p>
@@ -6165,14 +6182,14 @@ Heap
 <p>&#x4ECE;&#x5185;&#x5B58;&#x6A21;&#x578B;&#x800C;&#x4E0D;&#x662F;&#x5783;&#x573E;&#x6536;&#x96C6;&#x7684;&#x89D2;&#x5EA6;&#xFF0C;&#x5BF9;Eden&#x533A;&#x57DF;&#x7EE7;&#x7EED;&#x8FDB;&#x884C;&#x5212;&#x5206;&#xFF0C;JVM&#x4E3A;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x5206;&#x914D;&#x4E86;&#x4E00;&#x4E2A;&#x79C1;&#x6709;&#x7F13;&#x5B58;&#x533A;&#x57DF;&#xFF0C;&#x5B83;&#x5305;&#x542B;&#x5728;Eden&#x7A7A;&#x95F4;&#x5185;&#x3002;</p>
 <p>&#x591A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x5206;&#x914D;&#x5185;&#x5B58;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;TLAB&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x975E;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x95EE;&#x9898;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x80FD;&#x591F;&#x63D0;&#x5347;&#x5185;&#x5B58;&#x5206;&#x914D;&#x7684;&#x541E;&#x5410;&#x91CF;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x8FD9;&#x79CD;&#x5185;&#x5B58;&#x5206;&#x914D;&#x65B9;&#x5F0F;&#x79F0;&#x4E4B;&#x4E3A;&#x5FEB;&#x901F;&#x5206;&#x914D;&#x7B56;&#x7565;&#x3002;</p>
 <p>&#x636E;&#x6211;&#x6240;&#x77E5;&#x6240;&#x6709;OpenJDK&#x884D;&#x751F;&#x51FA;&#x6765;&#x7684;JVM&#x90FD;&#x63D0;&#x4F9B;&#x4E86;TLAB&#x7684;&#x8BBE;&#x8BA1;&#x3002;</p>
-<p><a href="images/image-20200707103547712.png" data-lightbox="1aedbcd8-27cb-4f60-99d6-14d12e25c714" data-title="image-20200707103547712"><img src="images/image-20200707103547712.png" alt="image-20200707103547712"></a></p>
+<p><a href="images/image-20200707103547712.png" data-lightbox="f523fa2e-6c5e-4f1a-857f-6df4bee1b3f5" data-title="image-20200707103547712"><img src="images/image-20200707103547712.png" alt="image-20200707103547712"></a></p>
 <p>&#x5C3D;&#x7BA1;&#x4E0D;&#x662F;&#x6240;&#x6709;&#x7684;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#x90FD;&#x80FD;&#x591F;&#x5728;TLAB&#x4E2D;&#x6210;&#x529F;&#x5206;&#x914D;&#x5185;&#x5B58;&#xFF0C;&#x4F46;JVM&#x786E;&#x5B9E;&#x662F;&#x5C06;TLAB&#x4F5C;&#x4E3A;&#x5185;&#x5B58;&#x5206;&#x914D;&#x7684;&#x9996;&#x9009;&#x3002;</p>
 <p>&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x9009;&#x9879;&#x201C;-Xx:UseTLAB&#x201D;&#x8BBE;&#x7F6E;&#x662F;&#x5426;&#x5F00;&#x542F;TLAB&#x7A7A;&#x95F4;&#x3002;</p>
 <p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;TLAB&#x7A7A;&#x95F4;&#x7684;&#x5185;&#x5B58;&#x975E;&#x5E38;&#x5C0F;&#xFF0C;&#x4EC5;&#x5360;&#x6709;&#x6574;&#x4E2A;Eden&#x7A7A;&#x95F4;&#x7684;1&#xFF0C;&#x5F53;&#x7136;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x9009;&#x9879;&#x201C;-Xx:TLABWasteTargetPercent&#x201D;&#x8BBE;&#x7F6E;TLAB&#x7A7A;&#x95F4;&#x6240;&#x5360;&#x7528;Eden&#x7A7A;&#x95F4;&#x7684;&#x767E;&#x5206;&#x6BD4;&#x5927;&#x5C0F;&#x3002;</p>
 <p>&#x4E00;&#x65E6;&#x5BF9;&#x8C61;&#x5728;TLAB&#x7A7A;&#x95F4;&#x5206;&#x914D;&#x5185;&#x5B58;&#x5931;&#x8D25;&#x65F6;&#xFF0C;JVM&#x5C31;&#x4F1A;&#x5C1D;&#x8BD5;&#x7740;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x52A0;&#x9501;&#x673A;&#x5236;&#x786E;&#x4FDD;&#x6570;&#x636E;&#x64CD;&#x4F5C;&#x7684;&#x539F;&#x5B50;&#x6027;&#xFF0C;&#x4ECE;&#x800C;&#x76F4;&#x63A5;&#x5728;Eden&#x7A7A;&#x95F4;&#x4E2D;&#x5206;&#x914D;&#x5185;&#x5B58;&#x3002;</p>
 <h3 id="tlab&#x5206;&#x914D;&#x8FC7;&#x7A0B;"><a name="tlab&#x5206;&#x914D;&#x8FC7;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#tlab&#x5206;&#x914D;&#x8FC7;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>TLAB&#x5206;&#x914D;&#x8FC7;&#x7A0B;</h3>
 <p>&#x5BF9;&#x8C61;&#x9996;&#x5148;&#x662F;&#x901A;&#x8FC7;TLAB&#x5F00;&#x8F9F;&#x7A7A;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x80FD;&#x653E;&#x5165;&#xFF0C;&#x90A3;&#x4E48;&#x9700;&#x8981;&#x901A;&#x8FC7;Eden&#x6765;&#x8FDB;&#x884C;&#x5206;&#x914D;</p>
-<p><a href="images/image-20200707104253530.png" data-lightbox="870f6609-d710-4710-8378-4eedce2ac078" data-title="image-20200707104253530"><img src="images/image-20200707104253530.png" alt="image-20200707104253530"></a></p>
+<p><a href="images/image-20200707104253530.png" data-lightbox="dc59c264-aa81-4217-8b29-156f784c4c4e" data-title="image-20200707104253530"><img src="images/image-20200707104253530.png" alt="image-20200707104253530"></a></p>
 <h2 id="&#x5C0F;&#x7ED3;&#xFF1A;&#x5806;&#x7A7A;&#x95F4;&#x7684;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;"><a name="&#x5C0F;&#x7ED3;&#xFF1A;&#x5806;&#x7A7A;&#x95F4;&#x7684;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#&#x5C0F;&#x7ED3;&#xFF1A;&#x5806;&#x7A7A;&#x95F4;&#x7684;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C0F;&#x7ED3;&#xFF1A;&#x5806;&#x7A7A;&#x95F4;&#x7684;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;</h2>
 <ul>
 <li>-XX&#xFF1A;+PrintFlagsInitial&#xFF1A;&#x67E5;&#x770B;&#x6240;&#x6709;&#x7684;&#x53C2;&#x6570;&#x7684;&#x9ED8;&#x8BA4;&#x521D;&#x59CB;&#x503C;</li>
@@ -6217,70 +6234,70 @@ Heap
 </ul>
 <h4 id="&#x9003;&#x9038;&#x5206;&#x6790;&#x4E3E;&#x4F8B;"><a name="&#x9003;&#x9038;&#x5206;&#x6790;&#x4E3E;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x9003;&#x9038;&#x5206;&#x6790;&#x4E3E;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9003;&#x9038;&#x5206;&#x6790;&#x4E3E;&#x4F8B;</h4>
 <p>&#x6CA1;&#x6709;&#x53D1;&#x751F;&#x9003;&#x9038;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x5206;&#x914D;&#x5230;&#x6808;&#x4E0A;&#xFF0C;&#x968F;&#x7740;&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x7684;&#x7ED3;&#x675F;&#xFF0C;&#x6808;&#x7A7A;&#x95F4;&#x5C31;&#x88AB;&#x79FB;&#x9664;&#xFF0C;&#x6BCF;&#x4E2A;&#x6808;&#x91CC;&#x9762;&#x5305;&#x542B;&#x4E86;&#x5F88;&#x591A;&#x6808;&#x5E27;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x53D1;&#x751F;&#x9003;&#x9038;&#x5206;&#x6790;</p>
-<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">my_method</span><span class="hljs-params">()</span> </span>{
-    V v = <span class="hljs-keyword">new</span> V();
-    <span class="hljs-comment">// use v</span>
-    <span class="hljs-comment">// ....</span>
-    v = <span class="hljs-keyword">null</span>;
-}
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">my_method</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">V</span> v <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">V</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// use v</span>
+    <span class="token comment">// ....</span>
+    v <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x9488;&#x5BF9;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;</p>
-<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> StringBuffer <span class="hljs-title">createStringBuffer</span><span class="hljs-params">(String s1, String s2)</span> </span>{
-    StringBuffer sb = <span class="hljs-keyword">new</span> StringBuffer();
-    sb.append(s1);
-    sb.append(s2);
-    <span class="hljs-keyword">return</span> sb;
-}
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">StringBuffer</span> <span class="token function">createStringBuffer</span><span class="token punctuation">(</span><span class="token class-name">String</span> s1<span class="token punctuation">,</span> <span class="token class-name">String</span> s2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">StringBuffer</span> sb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    sb<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    sb<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> sb<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x5982;&#x679C;&#x60F3;&#x8981;StringBuffer sb&#x4E0D;&#x53D1;&#x751F;&#x9003;&#x9038;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;</p>
-<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">createStringBuffer</span><span class="hljs-params">(String s1, String s2)</span> </span>{
-    StringBuffer sb = <span class="hljs-keyword">new</span> StringBuffer();
-    sb.append(s1);
-    sb.append(s2);
-    <span class="hljs-keyword">return</span> sb.toString();
-}
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">String</span> <span class="token function">createStringBuffer</span><span class="token punctuation">(</span><span class="token class-name">String</span> s1<span class="token punctuation">,</span> <span class="token class-name">String</span> s2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">StringBuffer</span> sb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    sb<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    sb<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> sb<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x5B8C;&#x6574;&#x7684;&#x9003;&#x9038;&#x5206;&#x6790;&#x4EE3;&#x7801;&#x4E3E;&#x4F8B;</p>
-<pre><code class="lang-java"><span class="hljs-comment">/**
+<pre class="language-"><code class="lang-java"><span class="token comment">/**
  * &#x9003;&#x9038;&#x5206;&#x6790;
  * &#x5982;&#x4F55;&#x5FEB;&#x901F;&#x7684;&#x5224;&#x65AD;&#x662F;&#x5426;&#x53D1;&#x751F;&#x4E86;&#x9003;&#x9038;&#x5206;&#x6790;&#xFF0C;&#x5927;&#x5BB6;&#x5C31;&#x770B;new&#x7684;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x5728;&#x65B9;&#x6CD5;&#x5916;&#x88AB;&#x8C03;&#x7528;&#x3002;
- * <span class="hljs-doctag">@author</span>: Victor
- * <span class="hljs-doctag">@create</span>: 2020-07-07-20:05
+ * @author: Victor
+ * @create: 2020-07-07-20:05
  */</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EscapeAnalysis</span> </span>{
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">EscapeAnalysis</span> <span class="token punctuation">{</span>
 
-    <span class="hljs-keyword">public</span> EscapeAnalysis obj;
+    <span class="token keyword">public</span> <span class="token class-name">EscapeAnalysis</span> obj<span class="token punctuation">;</span>
 
-    <span class="hljs-comment">/**
+    <span class="token comment">/**
      * &#x65B9;&#x6CD5;&#x8FD4;&#x56DE;EscapeAnalysis&#x5BF9;&#x8C61;&#xFF0C;&#x53D1;&#x751F;&#x9003;&#x9038;
-     * <span class="hljs-doctag">@return</span>
+     * @return
      */</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> EscapeAnalysis <span class="hljs-title">getInstance</span><span class="hljs-params">()</span> </span>{
-        <span class="hljs-keyword">return</span> obj == <span class="hljs-keyword">null</span> ? <span class="hljs-keyword">new</span> EscapeAnalysis():obj;
-    }
+    <span class="token keyword">public</span> <span class="token class-name">EscapeAnalysis</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> obj <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">?</span> <span class="token keyword">new</span> <span class="token class-name">EscapeAnalysis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>obj<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-comment">/**
+    <span class="token comment">/**
      * &#x4E3A;&#x6210;&#x5458;&#x5C5E;&#x6027;&#x8D4B;&#x503C;&#xFF0C;&#x53D1;&#x751F;&#x9003;&#x9038;
      */</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setObj</span><span class="hljs-params">()</span> </span>{
-        <span class="hljs-keyword">this</span>.obj = <span class="hljs-keyword">new</span> EscapeAnalysis();
-    }
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EscapeAnalysis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-comment">/**
+    <span class="token comment">/**
      * &#x5BF9;&#x8C61;&#x7684;&#x4F5C;&#x7528;&#x4E8E;&#x4EC5;&#x5728;&#x5F53;&#x524D;&#x65B9;&#x6CD5;&#x4E2D;&#x6709;&#x6548;&#xFF0C;&#x6CA1;&#x6709;&#x53D1;&#x751F;&#x9003;&#x9038;
      */</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">useEscapeAnalysis</span><span class="hljs-params">()</span> </span>{
-        EscapeAnalysis e = <span class="hljs-keyword">new</span> EscapeAnalysis();
-    }
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">useEscapeAnalysis</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">EscapeAnalysis</span> e <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EscapeAnalysis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-comment">/**
+    <span class="token comment">/**
      * &#x5F15;&#x7528;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x7684;&#x503C;&#xFF0C;&#x53D1;&#x751F;&#x9003;&#x9038;
      */</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">useEscapeAnalysis2</span><span class="hljs-params">()</span> </span>{
-        EscapeAnalysis e = getInstance();
-        <span class="hljs-comment">// getInstance().XXX  &#x53D1;&#x751F;&#x9003;&#x9038;</span>
-    }
-}
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">useEscapeAnalysis2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">EscapeAnalysis</span> e <span class="token operator">=</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// getInstance().XXX  &#x53D1;&#x751F;&#x9003;&#x9038;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h4 id="&#x53C2;&#x6570;&#x8BBE;&#x7F6E;"><a name="&#x53C2;&#x6570;&#x8BBE;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x6570;&#x8BBE;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x6570;&#x8BBE;&#x7F6E;</h4>
 <p>&#x5728;JDK 1.7 &#x7248;&#x672C;&#x4E4B;&#x540E;&#xFF0C;HotSpot&#x4E2D;&#x9ED8;&#x8BA4;&#x5C31;&#x5DF2;&#x7ECF;&#x5F00;&#x542F;&#x4E86;&#x9003;&#x9038;&#x5206;&#x6790;</p>
@@ -6305,96 +6322,96 @@ Heap
 </blockquote>
 <h4 id="&#x4E3E;&#x4F8B;"><a name="&#x4E3E;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x4E3E;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E3E;&#x4F8B;</h4>
 <p>&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x4E3E;&#x4F8B;&#x6765;&#x8BF4;&#x660E; &#x5F00;&#x542F;&#x9003;&#x9038;&#x5206;&#x6790; &#x548C; &#x672A;&#x5F00;&#x542F;&#x9003;&#x9038;&#x5206;&#x6790;&#x65F6;&#x5019;&#x7684;&#x60C5;&#x51B5;</p>
-<pre><code class="lang-java"><span class="hljs-comment">/**
+<pre class="language-"><code class="lang-java"><span class="token comment">/**
  * &#x6808;&#x4E0A;&#x5206;&#x914D;
  * -Xmx1G -Xms1G -XX:-DoEscapeAnalysis -XX:+PrintGCDetails
- * <span class="hljs-doctag">@author</span>: Victor
- * <span class="hljs-doctag">@create</span>: 2020-07-07-20:23
+ * @author: Victor
+ * @create: 2020-07-07-20:23
  */</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
-    <span class="hljs-keyword">private</span> String name;
-    <span class="hljs-keyword">private</span> String age;
-    <span class="hljs-keyword">private</span> String gender;
-    <span class="hljs-keyword">private</span> String phone;
-}
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StackAllocation</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> InterruptedException </span>{
-        <span class="hljs-keyword">long</span> start = System.currentTimeMillis();
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100000000</span>; i++) {
-            alloc();
-        }
-        <span class="hljs-keyword">long</span> end = System.currentTimeMillis();
-        System.out.println(<span class="hljs-string">&quot;&#x82B1;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#x4E3A;&#xFF1A;&quot;</span> + (end - start) + <span class="hljs-string">&quot; ms&quot;</span>);
+<span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> gender<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> phone<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StackAllocation</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">InterruptedException</span> <span class="token punctuation">{</span>
+        <span class="token keyword">long</span> start <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100000000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">alloc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">long</span> end <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&#x82B1;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#x4E3A;&#xFF1A;&quot;</span> <span class="token operator">+</span> <span class="token punctuation">(</span>end <span class="token operator">-</span> start<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot; ms&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="hljs-comment">// &#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x67E5;&#x770B;&#x5806;&#x5185;&#x5B58;&#x4E2D;&#x5BF9;&#x8C61;&#x4E2A;&#x6570;&#xFF0C;&#x7EBF;&#x7A0B;sleep</span>
-        Thread.sleep(<span class="hljs-number">10000000</span>);
-    }
+        <span class="token comment">// &#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x67E5;&#x770B;&#x5806;&#x5185;&#x5B58;&#x4E2D;&#x5BF9;&#x8C61;&#x4E2A;&#x6570;&#xFF0C;&#x7EBF;&#x7A0B;sleep</span>
+        <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">10000000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">alloc</span><span class="hljs-params">()</span> </span>{
-        <span class="hljs-comment">// &#x672A;&#x53D1;&#x751F;&#x9003;&#x9038;</span>
-        User user = <span class="hljs-keyword">new</span> User(); 
-    }
-}
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">alloc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x672A;&#x53D1;&#x751F;&#x9003;&#x9038;</span>
+        <span class="token class-name">User</span> user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x8BBE;&#x7F6E;JVM&#x53C2;&#x6570;&#xFF0C;&#x8868;&#x793A;&#x672A;&#x5F00;&#x542F;&#x9003;&#x9038;&#x5206;&#x6790;</p>
-<pre><code>-Xmx1G -Xms1G -XX:-DoEscapeAnalysis -XX:+PrintGCDetails
+<pre class="language-"><code>-Xmx1G -Xms1G -XX:-DoEscapeAnalysis -XX:+PrintGCDetails
 </code></pre><p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x89E6;&#x53D1;&#x4E86;GC&#x64CD;&#x4F5C;</p>
-<pre><code>&#x82B1;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#x4E3A;&#xFF1A;664 ms
+<pre class="language-"><code>&#x82B1;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#x4E3A;&#xFF1A;664 ms
 </code></pre><p>&#x7136;&#x540E;&#x67E5;&#x770B;&#x5185;&#x5B58;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x53D1;&#x73B0;&#x6709;&#x5927;&#x91CF;&#x7684;User&#x5B58;&#x50A8;&#x5728;&#x5806;&#x4E2D;</p>
-<p><a href="images/image-20200707203038615.png" data-lightbox="01b2fbef-1394-4721-98dc-f69169e5c40e" data-title="image-20200707203038615"><img src="images/image-20200707203038615.png" alt="image-20200707203038615"></a></p>
+<p><a href="images/image-20200707203038615.png" data-lightbox="ae7383fa-5f40-4b42-93aa-66939562f4f2" data-title="image-20200707203038615"><img src="images/image-20200707203038615.png" alt="image-20200707203038615"></a></p>
 <p>&#x6211;&#x4EEC;&#x5728;&#x5F00;&#x542F;&#x9003;&#x9038;&#x5206;&#x6790;</p>
-<pre><code>-Xmx1G -Xms1G -XX:+DoEscapeAnalysis -XX:+PrintGCDetails
+<pre class="language-"><code>-Xmx1G -Xms1G -XX:+DoEscapeAnalysis -XX:+PrintGCDetails
 </code></pre><p>&#x7136;&#x540E;&#x67E5;&#x770B;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#xFF0C;&#x6211;&#x4EEC;&#x80FD;&#x591F;&#x53D1;&#x73B0;&#x82B1;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#x5FEB;&#x901F;&#x51CF;&#x5C11;&#xFF0C;&#x540C;&#x65F6;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;GC&#x64CD;&#x4F5C;</p>
-<pre><code>&#x82B1;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#x4E3A;&#xFF1A;5 ms
+<pre class="language-"><code>&#x82B1;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#x4E3A;&#xFF1A;5 ms
 </code></pre><p>&#x5728;&#x770B;&#x5185;&#x5B58;&#x60C5;&#x51B5;&#xFF0C;&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x53EA;&#x6709;&#x5F88;&#x5C11;&#x7684;User&#x5BF9;&#x8C61;&#xFF0C;&#x8BF4;&#x660E;User&#x672A;&#x53D1;&#x751F;&#x9003;&#x9038;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5B58;&#x50A8;&#x5728;&#x6808;&#x4E2D;&#xFF0C;&#x968F;&#x7740;&#x6808;&#x7684;&#x9500;&#x6BC1;&#x800C;&#x6D88;&#x5931;</p>
-<p><a href="images/image-20200707203441718.png" data-lightbox="5e54e2f0-cfe2-451e-954a-4d3b91adcc7d" data-title="image-20200707203441718"><img src="images/image-20200707203441718.png" alt="image-20200707203441718"></a></p>
+<p><a href="images/image-20200707203441718.png" data-lightbox="9b777990-3e84-4c29-8ea0-92fb8b0da8b7" data-title="image-20200707203441718"><img src="images/image-20200707203441718.png" alt="image-20200707203441718"></a></p>
 <h3 id="&#x540C;&#x6B65;&#x7701;&#x7565;"><a name="&#x540C;&#x6B65;&#x7701;&#x7565;" class="anchor-navigation-ex-anchor" href="#&#x540C;&#x6B65;&#x7701;&#x7565;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x540C;&#x6B65;&#x7701;&#x7565;</h3>
 <p>&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x7684;&#x4EE3;&#x4EF7;&#x662F;&#x76F8;&#x5F53;&#x9AD8;&#x7684;&#xFF0C;&#x540C;&#x6B65;&#x7684;&#x540E;&#x679C;&#x662F;&#x964D;&#x4F4E;&#x5E76;&#x53D1;&#x6027;&#x548C;&#x6027;&#x80FD;&#x3002;</p>
 <p>&#x5728;&#x52A8;&#x6001;&#x7F16;&#x8BD1;&#x540C;&#x6B65;&#x5757;&#x7684;&#x65F6;&#x5019;&#xFF0C;JIT&#x7F16;&#x8BD1;&#x5668;&#x53EF;&#x4EE5;&#x501F;&#x52A9;&#x9003;&#x9038;&#x5206;&#x6790;&#x6765;&#x5224;&#x65AD;&#x540C;&#x6B65;&#x5757;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x9501;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x53EA;&#x80FD;&#x591F;&#x88AB;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x8BBF;&#x95EE;&#x800C;&#x6CA1;&#x6709;&#x88AB;&#x53D1;&#x5E03;&#x5230;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#xFF0C;&#x90A3;&#x4E48;JIT&#x7F16;&#x8BD1;&#x5668;&#x5728;&#x7F16;&#x8BD1;&#x8FD9;&#x4E2A;&#x540C;&#x6B65;&#x5757;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x53D6;&#x6D88;&#x5BF9;&#x8FD9;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#x7684;&#x540C;&#x6B65;&#x3002;&#x8FD9;&#x6837;&#x5C31;&#x80FD;&#x5927;&#x5927;&#x63D0;&#x9AD8;&#x5E76;&#x53D1;&#x6027;&#x548C;&#x6027;&#x80FD;&#x3002;&#x8FD9;&#x4E2A;&#x53D6;&#x6D88;&#x540C;&#x6B65;&#x7684;&#x8FC7;&#x7A0B;&#x5C31;&#x53EB;&#x540C;&#x6B65;&#x7701;&#x7565;&#xFF0C;&#x4E5F;&#x53EB;&#x9501;&#x6D88;&#x9664;&#x3002;</p>
 <p>&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;</p>
-<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">f</span><span class="hljs-params">()</span> </span>{
-    Object hellis = <span class="hljs-keyword">new</span> Object();
-    <span class="hljs-keyword">synchronized</span>(hellis) {
-        System.out.println(hellis);
-    }
-}
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Object</span> hellis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">synchronized</span><span class="token punctuation">(</span>hellis<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>hellis<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x4EE3;&#x7801;&#x4E2D;&#x5BF9;hellis&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x52A0;&#x9501;&#xFF0C;&#x4F46;&#x662F;hellis&#x5BF9;&#x8C61;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x53EA;&#x5728;f()&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x5E76;&#x4E0D;&#x4F1A;&#x88AB;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x6240;&#x8BBF;&#x95EE;&#x5230;&#xFF0C;&#x6240;&#x4EE5;&#x5728;JIT&#x7F16;&#x8BD1;&#x9636;&#x6BB5;&#x5C31;&#x4F1A;&#x88AB;&#x4F18;&#x5316;&#x6389;&#xFF0C;&#x4F18;&#x5316;&#x6210;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">f</span><span class="hljs-params">()</span> </span>{
-    Object hellis = <span class="hljs-keyword">new</span> Object();
-    System.out.println(hellis);
-}
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Object</span> hellis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>hellis<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x6211;&#x4EEC;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x6210;&#x5B57;&#x8282;&#x7801;</p>
-<p><a href="images/image-20200707205634266.png" data-lightbox="90ed6094-8cdb-4fdf-8811-be47d372e0b0" data-title="image-20200707205634266"><img src="images/image-20200707205634266.png" alt="image-20200707205634266"></a></p>
+<p><a href="images/image-20200707205634266.png" data-lightbox="d599e082-5232-448e-b81d-0f68a9307c3b" data-title="image-20200707205634266"><img src="images/image-20200707205634266.png" alt="image-20200707205634266"></a></p>
 <h3 id="&#x5206;&#x79BB;&#x5BF9;&#x8C61;&#x548C;&#x6807;&#x91CF;&#x66FF;&#x6362;"><a name="&#x5206;&#x79BB;&#x5BF9;&#x8C61;&#x548C;&#x6807;&#x91CF;&#x66FF;&#x6362;" class="anchor-navigation-ex-anchor" href="#&#x5206;&#x79BB;&#x5BF9;&#x8C61;&#x548C;&#x6807;&#x91CF;&#x66FF;&#x6362;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5206;&#x79BB;&#x5BF9;&#x8C61;&#x548C;&#x6807;&#x91CF;&#x66FF;&#x6362;</h3>
 <p>&#x6807;&#x91CF;&#xFF08;scalar&#xFF09;&#x662F;&#x6307;&#x4E00;&#x4E2A;&#x65E0;&#x6CD5;&#x518D;&#x5206;&#x89E3;&#x6210;&#x66F4;&#x5C0F;&#x7684;&#x6570;&#x636E;&#x7684;&#x6570;&#x636E;&#x3002;Java&#x4E2D;&#x7684;&#x539F;&#x59CB;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5C31;&#x662F;&#x6807;&#x91CF;&#x3002;</p>
 <p>&#x76F8;&#x5BF9;&#x7684;&#xFF0C;&#x90A3;&#x4E9B;&#x8FD8;&#x53EF;&#x4EE5;&#x5206;&#x89E3;&#x7684;&#x6570;&#x636E;&#x53EB;&#x505A;&#x805A;&#x5408;&#x91CF;&#xFF08;Aggregate&#xFF09;&#xFF0C;Java&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x5C31;&#x662F;&#x805A;&#x5408;&#x91CF;&#xFF0C;&#x56E0;&#x4E3A;&#x4ED6;&#x53EF;&#x4EE5;&#x5206;&#x89E3;&#x6210;&#x5176;&#x4ED6;&#x805A;&#x5408;&#x91CF;&#x548C;&#x6807;&#x91CF;&#x3002;</p>
 <p>&#x5728;JIT&#x9636;&#x6BB5;&#xFF0C;&#x5982;&#x679C;&#x7ECF;&#x8FC7;&#x9003;&#x9038;&#x5206;&#x6790;&#xFF0C;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E0D;&#x4F1A;&#x88AB;&#x5916;&#x754C;&#x8BBF;&#x95EE;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;&#x7ECF;&#x8FC7;JIT&#x4F18;&#x5316;&#xFF0C;&#x5C31;&#x4F1A;&#x628A;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x62C6;&#x89E3;&#x6210;&#x82E5;&#x5E72;&#x4E2A;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x82E5;&#x5E72;&#x4E2A;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x6765;&#x4EE3;&#x66FF;&#x3002;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x5C31;&#x662F;&#x6807;&#x91CF;&#x66FF;&#x6362;&#x3002;</p>
-<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
-    alloc();
-}
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Point</span> </span>{
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> x;
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> y;
-}
-<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">alloc</span><span class="hljs-params">()</span> </span>{
-    Point point = <span class="hljs-keyword">new</span> Point(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>);
-    System.out.println(<span class="hljs-string">&quot;point.x&quot;</span> + point.x + <span class="hljs-string">&quot;;point.y&quot;</span> + point.y);
-}
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">alloc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> x<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">alloc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Point</span> point <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Point</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;point.x&quot;</span> <span class="token operator">+</span> point<span class="token punctuation">.</span>x <span class="token operator">+</span> <span class="token string">&quot;;point.y&quot;</span> <span class="token operator">+</span> point<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#xFF0C;&#x7ECF;&#x8FC7;&#x6807;&#x91CF;&#x66FF;&#x6362;&#x540E;&#xFF0C;&#x5C31;&#x4F1A;&#x53D8;&#x6210;</p>
-<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">alloc</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">int</span> x = <span class="hljs-number">1</span>;
-    <span class="hljs-keyword">int</span> y = <span class="hljs-number">2</span>;
-    System.out.println(<span class="hljs-string">&quot;point.x = &quot;</span> + x + <span class="hljs-string">&quot;; point.y=&quot;</span> + y);
-}
+<pre class="language-"><code class="lang-java"><span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">alloc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;point.x = &quot;</span> <span class="token operator">+</span> x <span class="token operator">+</span> <span class="token string">&quot;; point.y=&quot;</span> <span class="token operator">+</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;Point&#x8FD9;&#x4E2A;&#x805A;&#x5408;&#x91CF;&#x7ECF;&#x8FC7;&#x9003;&#x9038;&#x5206;&#x6790;&#x540E;&#xFF0C;&#x53D1;&#x73B0;&#x4ED6;&#x5E76;&#x6CA1;&#x6709;&#x9003;&#x9038;&#xFF0C;&#x5C31;&#x88AB;&#x66FF;&#x6362;&#x6210;&#x4E24;&#x4E2A;&#x6807;&#x91CF;&#x4E86;&#x3002;&#x90A3;&#x4E48;&#x6807;&#x91CF;&#x66FF;&#x6362;&#x6709;&#x4EC0;&#x4E48;&#x597D;&#x5904;&#x5462;&#xFF1F;&#x5C31;&#x662F;&#x53EF;&#x4EE5;&#x5927;&#x5927;&#x51CF;&#x5C11;&#x5806;&#x5185;&#x5B58;&#x7684;&#x5360;&#x7528;&#x3002;&#x56E0;&#x4E3A;&#x4E00;&#x65E6;&#x4E0D;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x5206;&#x914D;&#x5806;&#x5185;&#x5B58;&#x4E86;&#x3002;
 &#x6807;&#x91CF;&#x66FF;&#x6362;&#x4E3A;&#x6808;&#x4E0A;&#x5206;&#x914D;&#x63D0;&#x4F9B;&#x4E86;&#x5F88;&#x597D;&#x7684;&#x57FA;&#x7840;&#x3002;</p>
 <h3 id="&#x4EE3;&#x7801;&#x4F18;&#x5316;&#x4E4B;&#x6807;&#x91CF;&#x66FF;&#x6362;"><a name="&#x4EE3;&#x7801;&#x4F18;&#x5316;&#x4E4B;&#x6807;&#x91CF;&#x66FF;&#x6362;" class="anchor-navigation-ex-anchor" href="#&#x4EE3;&#x7801;&#x4F18;&#x5316;&#x4E4B;&#x6807;&#x91CF;&#x66FF;&#x6362;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EE3;&#x7801;&#x4F18;&#x5316;&#x4E4B;&#x6807;&#x91CF;&#x66FF;&#x6362;</h3>
 <p>&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x5728;&#x4E3B;&#x51FD;&#x6570;&#x4E2D;&#x8FDB;&#x884C;&#x4E86;1&#x4EBF;&#x6B21;alloc&#x3002;&#x8C03;&#x7528;&#x8FDB;&#x884C;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#xFF0C;&#x7531;&#x4E8E;User&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#x9700;&#x8981;&#x5360;&#x636E;&#x7EA6;16&#x5B57;&#x8282;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x56E0;&#x6B64;&#x7D2F;&#x8BA1;&#x5206;&#x914D;&#x7A7A;&#x95F4;&#x8FBE;&#x5230;&#x5C06;&#x8FD1;1.5GB&#x3002;&#x5982;&#x679C;&#x5806;&#x7A7A;&#x95F4;&#x5C0F;&#x4E8E;&#x8FD9;&#x4E2A;&#x503C;&#xFF0C;&#x5C31;&#x5FC5;&#x7136;&#x4F1A;&#x53D1;&#x751F;GC&#x3002;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x53C2;&#x6570;&#x8FD0;&#x884C;&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#xFF1A;</p>
-<pre><code class="lang-bash">-server -Xmx100m -Xms100m -XX:+DoEscapeAnalysis -XX:+PrintGC -XX:+EliminateAllocations
+<pre class="language-"><code class="lang-bash">-server -Xmx100m -Xms100m -XX:+DoEscapeAnalysis -XX:+PrintGC -XX:+EliminateAllocations
 </code></pre>
 <p>&#x8FD9;&#x91CC;&#x8BBE;&#x7F6E;&#x53C2;&#x6570;&#x5982;&#x4E0B;&#xFF1A;</p>
 <ul>
@@ -6413,8 +6430,11 @@ Heap
 <h2 id="&#x5C0F;&#x7ED3;"><a name="&#x5C0F;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#&#x5C0F;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C0F;&#x7ED3;</h2>
 <p>&#x5E74;&#x8F7B;&#x4EE3;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x8BDE;&#x751F;&#x3001;&#x6210;&#x957F;&#x3001;&#x6D88;&#x4EA1;&#x7684;&#x533A;&#x57DF;&#xFF0C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5728;&#x8FD9;&#x91CC;&#x4EA7;&#x751F;&#x3001;&#x5E94;&#x7528;&#xFF0C;&#x6700;&#x540E;&#x88AB;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x6536;&#x96C6;&#x3001;&#x7ED3;&#x675F;&#x751F;&#x547D;&#x3002;</p>
 <p>&#x8001;&#x5E74;&#x4EE3;&#x653E;&#x7F6E;&#x957F;&#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x901A;&#x5E38;&#x90FD;&#x662F;&#x4ECE;survivor&#x533A;&#x57DF;&#x7B5B;&#x9009;&#x62F7;&#x8D1D;&#x8FC7;&#x6765;&#x7684;Java&#x5BF9;&#x8C61;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x4E5F;&#x6709;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x666E;&#x901A;&#x7684;&#x5BF9;&#x8C61;&#x4F1A;&#x88AB;&#x5206;&#x914D;&#x5728;TLAB&#x4E0A;&#xFF1B;&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x8F83;&#x5927;&#xFF0C;JVM&#x4F1A;&#x8BD5;&#x56FE;&#x76F4;&#x63A5;&#x5206;&#x914D;&#x5728;Eden&#x5176;&#x4ED6;&#x4F4D;&#x7F6E;&#x4E0A;&#xFF1B;&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x592A;&#x5927;&#xFF0C;&#x5B8C;&#x5168;&#x65E0;&#x6CD5;&#x5728;&#x65B0;&#x751F;&#x4EE3;&#x627E;&#x5230;&#x8DB3;&#x591F;&#x957F;&#x7684;&#x8FDE;&#x7EED;&#x7A7A;&#x95F2;&#x7A7A;&#x95F4;&#xFF0C;JVM&#x5C31;&#x4F1A;&#x76F4;&#x63A5;&#x5206;&#x914D;&#x5230;&#x8001;&#x5E74;&#x4EE3;&#x3002;&#x5F53;GC&#x53EA;&#x53D1;&#x751F;&#x5728;&#x5E74;&#x8F7B;&#x4EE3;&#x4E2D;&#xFF0C;&#x56DE;&#x6536;&#x5E74;&#x8F7B;&#x4EE3;&#x5BF9;&#x8C61;&#x7684;&#x884C;&#x4E3A;&#x88AB;&#x79F0;&#x4E3A;MinorGc&#x3002;</p>
-<p>&#x5F53;GC&#x53D1;&#x751F;&#x5728;&#x8001;&#x5E74;&#x4EE3;&#x65F6;&#x5219;&#x88AB;&#x79F0;&#x4E3A;MajorGc&#x6216;&#x8005;FullGC&#x3002;&#x4E00;&#x822C;&#x7684;&#xFF0C;MinorGc&#x7684;&#x53D1;&#x751F;&#x9891;&#x7387;&#x8981;&#x6BD4;MajorGC&#x9AD8;&#x5F88;&#x591A;&#xFF0C;&#x5373;&#x8001;&#x5E74;&#x4EE3;&#x4E2D;&#x5783;&#x573E;&#x56DE;&#x6536;&#x53D1;&#x751F;&#x7684;&#x9891;&#x7387;&#x5C06;&#x5927;&#x5927;&#x4F4E;&#x4E8E;&#x5E74;&#x8F7B;&#x4EE3;&#x3002;</p>
-</body></html>
+<p>&#x5F53;GC&#x53D1;&#x751F;&#x5728;&#x8001;&#x5E74;&#x4EE3;&#x65F6;&#x5219;&#x88AB;&#x79F0;&#x4E3A;MajorGc&#x6216;&#x8005;FullGC&#x3002;&#x4E00;&#x822C;&#x7684;&#xFF0C;MinorGc&#x7684;&#x53D1;&#x751F;&#x9891;&#x7387;&#x8981;&#x6BD4;MajorGC&#x9AD8;&#x5F88;&#x591A;&#xFF0C;&#x5373;&#x8001;&#x5E74;&#x4EE3;&#x4E2D;&#x5783;&#x573E;&#x56DE;&#x6536;&#x53D1;&#x751F;&#x7684;&#x9891;&#x7387;&#x5C06;&#x5927;&#x5927;&#x4F4E;&#x4E8E;&#x5E74;&#x8F7B;&#x4EE3;&#x3002;</p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script> <p></p>
+<footer class="page-footer"><span class="copyright">victorfengming.gitee.io&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">&#x7F72;&#x540D;4.0&#x56FD;&#x9645;(CC BY 4.0)&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6700;&#x540E;&#x66F4;&#x65B0;&#xFF1A;
+2021-03-17 09:20:05
+</span></footer></body></html>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
                             
@@ -6457,7 +6477,7 @@ Heap
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"堆","level":"1.9","depth":1,"next":{"title":"堆的核心概念","level":"1.9.1","depth":2,"anchor":"#堆的核心概念","path":"1_内存与垃圾回收篇/8_堆/README.md","ref":"1_内存与垃圾回收篇/8_堆/README.md#堆的核心概念","articles":[{"title":"堆内存细分","level":"1.9.1.1","depth":3,"anchor":"#堆内存细分","path":"1_内存与垃圾回收篇/8_堆/README.md","ref":"1_内存与垃圾回收篇/8_堆/README.md#堆内存细分","articles":[]}]},"previous":{"title":"本地方法栈","level":"1.8.1","depth":2,"anchor":"#本地方法栈","path":"1_内存与垃圾回收篇/7_本地方法栈/README.md","ref":"1_内存与垃圾回收篇/7_本地方法栈/README.md#本地方法栈","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count","ancre-navigation"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"ancre-navigation":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":true,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1_内存与垃圾回收篇/8_堆/README.md","mtime":"2021-03-17T01:20:05.089Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-17T01:31:17.168Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"堆","level":"1.9","depth":1,"next":{"title":"堆的核心概念","level":"1.9.1","depth":2,"anchor":"#堆的核心概念","path":"1_内存与垃圾回收篇/8_堆/README.md","ref":"1_内存与垃圾回收篇/8_堆/README.md#堆的核心概念","articles":[{"title":"堆内存细分","level":"1.9.1.1","depth":3,"anchor":"#堆内存细分","path":"1_内存与垃圾回收篇/8_堆/README.md","ref":"1_内存与垃圾回收篇/8_堆/README.md#堆内存细分","articles":[]}]},"previous":{"title":"本地方法栈","level":"1.8.1","depth":2,"anchor":"#本地方法栈","path":"1_内存与垃圾回收篇/7_本地方法栈/README.md","ref":"1_内存与垃圾回收篇/7_本地方法栈/README.md#本地方法栈","articles":[]},"dir":"ltr"},"config":{"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count","ancre-navigation","-search","search-plus","-highlight","popup","prism","prism-themes","-sharing","sharing-plus","tbfed-pagefooter","toolbar-button"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"victorfengming.gitee.io，使用<a href='https://creativecommons.org/licenses/by/4.0/deed.zh'>署名4.0国际(CC BY 4.0)协议</a>发布","modify_label":"最后更新：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"toolbar-button":{"label":"下载PDF","url":"https://victorfengming.gitee.io/jvm/","icon":"fa-file-pdf-o"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"prism-themes":{},"ancre-navigation":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":true,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","line","linkedin","messenger","pocket","qq","qzone","stumbleupon","twitter","viber","vk","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"},"search-plus":{}},"theme":"default","author":"Victor <victorfengming@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jvm","language":"zh-hans","links":{"sidebar":{"文档索引页":"https://victorfengming.gitee.io/index/gitbook/"}},"gitbook":"3.2.3","description":"jvm,Java 虚拟机"},"file":{"path":"1_内存与垃圾回收篇/8_堆/README.md","mtime":"2021-03-17T01:20:05.089Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-03T02:23:07.405Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -6465,6 +6485,10 @@ Heap
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
@@ -6491,15 +6515,19 @@ Heap
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toolbar-button/plugin.js"></script>
         
     
         

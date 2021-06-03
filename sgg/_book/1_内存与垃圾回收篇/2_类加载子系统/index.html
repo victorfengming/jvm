@@ -1,20 +1,24 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>类加载子系统 · GitBook</title>
+        <title>类加载子系统 · jvm</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Victor <victorfengming@163.com>">
         
         
     
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
@@ -41,11 +45,15 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
                 
             
                 
@@ -105,7 +113,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -116,7 +124,16 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://victorfengming.gitee.io/index/gitbook/" target="_blank" class="custom-link">文档索引页</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -5756,7 +5773,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -5789,16 +5806,16 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
                                 
                                 <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x7C7B;&#x52A0;&#x8F7D;&#x5B50;&#x7CFB;&#x7EDF;"><b></b>&#x7C7B;&#x52A0;&#x8F7D;&#x5B50;&#x7CFB;&#x7EDF;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6982;&#x8FF0;"><b></b>&#x6982;&#x8FF0;</a></li><li><span class="title-icon "></span><a href="#&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x5B50;&#x7CFB;&#x7EDF;&#x4F5C;&#x7528;"><b></b>&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x5B50;&#x7CFB;&#x7EDF;&#x4F5C;&#x7528;</a></li><li><span class="title-icon "></span><a href="#&#x7C7B;&#x7684;&#x52A0;&#x8F7D;&#x8FC7;&#x7A0B;"><b></b>&#x7C7B;&#x7684;&#x52A0;&#x8F7D;&#x8FC7;&#x7A0B;</a></li><li><span class="title-icon "></span><a href="#&#x52A0;&#x8F7D;&#x9636;&#x6BB5;"><b></b>&#x52A0;&#x8F7D;&#x9636;&#x6BB5;</a></li><ul><li><span class="title-icon "></span><a href="#&#x52A0;&#x8F7D;class&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;"><b></b>&#x52A0;&#x8F7D;class&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#&#x94FE;&#x63A5;&#x9636;&#x6BB5;"><b></b>&#x94FE;&#x63A5;&#x9636;&#x6BB5;</a></li><li><span class="title-icon "></span><a href="#&#x51C6;&#x5907;-prepare"><b></b>&#x51C6;&#x5907; Prepare</a></li><li><span class="title-icon "></span><a href="#&#x89E3;&#x6790;-resolve"><b></b>&#x89E3;&#x6790; Resolve</a></li><li><span class="title-icon "></span><a href="#&#x521D;&#x59CB;&#x5316;&#x9636;&#x6BB5;"><b></b>&#x521D;&#x59CB;&#x5316;&#x9636;&#x6BB5;</a></li></ul><li><span class="title-icon "></span><a href="#&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x7684;&#x5206;&#x7C7B;"><b></b>&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x7684;&#x5206;&#x7C7B;</a></li><ul><li><span class="title-icon "></span><a href="#&#x865A;&#x62DF;&#x673A;&#x81EA;&#x5E26;&#x7684;&#x52A0;&#x8F7D;&#x5668;"><b></b>&#x865A;&#x62DF;&#x673A;&#x81EA;&#x5E26;&#x7684;&#x52A0;&#x8F7D;&#x5668;</a></li><li><span class="title-icon "></span><a href="#&#x6269;&#x5C55;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#xFF08;extension-classloader&#xFF09;"><b></b>&#x6269;&#x5C55;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#xFF08;Extension ClassLoader&#xFF09;</a></li><li><span class="title-icon "></span><a href="#&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#xFF08;&#x7CFB;&#x7EDF;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#xFF0C;appclassloader&#xFF09;"><b></b>&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#xFF08;&#x7CFB;&#x7EDF;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#xFF0C;AppClassLoader&#xFF09;</a></li><li><span class="title-icon "></span><a href="#&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;"><b></b>&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;</a></li><li><span class="title-icon "></span><a href="#&#x67E5;&#x770B;&#x6839;&#x52A0;&#x8F7D;&#x5668;&#x6240;&#x80FD;&#x52A0;&#x8F7D;&#x7684;&#x76EE;&#x5F55;"><b></b>&#x67E5;&#x770B;&#x6839;&#x52A0;&#x8F7D;&#x5668;&#x6240;&#x80FD;&#x52A0;&#x8F7D;&#x7684;&#x76EE;&#x5F55;</a></li><li><span class="title-icon "></span><a href="#&#x5173;&#x4E8E;classloader"><b></b>&#x5173;&#x4E8E;ClassLoader</a></li></ul><li><span class="title-icon "></span><a href="#&#x53CC;&#x4EB2;&#x59D4;&#x6D3E;&#x673A;&#x5236;"><b></b>&#x53CC;&#x4EB2;&#x59D4;&#x6D3E;&#x673A;&#x5236;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5DE5;&#x4F5C;&#x539F;&#x7406;"><b></b>&#x5DE5;&#x4F5C;&#x539F;&#x7406;</a></li><li><span class="title-icon "></span><a href="#&#x53CC;&#x4EB2;&#x59D4;&#x6D3E;&#x673A;&#x5236;&#x4E3E;&#x4F8B;"><b></b>&#x53CC;&#x4EB2;&#x59D4;&#x6D3E;&#x673A;&#x5236;&#x4E3E;&#x4F8B;</a></li><li><span class="title-icon "></span><a href="#&#x6C99;&#x7BB1;&#x5B89;&#x5168;&#x673A;&#x5236;"><b></b>&#x6C99;&#x7BB1;&#x5B89;&#x5168;&#x673A;&#x5236;</a></li><li><span class="title-icon "></span><a href="#&#x53CC;&#x4EB2;&#x59D4;&#x6D3E;&#x673A;&#x5236;&#x7684;&#x4F18;&#x52BF;"><b></b>&#x53CC;&#x4EB2;&#x59D4;&#x6D3E;&#x673A;&#x5236;&#x7684;&#x4F18;&#x52BF;</a></li></ul><li><span class="title-icon "></span><a href="#&#x5176;&#x5B83;"><b></b>&#x5176;&#x5B83;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5982;&#x4F55;&#x5224;&#x65AD;&#x4E24;&#x4E2A;class&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x76F8;&#x540C;"><b></b>&#x5982;&#x4F55;&#x5224;&#x65AD;&#x4E24;&#x4E2A;class&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x76F8;&#x540C;</a></li><li><span class="title-icon "></span><a href="#&#x7C7B;&#x7684;&#x4E3B;&#x52A8;&#x4F7F;&#x7528;&#x548C;&#x88AB;&#x52A8;&#x4F7F;&#x7528;"><b></b>&#x7C7B;&#x7684;&#x4E3B;&#x52A8;&#x4F7F;&#x7528;&#x548C;&#x88AB;&#x52A8;&#x4F7F;&#x7528;</a></li></ul></ul></ul></div><a href="#&#x7C7B;&#x52A0;&#x8F7D;&#x5B50;&#x7CFB;&#x7EDF;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x7C7B;&#x52A0;&#x8F7D;&#x5B50;&#x7CFB;&#x7EDF;"><a name="&#x7C7B;&#x52A0;&#x8F7D;&#x5B50;&#x7CFB;&#x7EDF;" class="anchor-navigation-ex-anchor" href="#&#x7C7B;&#x52A0;&#x8F7D;&#x5B50;&#x7CFB;&#x7EDF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7C7B;&#x52A0;&#x8F7D;&#x5B50;&#x7CFB;&#x7EDF;</h1>
 <h2 id="&#x6982;&#x8FF0;"><a name="&#x6982;&#x8FF0;" class="anchor-navigation-ex-anchor" href="#&#x6982;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6982;&#x8FF0;</h2>
-<p><a href="images/image-20200705080719531.png" data-lightbox="af453b41-3045-4d78-9b8a-abc4c39411b3" data-title="image-20200705080719531"><img src="images/image-20200705080719531.png" alt="image-20200705080719531"></a></p>
+<p><a href="images/image-20200705080719531.png" data-lightbox="5ba79e8a-c3d1-427a-901f-2acab8862d5d" data-title="image-20200705080719531"><img src="images/image-20200705080719531.png" alt="image-20200705080719531"></a></p>
 <p>&#x5B8C;&#x6574;&#x56FE;&#x5982;&#x4E0B;</p>
-<p><a href="images/image-20200705080911284.png" data-lightbox="10428d7c-3fa1-4c4b-8bbc-7496c27cf53d" data-title="image-20200705080911284"><img src="images/image-20200705080911284.png" alt="image-20200705080911284"></a></p>
+<p><a href="images/image-20200705080911284.png" data-lightbox="bedc7e2b-1ae4-4cc7-b3b0-1efef51a1185" data-title="image-20200705080911284"><img src="images/image-20200705080911284.png" alt="image-20200705080911284"></a></p>
 <p>&#x5982;&#x679C;&#x81EA;&#x5DF1;&#x60F3;&#x624B;&#x5199;&#x4E00;&#x4E2A;Java&#x865A;&#x62DF;&#x673A;&#x7684;&#x8BDD;&#xFF0C;&#x4E3B;&#x8981;&#x8003;&#x8651;&#x54EA;&#x4E9B;&#x7ED3;&#x6784;&#x5462;&#xFF1F;</p>
 <ul>
 <li>&#x7C7B;&#x52A0;&#x8F7D;&#x5668;</li>
@@ -5808,30 +5825,30 @@
 <p>&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x5B50;&#x7CFB;&#x7EDF;&#x8D1F;&#x8D23;&#x4ECE;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x6216;&#x8005;&#x7F51;&#x7EDC;&#x4E2D;&#x52A0;&#x8F7D;Class&#x6587;&#x4EF6;&#xFF0C;class&#x6587;&#x4EF6;&#x5728;&#x6587;&#x4EF6;&#x5F00;&#x5934;&#x6709;&#x7279;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#x6807;&#x8BC6;&#x3002;</p>
 <p>ClassLoader&#x53EA;&#x8D1F;&#x8D23;class&#x6587;&#x4EF6;&#x7684;&#x52A0;&#x8F7D;&#xFF0C;&#x81F3;&#x4E8E;&#x5B83;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#xFF0C;&#x5219;&#x7531;Execution Engine&#x51B3;&#x5B9A;&#x3002;</p>
 <p>&#x52A0;&#x8F7D;&#x7684;&#x7C7B;&#x4FE1;&#x606F;&#x5B58;&#x653E;&#x4E8E;&#x4E00;&#x5757;&#x79F0;&#x4E3A;&#x65B9;&#x6CD5;&#x533A;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x3002;&#x9664;&#x4E86;&#x7C7B;&#x7684;&#x4FE1;&#x606F;&#x5916;&#xFF0C;&#x65B9;&#x6CD5;&#x533A;&#x4E2D;&#x8FD8;&#x4F1A;&#x5B58;&#x653E;&#x8FD0;&#x884C;&#x65F6;&#x5E38;&#x91CF;&#x6C60;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x80FD;&#x8FD8;&#x5305;&#x62EC;&#x5B57;&#x7B26;&#x4E32;&#x5B57;&#x9762;&#x91CF;&#x548C;&#x6570;&#x5B57;&#x5E38;&#x91CF;&#xFF08;&#x8FD9;&#x90E8;&#x5206;&#x5E38;&#x91CF;&#x4FE1;&#x606F;&#x662F;Class&#x6587;&#x4EF6;&#x4E2D;&#x5E38;&#x91CF;&#x6C60;&#x90E8;&#x5206;&#x7684;&#x5185;&#x5B58;&#x6620;&#x5C04;&#xFF09;</p>
-<p><a href="images/image-20200705081813409.png" data-lightbox="995569cd-141d-4d6b-9a50-ed10f4f2f6a9" data-title="image-20200705081813409"><img src="images/image-20200705081813409.png" alt="image-20200705081813409"></a></p>
+<p><a href="images/image-20200705081813409.png" data-lightbox="796057f3-4978-4608-a6b3-d38e2c4bba20" data-title="image-20200705081813409"><img src="images/image-20200705081813409.png" alt="image-20200705081813409"></a></p>
 <ul>
 <li>class file&#x5B58;&#x5728;&#x4E8E;&#x672C;&#x5730;&#x786C;&#x76D8;&#x4E0A;&#xFF0C;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x8BBE;&#x8BA1;&#x5E08;&#x753B;&#x5728;&#x7EB8;&#x4E0A;&#x7684;&#x6A21;&#x677F;&#xFF0C;&#x800C;&#x6700;&#x7EC8;&#x8FD9;&#x4E2A;&#x6A21;&#x677F;&#x5728;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x662F;&#x8981;&#x52A0;&#x8F7D;&#x5230;JVM&#x5F53;&#x4E2D;&#x6765;&#x6839;&#x636E;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5B9E;&#x4F8B;&#x5316;&#x51FA;n&#x4E2A;&#x4E00;&#x6A21;&#x4E00;&#x6837;&#x7684;&#x5B9E;&#x4F8B;&#x3002;</li>
 <li>class file&#x52A0;&#x8F7D;&#x5230;JVM&#x4E2D;&#xFF0C;&#x88AB;&#x79F0;&#x4E3A;DNA&#x5143;&#x6570;&#x636E;&#x6A21;&#x677F;&#xFF0C;&#x653E;&#x5728;&#x65B9;&#x6CD5;&#x533A;&#x3002;</li>
 <li>&#x5728;.class&#x6587;&#x4EF6;-&gt;JVM-&gt;&#x6700;&#x7EC8;&#x6210;&#x4E3A;&#x5143;&#x6570;&#x636E;&#x6A21;&#x677F;&#xFF0C;&#x6B64;&#x8FC7;&#x7A0B;&#x5C31;&#x8981;&#x4E00;&#x4E2A;&#x8FD0;&#x8F93;&#x5DE5;&#x5177;&#xFF08;&#x7C7B;&#x88C5;&#x8F7D;&#x5668;Class Loader&#xFF09;&#xFF0C;&#x626E;&#x6F14;&#x4E00;&#x4E2A;&#x5FEB;&#x9012;&#x5458;&#x7684;&#x89D2;&#x8272;&#x3002;</li>
 </ul>
-<p><a href="images/image-20200705081913538.png" data-lightbox="289d7536-37df-49d2-b2ec-c9adb68dddec" data-title="image-20200705081913538"><img src="images/image-20200705081913538.png" alt="image-20200705081913538"></a></p>
+<p><a href="images/image-20200705081913538.png" data-lightbox="c73da2cd-ae7a-44dc-b1c0-debbbebecd84" data-title="image-20200705081913538"><img src="images/image-20200705081913538.png" alt="image-20200705081913538"></a></p>
 <h2 id="&#x7C7B;&#x7684;&#x52A0;&#x8F7D;&#x8FC7;&#x7A0B;"><a name="&#x7C7B;&#x7684;&#x52A0;&#x8F7D;&#x8FC7;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#&#x7C7B;&#x7684;&#x52A0;&#x8F7D;&#x8FC7;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7C7B;&#x7684;&#x52A0;&#x8F7D;&#x8FC7;&#x7A0B;</h2>
 <p>&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4E00;&#x6BB5;&#x7B80;&#x5355;&#x7684;&#x4EE3;&#x7801;</p>
-<pre><code class="lang-java"><span class="hljs-comment">/**
+<pre class="language-"><code class="lang-java"><span class="token comment">/**
  * &#x7C7B;&#x52A0;&#x8F7D;&#x5B50;&#x7CFB;&#x7EDF;
- * <span class="hljs-doctag">@author</span>: Victor
- * <span class="hljs-doctag">@create</span>: 2020-07-05-8:24
+ * @author: Victor
+ * @create: 2020-07-05-8:24
  */</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloLoader</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        System.out.println(<span class="hljs-string">&quot;&#x6211;&#x5DF2;&#x7ECF;&#x88AB;&#x52A0;&#x8F7D;&#x5566;&quot;</span>);
-    }
-}
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloLoader</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&#x6211;&#x5DF2;&#x7ECF;&#x88AB;&#x52A0;&#x8F7D;&#x5566;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x5B83;&#x7684;&#x52A0;&#x8F7D;&#x8FC7;&#x7A0B;&#x662F;&#x600E;&#x4E48;&#x6837;&#x7684;&#x5462;?</p>
-<p><a href="images/image-20200705082255746.png" data-lightbox="1c229d0d-20a3-4f3b-8ba7-c9969ca2802d" data-title="image-20200705082255746"><img src="images/image-20200705082255746.png" alt="image-20200705082255746"></a></p>
+<p><a href="images/image-20200705082255746.png" data-lightbox="c770d6bd-988f-42d1-be49-2b5e86ced718" data-title="image-20200705082255746"><img src="images/image-20200705082255746.png" alt="image-20200705082255746"></a></p>
 <p>&#x5B8C;&#x6574;&#x7684;&#x6D41;&#x7A0B;&#x56FE;&#x5982;&#x4E0B;&#x6240;&#x793A;</p>
-<p><a href="images/image-20200705082601441.png" data-lightbox="4bddf98f-b9af-4338-8587-cf83921a861f" data-title="image-20200705082601441"><img src="images/image-20200705082601441.png" alt="image-20200705082601441"></a></p>
+<p><a href="images/image-20200705082601441.png" data-lightbox="051c1c91-8366-4d52-8ab8-3c40761df3bb" data-title="image-20200705082601441"><img src="images/image-20200705082601441.png" alt="image-20200705082601441"></a></p>
 <h2 id="&#x52A0;&#x8F7D;&#x9636;&#x6BB5;"><a name="&#x52A0;&#x8F7D;&#x9636;&#x6BB5;" class="anchor-navigation-ex-anchor" href="#&#x52A0;&#x8F7D;&#x9636;&#x6BB5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x52A0;&#x8F7D;&#x9636;&#x6BB5;</h2>
 <p>&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5168;&#x9650;&#x5B9A;&#x540D;&#x83B7;&#x53D6;&#x5B9A;&#x4E49;&#x6B64;&#x7C7B;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x5B57;&#x8282;&#x6D41;</p>
 <p>&#x5C06;&#x8FD9;&#x4E2A;&#x5B57;&#x8282;&#x6D41;&#x6240;&#x4EE3;&#x8868;&#x7684;&#x9759;&#x6001;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#x8F6C;&#x5316;&#x4E3A;&#x65B9;&#x6CD5;&#x533A;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x6570;&#x636E;&#x7ED3;&#x6784;</p>
@@ -5852,24 +5869,24 @@
 <blockquote>
 <p>&#x5DE5;&#x5177;&#xFF1A;Binary Viewer&#x67E5;&#x770B;</p>
 </blockquote>
-<p><a href="images/image-20200705084038680.png" data-lightbox="0820c1a6-b94e-4465-b03f-c383f87595a2" data-title="image-20200705084038680"><img src="images/image-20200705084038680.png" alt="image-20200705084038680"></a></p>
+<p><a href="images/image-20200705084038680.png" data-lightbox="85ffc955-aade-4d42-8a2d-b0ec6a823de4" data-title="image-20200705084038680"><img src="images/image-20200705084038680.png" alt="image-20200705084038680"></a></p>
 <p>&#x5982;&#x679C;&#x51FA;&#x73B0;&#x4E0D;&#x5408;&#x6CD5;&#x7684;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;&#x5C06;&#x4F1A;&#x9A8C;&#x8BC1;&#x4E0D;&#x901A;&#x8FC7;</p>
 <p>&#x540C;&#x65F6;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5B89;&#x88C5;IDEA&#x7684;&#x63D2;&#x4EF6;&#xFF0C;&#x6765;&#x67E5;&#x770B;&#x6211;&#x4EEC;&#x7684;Class&#x6587;&#x4EF6;</p>
-<p><a href="images/image-20200705090237078.png" data-lightbox="70e9dbce-c6fe-4dd4-b3b0-6ee25d36272d" data-title="image-20200705090237078"><img src="images/image-20200705090237078.png" alt="image-20200705090237078"></a></p>
+<p><a href="images/image-20200705090237078.png" data-lightbox="33a73255-4cd5-4767-9bdc-fbc59dd21b35" data-title="image-20200705090237078"><img src="images/image-20200705090237078.png" alt="image-20200705090237078"></a></p>
 <p>&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x7F16;&#x8BD1;&#x5B8C;&#x4E00;&#x4E2A;class&#x6587;&#x4EF6;&#x540E;&#xFF0C;&#x70B9;&#x51FB;view&#x5373;&#x53EF;&#x663E;&#x793A;&#x6211;&#x4EEC;&#x5B89;&#x88C5;&#x7684;&#x63D2;&#x4EF6;&#x6765;&#x67E5;&#x770B;&#x5B57;&#x8282;&#x7801;&#x65B9;&#x6CD5;&#x4E86;</p>
-<p><a href="images/image-20200705090328171.png" data-lightbox="77e85b7b-71b7-43af-afd3-ebba9c138416" data-title="image-20200705090328171"><img src="images/image-20200705090328171.png" alt="image-20200705090328171"></a></p>
+<p><a href="images/image-20200705090328171.png" data-lightbox="c23f0912-a911-4ce6-bcc6-f18be265853b" data-title="image-20200705090328171"><img src="images/image-20200705090328171.png" alt="image-20200705090328171"></a></p>
 <h3 id="&#x51C6;&#x5907;-prepare"><a name="&#x51C6;&#x5907;-prepare" class="anchor-navigation-ex-anchor" href="#&#x51C6;&#x5907;-prepare"><i class="fa fa-link" aria-hidden="true"></i></a>&#x51C6;&#x5907; Prepare</h3>
 <p>&#x4E3A;&#x7C7B;&#x53D8;&#x91CF;&#x5206;&#x914D;&#x5185;&#x5B58;&#x5E76;&#x4E14;&#x8BBE;&#x7F6E;&#x8BE5;&#x7C7B;&#x53D8;&#x91CF;&#x7684;&#x9ED8;&#x8BA4;&#x521D;&#x59CB;&#x503C;&#xFF0C;&#x5373;&#x96F6;&#x503C;&#x3002;</p>
-<pre><code class="lang-java"><span class="hljs-comment">/**
- * <span class="hljs-doctag">@author</span>: Victor
- * <span class="hljs-doctag">@create</span>: 2020-07-05-8:42
+<pre class="language-"><code class="lang-java"><span class="token comment">/**
+ * @author: Victor
+ * @create: 2020-07-05-8:42
  */</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloApp</span> </span>{
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>;  <span class="hljs-comment">// &#x51C6;&#x5907;&#x9636;&#x6BB5;&#x4E3A;0&#xFF0C;&#x5728;&#x4E0B;&#x4E2A;&#x9636;&#x6BB5;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x624D;&#x662F;1</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        System.out.println(a);
-    }
-}
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloApp</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>  <span class="token comment">// &#x51C6;&#x5907;&#x9636;&#x6BB5;&#x4E3A;0&#xFF0C;&#x5728;&#x4E0B;&#x4E2A;&#x9636;&#x6BB5;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x624D;&#x662F;1</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x4E0A;&#x9762;&#x7684;&#x53D8;&#x91CF;a&#x5728;&#x51C6;&#x5907;&#x9636;&#x6BB5;&#x4F1A;&#x8D4B;&#x521D;&#x59CB;&#x503C;&#xFF0C;&#x4F46;&#x4E0D;&#x662F;1&#xFF0C;&#x800C;&#x662F;0&#x3002;</p>
 <p>&#x8FD9;&#x91CC;&#x4E0D;&#x5305;&#x542B;&#x7528;final&#x4FEE;&#x9970;&#x7684;static&#xFF0C;&#x56E0;&#x4E3A;final&#x5728;&#x7F16;&#x8BD1;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x5206;&#x914D;&#x4E86;&#xFF0C;&#x51C6;&#x5907;&#x9636;&#x6BB5;&#x4F1A;&#x663E;&#x5F0F;&#x521D;&#x59CB;&#x5316;&#xFF1B;</p>
@@ -5891,87 +5908,87 @@
 <ul>
 <li>&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x7C7B;&#x5728;&#x58F0;&#x660E;&#x540E;&#xFF0C;&#x90FD;&#x6709;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x6784;&#x9020;&#x5668;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x7A7A;&#x53C2;&#x6784;&#x9020;&#x5668;</li>
 </ul>
-<pre><code class="lang-java"><span class="hljs-comment">/**
- * <span class="hljs-doctag">@author</span>: Victor
- * <span class="hljs-doctag">@create</span>: 2020-07-05-8:47
+<pre class="language-"><code class="lang-java"><span class="token comment">/**
+ * @author: Victor
+ * @create: 2020-07-05-8:47
  */</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClassInitTest</span> </span>{
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> num = <span class="hljs-number">1</span>;
-    <span class="hljs-keyword">static</span> {
-        num = <span class="hljs-number">2</span>;
-        number = <span class="hljs-number">20</span>;
-        System.out.println(num);
-        System.out.println(number);  <span class="hljs-comment">//&#x62A5;&#x9519;&#xFF0C;&#x975E;&#x6CD5;&#x7684;&#x524D;&#x5411;&#x5F15;&#x7528;</span>
-    }
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ClassInitTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>
+        num <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        number <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//&#x62A5;&#x9519;&#xFF0C;&#x975E;&#x6CD5;&#x7684;&#x524D;&#x5411;&#x5F15;&#x7528;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> number = <span class="hljs-number">10</span>;
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> number <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
 
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        System.out.println(ClassInitTest.num); <span class="hljs-comment">// 2</span>
-        System.out.println(ClassInitTest.number); <span class="hljs-comment">// 10</span>
-    }
-}
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">ClassInitTest</span><span class="token punctuation">.</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">ClassInitTest</span><span class="token punctuation">.</span>number<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 10</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x5173;&#x4E8E;&#x6D89;&#x53CA;&#x5230;&#x7236;&#x7C7B;&#x65F6;&#x5019;&#x7684;&#x53D8;&#x91CF;&#x8D4B;&#x503C;&#x8FC7;&#x7A0B;</p>
-<pre><code class="lang-java"><span class="hljs-comment">/**
- * <span class="hljs-doctag">@author</span>: Victor
- * <span class="hljs-doctag">@create</span>: 2020-07-05-9:06
+<pre class="language-"><code class="lang-java"><span class="token comment">/**
+ * @author: Victor
+ * @create: 2020-07-05-9:06
  */</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClinitTest1</span> </span>{
-    <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Father</span> </span>{
-        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> A = <span class="hljs-number">1</span>;
-        <span class="hljs-keyword">static</span> {
-            A = <span class="hljs-number">2</span>;
-        }
-    }
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ClinitTest1</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">Father</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token class-name">A</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">static</span> <span class="token punctuation">{</span>
+            <span class="token class-name">A</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Son</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Father</span> </span>{
-        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> b = A;
-    }
+    <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">Son</span> <span class="token keyword">extends</span> <span class="token class-name">Father</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token class-name">A</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        System.out.println(Son.b);
-    }
-}
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Son</span><span class="token punctuation">.</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x6211;&#x4EEC;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x4E3A; 2&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x9996;&#x5148;&#x52A0;&#x8F7D;ClinitTest1&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x627E;&#x5230;main&#x65B9;&#x6CD5;&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;Son&#x7684;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x4F46;&#x662F;Son&#x7EE7;&#x627F;&#x4E86;Father&#xFF0C;&#x56E0;&#x6B64;&#x8FD8;&#x9700;&#x8981;&#x6267;&#x884C;Father&#x7684;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x540C;&#x65F6;&#x5C06;A&#x8D4B;&#x503C;&#x4E3A;2&#x3002;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x53CD;&#x7F16;&#x8BD1;&#x5F97;&#x5230;Father&#x7684;&#x52A0;&#x8F7D;&#x8FC7;&#x7A0B;&#xFF0C;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x539F;&#x6765;&#x7684;&#x503C;&#x88AB;&#x8D4B;&#x503C;&#x6210;1&#xFF0C;&#x7136;&#x540E;&#x53C8;&#x88AB;&#x590D;&#x5236;&#x6210;2&#xFF0C;&#x6700;&#x540E;&#x8FD4;&#x56DE;</p>
-<pre><code class="lang-bash">iconst_1
-putstatic <span class="hljs-comment">#2 &lt;com/atguigu/java/chapter02/ClinitTest1$Father.A&gt;</span>
+<pre class="language-"><code class="lang-bash">iconst_1
+putstatic <span class="token comment">#2 &lt;com/atguigu/java/chapter02/ClinitTest1$Father.A&gt;</span>
 iconst_2
-putstatic <span class="hljs-comment">#2 &lt;com/atguigu/java/chapter02/ClinitTest1$Father.A&gt;</span>
-<span class="hljs-built_in">return</span>
+putstatic <span class="token comment">#2 &lt;com/atguigu/java/chapter02/ClinitTest1$Father.A&gt;</span>
+<span class="token builtin class-name">return</span>
 </code></pre>
 <p>&#x865A;&#x62DF;&#x673A;&#x5FC5;&#x987B;&#x4FDD;&#x8BC1;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;<clinit>&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x4E0B;&#x88AB;&#x540C;&#x6B65;&#x52A0;&#x9501;&#x3002;</clinit></p>
-<pre><code class="lang-java"><span class="hljs-comment">/**
- * <span class="hljs-doctag">@author</span>: Victor
- * <span class="hljs-doctag">@create</span>: 2020-07-05-9:14
+<pre class="language-"><code class="lang-java"><span class="token comment">/**
+ * @author: Victor
+ * @create: 2020-07-05-9:14
  */</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DeadThreadTest</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        <span class="hljs-keyword">new</span> Thread(() -&gt; {
-            System.out.println(Thread.currentThread().getName() + <span class="hljs-string">&quot;\t &#x7EBF;&#x7A0B;t1&#x5F00;&#x59CB;&quot;</span>);
-            <span class="hljs-keyword">new</span> DeadThread();
-        }, <span class="hljs-string">&quot;t1&quot;</span>).start();
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DeadThreadTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;\t &#x7EBF;&#x7A0B;t1&#x5F00;&#x59CB;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">new</span> <span class="token class-name">DeadThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">&quot;t1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="hljs-keyword">new</span> Thread(() -&gt; {
-            System.out.println(Thread.currentThread().getName() + <span class="hljs-string">&quot;\t &#x7EBF;&#x7A0B;t2&#x5F00;&#x59CB;&quot;</span>);
-            <span class="hljs-keyword">new</span> DeadThread();
-        }, <span class="hljs-string">&quot;t2&quot;</span>).start();
-    }
-}
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DeadThread</span> </span>{
-    <span class="hljs-keyword">static</span> {
-        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">true</span>) {
-            System.out.println(Thread.currentThread().getName() + <span class="hljs-string">&quot;\t &#x521D;&#x59CB;&#x5316;&#x5F53;&#x524D;&#x7C7B;&quot;</span>);
-            <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>) {
+        <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;\t &#x7EBF;&#x7A0B;t2&#x5F00;&#x59CB;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">new</span> <span class="token class-name">DeadThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">&quot;t2&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">DeadThread</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;\t &#x521D;&#x59CB;&#x5316;&#x5F53;&#x524D;&#x7C7B;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-            }
-        }
-    }
-}
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x4E3A;</p>
-<pre><code>&#x7EBF;&#x7A0B;t1&#x5F00;&#x59CB;
+<pre class="language-"><code>&#x7EBF;&#x7A0B;t1&#x5F00;&#x59CB;
 &#x7EBF;&#x7A0B;t2&#x5F00;&#x59CB;
 &#x7EBF;&#x7A0B;t2 &#x521D;&#x59CB;&#x5316;&#x5F53;&#x524D;&#x7C7B;
 </code></pre><p>&#x4ECE;&#x4E0A;&#x9762;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x521D;&#x59CB;&#x5316;&#x540E;&#xFF0C;&#x53EA;&#x80FD;&#x591F;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x8FD9;&#x4E5F;&#x5C31;&#x662F;&#x540C;&#x6B65;&#x52A0;&#x9501;&#x7684;&#x8FC7;&#x7A0B;</p>
@@ -5979,39 +5996,39 @@ putstatic <span class="hljs-comment">#2 &lt;com/atguigu/java/chapter02/ClinitTes
 <p>JVM&#x652F;&#x6301;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x7C7B;&#x52A0;&#x8F7D;&#x5668; &#x3002;&#x5206;&#x522B;&#x4E3A;&#x5F15;&#x5BFC;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#xFF08;Bootstrap ClassLoader&#xFF09;&#x548C;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#xFF08;User-Defined ClassLoader&#xFF09;&#x3002;</p>
 <p>&#x4ECE;&#x6982;&#x5FF5;&#x4E0A;&#x6765;&#x8BB2;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x4E00;&#x822C;&#x6307;&#x7684;&#x662F;&#x7A0B;&#x5E8F;&#x4E2D;&#x7531;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x4E00;&#x7C7B;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#xFF0C;&#x4F46;&#x662F;Java&#x865A;&#x62DF;&#x673A;&#x89C4;&#x8303;&#x5374;&#x6CA1;&#x6709;&#x8FD9;&#x4E48;&#x5B9A;&#x4E49;&#xFF0C;&#x800C;&#x662F;&#x5C06;&#x6240;&#x6709;&#x6D3E;&#x751F;&#x4E8E;&#x62BD;&#x8C61;&#x7C7B;ClassLoader&#x7684;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x90FD;&#x5212;&#x5206;&#x4E3A;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x3002;</p>
 <p>&#x65E0;&#x8BBA;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x7684;&#x7C7B;&#x578B;&#x5982;&#x4F55;&#x5212;&#x5206;&#xFF0C;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x6211;&#x4EEC;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x59CB;&#x7EC8;&#x53EA;&#x6709;3&#x4E2A;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
-<p><a href="images/image-20200705094149223.png" data-lightbox="23cd8225-d321-4abc-995f-1828db248812" data-title="image-20200705094149223"><img src="images/image-20200705094149223.png" alt="image-20200705094149223"></a></p>
+<p><a href="images/image-20200705094149223.png" data-lightbox="c88bca08-124d-4dc1-8c09-809c95cbf4da" data-title="image-20200705094149223"><img src="images/image-20200705094149223.png" alt="image-20200705094149223"></a></p>
 <p>&#x8FD9;&#x91CC;&#x7684;&#x56DB;&#x8005;&#x4E4B;&#x95F4;&#x662F;&#x5305;&#x542B;&#x5173;&#x7CFB;&#xFF0C;&#x4E0D;&#x662F;&#x4E0A;&#x5C42;&#x548C;&#x4E0B;&#x5C42;&#xFF0C;&#x4E5F;&#x4E0D;&#x662F;&#x5B50;&#x7CFB;&#x7EDF;&#x7684;&#x7EE7;&#x627F;&#x5173;&#x7CFB;&#x3002;</p>
 <p>&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x83B7;&#x53D6;&#x5B83;&#x4E0D;&#x540C;&#x7684;&#x52A0;&#x8F7D;&#x5668;</p>
-<pre><code class="lang-java"><span class="hljs-comment">/**
- * <span class="hljs-doctag">@author</span>: Victor
- * <span class="hljs-doctag">@create</span>: 2020-07-05-9:47
+<pre class="language-"><code class="lang-java"><span class="token comment">/**
+ * @author: Victor
+ * @create: 2020-07-05-9:47
  */</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClassLoaderTest</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        <span class="hljs-comment">// &#x83B7;&#x53D6;&#x7CFB;&#x7EDF;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;</span>
-        ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
-        System.out.println(systemClassLoader);
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ClassLoaderTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x83B7;&#x53D6;&#x7CFB;&#x7EDF;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;</span>
+        <span class="token class-name">ClassLoader</span> systemClassLoader <span class="token operator">=</span> <span class="token class-name">ClassLoader</span><span class="token punctuation">.</span><span class="token function">getSystemClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>systemClassLoader<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="hljs-comment">// &#x83B7;&#x53D6;&#x5176;&#x4E0A;&#x5C42;&#x7684;&#xFF1A;&#x6269;&#x5C55;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;</span>
-        ClassLoader extClassLoader = systemClassLoader.getParent();
-        System.out.println(extClassLoader);
+        <span class="token comment">// &#x83B7;&#x53D6;&#x5176;&#x4E0A;&#x5C42;&#x7684;&#xFF1A;&#x6269;&#x5C55;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;</span>
+        <span class="token class-name">ClassLoader</span> extClassLoader <span class="token operator">=</span> systemClassLoader<span class="token punctuation">.</span><span class="token function">getParent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>extClassLoader<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="hljs-comment">// &#x8BD5;&#x56FE;&#x83B7;&#x53D6; &#x6839;&#x52A0;&#x8F7D;&#x5668;</span>
-        ClassLoader bootstrapClassLoader = extClassLoader.getParent();
-        System.out.println(bootstrapClassLoader);
+        <span class="token comment">// &#x8BD5;&#x56FE;&#x83B7;&#x53D6; &#x6839;&#x52A0;&#x8F7D;&#x5668;</span>
+        <span class="token class-name">ClassLoader</span> bootstrapClassLoader <span class="token operator">=</span> extClassLoader<span class="token punctuation">.</span><span class="token function">getParent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>bootstrapClassLoader<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="hljs-comment">// &#x83B7;&#x53D6;&#x81EA;&#x5B9A;&#x4E49;&#x52A0;&#x8F7D;&#x5668;</span>
-        ClassLoader classLoader = ClassLoaderTest.class.getClassLoader();
-        System.out.println(classLoader);
+        <span class="token comment">// &#x83B7;&#x53D6;&#x81EA;&#x5B9A;&#x4E49;&#x52A0;&#x8F7D;&#x5668;</span>
+        <span class="token class-name">ClassLoader</span> classLoader <span class="token operator">=</span> <span class="token class-name">ClassLoaderTest</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>classLoader<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="hljs-comment">// &#x83B7;&#x53D6;String&#x7C7B;&#x578B;&#x7684;&#x52A0;&#x8F7D;&#x5668;</span>
-        ClassLoader classLoader1 = String.class.getClassLoader();
-        System.out.println(classLoader1);
-    }
-}
+        <span class="token comment">// &#x83B7;&#x53D6;String&#x7C7B;&#x578B;&#x7684;&#x52A0;&#x8F7D;&#x5668;</span>
+        <span class="token class-name">ClassLoader</span> classLoader1 <span class="token operator">=</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>classLoader1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x4ECE;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x770B;&#x51FA; &#x6839;&#x52A0;&#x8F7D;&#x5668;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x901A;&#x8FC7;&#x4EE3;&#x7801;&#x83B7;&#x53D6;&#xFF0C;&#x540C;&#x65F6;&#x76EE;&#x524D;&#x7528;&#x6237;&#x4EE3;&#x7801;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x52A0;&#x8F7D;&#x5668;&#x4E3A;&#x7CFB;&#x7EDF;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x3002;&#x540C;&#x65F6;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x83B7;&#x53D6;String&#x7C7B;&#x578B;&#x7684;&#x52A0;&#x8F7D;&#x5668;&#xFF0C;&#x53D1;&#x73B0;&#x662F;null&#xFF0C;&#x90A3;&#x4E48;&#x8BF4;&#x660E;String&#x7C7B;&#x578B;&#x662F;&#x901A;&#x8FC7;&#x6839;&#x52A0;&#x8F7D;&#x5668;&#x8FDB;&#x884C;&#x52A0;&#x8F7D;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;Java&#x7684;&#x6838;&#x5FC3;&#x7C7B;&#x5E93;&#x90FD;&#x662F;&#x4F7F;&#x7528;&#x6839;&#x52A0;&#x8F7D;&#x5668;&#x8FDB;&#x884C;&#x52A0;&#x8F7D;&#x7684;&#x3002;</p>
-<pre><code>sun.misc.Launcher$AppClassLoader@18b4aac2
+<pre class="language-"><code>sun.misc.Launcher$AppClassLoader@18b4aac2
 sun.misc.Launcher$ExtClassLoader@1540e19d
 null
 sun.misc.Launcher$AppClassLoader@18b4aac2
@@ -6058,26 +6075,26 @@ null
 </ul>
 <h3 id="&#x67E5;&#x770B;&#x6839;&#x52A0;&#x8F7D;&#x5668;&#x6240;&#x80FD;&#x52A0;&#x8F7D;&#x7684;&#x76EE;&#x5F55;"><a name="&#x67E5;&#x770B;&#x6839;&#x52A0;&#x8F7D;&#x5668;&#x6240;&#x80FD;&#x52A0;&#x8F7D;&#x7684;&#x76EE;&#x5F55;" class="anchor-navigation-ex-anchor" href="#&#x67E5;&#x770B;&#x6839;&#x52A0;&#x8F7D;&#x5668;&#x6240;&#x80FD;&#x52A0;&#x8F7D;&#x7684;&#x76EE;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x67E5;&#x770B;&#x6839;&#x52A0;&#x8F7D;&#x5668;&#x6240;&#x80FD;&#x52A0;&#x8F7D;&#x7684;&#x76EE;&#x5F55;</h3>
 <p>&#x521A;&#x521A;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x6982;&#x5FF5;&#x4E86;&#x89E3;&#x5230;&#x4E86;&#xFF0C;&#x6839;&#x52A0;&#x8F7D;&#x5668;&#x53EA;&#x80FD;&#x591F;&#x52A0;&#x8F7D; java /lib&#x76EE;&#x5F55;&#x4E0B;&#x7684;class&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x4EE3;&#x7801;&#x9A8C;&#x8BC1;&#x4E00;&#x4E0B;</p>
-<pre><code class="lang-java"><span class="hljs-comment">/**
- * <span class="hljs-doctag">@author</span>: Victor
- * <span class="hljs-doctag">@create</span>: 2020-07-05-10:17
+<pre class="language-"><code class="lang-java"><span class="token comment">/**
+ * @author: Victor
+ * @create: 2020-07-05-10:17
  */</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClassLoaderTest1</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        System.out.println(<span class="hljs-string">&quot;*********&#x542F;&#x52A8;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;************&quot;</span>);
-        <span class="hljs-comment">// &#x83B7;&#x53D6;BootstrapClassLoader &#x80FD;&#x591F;&#x52A0;&#x8F7D;&#x7684;API&#x7684;&#x8DEF;&#x5F84;</span>
-        URL[] urls = sun.misc.Launcher.getBootstrapClassPath().getURLs();
-        <span class="hljs-keyword">for</span> (URL url : urls) {
-            System.out.println(url.toExternalForm());
-        }
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ClassLoaderTest1</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;*********&#x542F;&#x52A8;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;************&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x83B7;&#x53D6;BootstrapClassLoader &#x80FD;&#x591F;&#x52A0;&#x8F7D;&#x7684;API&#x7684;&#x8DEF;&#x5F84;</span>
+        URL<span class="token punctuation">[</span><span class="token punctuation">]</span> urls <span class="token operator">=</span> <span class="token class-name"><span class="token namespace">sun<span class="token punctuation">.</span>misc<span class="token punctuation">.</span></span>Launcher</span><span class="token punctuation">.</span><span class="token function">getBootstrapClassPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getURLs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>URL url <span class="token operator">:</span> urls<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>url<span class="token punctuation">.</span><span class="token function">toExternalForm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        <span class="hljs-comment">// &#x4ECE;&#x4E0A;&#x9762;&#x8DEF;&#x5F84;&#x4E2D;&#xFF0C;&#x968F;&#x610F;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x6765;&#x770B;&#x770B;&#x4ED6;&#x7684;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x662F;&#x4EC0;&#x4E48;&#xFF1A;&#x5F97;&#x5230;&#x7684;&#x662F;null&#xFF0C;&#x8BF4;&#x660E;&#x662F;  &#x6839;&#x52A0;&#x8F7D;&#x5668;</span>
-        ClassLoader classLoader = Provider.class.getClassLoader();
-    }
-}
+        <span class="token comment">// &#x4ECE;&#x4E0A;&#x9762;&#x8DEF;&#x5F84;&#x4E2D;&#xFF0C;&#x968F;&#x610F;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x6765;&#x770B;&#x770B;&#x4ED6;&#x7684;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x662F;&#x4EC0;&#x4E48;&#xFF1A;&#x5F97;&#x5230;&#x7684;&#x662F;null&#xFF0C;&#x8BF4;&#x660E;&#x662F;  &#x6839;&#x52A0;&#x8F7D;&#x5668;</span>
+        <span class="token class-name">ClassLoader</span> classLoader <span class="token operator">=</span> <span class="token class-name">Provider</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;</p>
-<pre><code>*********&#x542F;&#x52A8;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;************
+<pre class="language-"><code>*********&#x542F;&#x52A8;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;************
 file:/E:/Software/JDK1.8/Java/jre/lib/resources.jar
 file:/E:/Software/JDK1.8/Java/jre/lib/rt.jar
 file:/E:/Software/JDK1.8/Java/jre/lib/sunrsasign.jar
@@ -6089,9 +6106,9 @@ file:/E:/Software/JDK1.8/Java/jre/classes
 null
 </code></pre><h3 id="&#x5173;&#x4E8E;classloader"><a name="&#x5173;&#x4E8E;classloader" class="anchor-navigation-ex-anchor" href="#&#x5173;&#x4E8E;classloader"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5173;&#x4E8E;ClassLoader</h3>
 <p>ClassLoader&#x7C7B;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x7C7B;&#xFF0C;&#x5176;&#x540E;&#x6240;&#x6709;&#x7684;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x90FD;&#x7EE7;&#x627F;&#x81EA;ClassLoader&#xFF08;&#x4E0D;&#x5305;&#x62EC;&#x542F;&#x52A8;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#xFF09;</p>
-<p><a href="images/image-20200705103516138.png" data-lightbox="9290559e-4703-4bcc-bfb0-e7cada9a0d39" data-title="image-20200705103516138"><img src="images/image-20200705103516138.png" alt="image-20200705103516138"></a></p>
+<p><a href="images/image-20200705103516138.png" data-lightbox="41569a19-184c-46fb-abd0-631e444287e0" data-title="image-20200705103516138"><img src="images/image-20200705103516138.png" alt="image-20200705103516138"></a></p>
 <p>sun.misc.Launcher &#x5B83;&#x662F;&#x4E00;&#x4E2A;java&#x865A;&#x62DF;&#x673A;&#x7684;&#x5165;&#x53E3;&#x5E94;&#x7528;</p>
-<p><a href="images/image-20200705103636003.png" data-lightbox="437bce6c-ddf3-4a90-b514-ee94aba1140f" data-title="image-20200705103636003"><img src="images/image-20200705103636003.png" alt="image-20200705103636003"></a></p>
+<p><a href="images/image-20200705103636003.png" data-lightbox="a67d661e-6a9a-4880-b95f-6307c6c2f165" data-title="image-20200705103636003"><img src="images/image-20200705103636003.png" alt="image-20200705103636003"></a></p>
 <p>&#x83B7;&#x53D6;ClassLoader&#x7684;&#x9014;&#x5F84;</p>
 <ul>
 <li>&#x83B7;&#x53D6;&#x5F53;&#x524D;ClassLoader&#xFF1A;clazz.getClassLoader()</li>
@@ -6107,10 +6124,10 @@ null
 <li>&#x5982;&#x679C;&#x7236;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x8FD8;&#x5B58;&#x5728;&#x5176;&#x7236;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#xFF0C;&#x5219;&#x8FDB;&#x4E00;&#x6B65;&#x5411;&#x4E0A;&#x59D4;&#x6258;&#xFF0C;&#x4F9D;&#x6B21;&#x9012;&#x5F52;&#xFF0C;&#x8BF7;&#x6C42;&#x6700;&#x7EC8;&#x5C06;&#x5230;&#x8FBE;&#x9876;&#x5C42;&#x7684;&#x542F;&#x52A8;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#xFF1B;</li>
 <li>&#x5982;&#x679C;&#x7236;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x7C7B;&#x52A0;&#x8F7D;&#x4EFB;&#x52A1;&#xFF0C;&#x5C31;&#x6210;&#x529F;&#x8FD4;&#x56DE;&#xFF0C;&#x5018;&#x82E5;&#x7236;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x65E0;&#x6CD5;&#x5B8C;&#x6210;&#x6B64;&#x52A0;&#x8F7D;&#x4EFB;&#x52A1;&#xFF0C;&#x5B50;&#x52A0;&#x8F7D;&#x5668;&#x624D;&#x4F1A;&#x5C1D;&#x8BD5;&#x81EA;&#x5DF1;&#x53BB;&#x52A0;&#x8F7D;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x53CC;&#x4EB2;&#x59D4;&#x6D3E;&#x6A21;&#x5F0F;&#x3002;</li>
 </ul>
-<p><a href="images/image-20200705105151258.png" data-lightbox="8a3fe0fc-874f-47c4-a05d-d51c09a2f5a9" data-title="image-20200705105151258"><img src="images/image-20200705105151258.png" alt="image-20200705105151258"></a></p>
+<p><a href="images/image-20200705105151258.png" data-lightbox="49e1c4b8-dffd-4bd5-909d-eb1e5df0aebf" data-title="image-20200705105151258"><img src="images/image-20200705105151258.png" alt="image-20200705105151258"></a></p>
 <h3 id="&#x53CC;&#x4EB2;&#x59D4;&#x6D3E;&#x673A;&#x5236;&#x4E3E;&#x4F8B;"><a name="&#x53CC;&#x4EB2;&#x59D4;&#x6D3E;&#x673A;&#x5236;&#x4E3E;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x53CC;&#x4EB2;&#x59D4;&#x6D3E;&#x673A;&#x5236;&#x4E3E;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53CC;&#x4EB2;&#x59D4;&#x6D3E;&#x673A;&#x5236;&#x4E3E;&#x4F8B;</h3>
 <p>&#x5F53;&#x6211;&#x4EEC;&#x52A0;&#x8F7D;jdbc.jar &#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x77E5;&#x9053;&#x7684;&#x662F; jdbc.jar&#x662F;&#x57FA;&#x4E8E;SPI&#x63A5;&#x53E3;&#x8FDB;&#x884C;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x52A0;&#x8F7D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x8FDB;&#x884C;&#x53CC;&#x4EB2;&#x59D4;&#x6D3E;&#xFF0C;&#x6700;&#x7EC8;&#x4ECE;&#x6839;&#x52A0;&#x8F7D;&#x5668;&#x4E2D;&#x52A0;&#x8F7D; SPI&#x6838;&#x5FC3;&#x7C7B;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x52A0;&#x8F7D;SPI&#x63A5;&#x53E3;&#x7C7B;&#xFF0C;&#x63A5;&#x7740;&#x5728;&#x8FDB;&#x884C;&#x53CD;&#x5411;&#x59D4;&#x6D3E;&#xFF0C;&#x901A;&#x8FC7;&#x7EBF;&#x7A0B;&#x4E0A;&#x4E0B;&#x6587;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x8FDB;&#x884C;&#x5B9E;&#x73B0;&#x7C7B; jdbc.jar&#x7684;&#x52A0;&#x8F7D;&#x3002;</p>
-<p><a href="images/image-20200705105810107.png" data-lightbox="bb6080c5-14cd-4b14-acd8-c66832473e33" data-title="image-20200705105810107"><img src="images/image-20200705105810107.png" alt="image-20200705105810107"></a></p>
+<p><a href="images/image-20200705105810107.png" data-lightbox="2822b43d-999f-43c8-9061-87924766df21" data-title="image-20200705105810107"><img src="images/image-20200705105810107.png" alt="image-20200705105810107"></a></p>
 <h3 id="&#x6C99;&#x7BB1;&#x5B89;&#x5168;&#x673A;&#x5236;"><a name="&#x6C99;&#x7BB1;&#x5B89;&#x5168;&#x673A;&#x5236;" class="anchor-navigation-ex-anchor" href="#&#x6C99;&#x7BB1;&#x5B89;&#x5168;&#x673A;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6C99;&#x7BB1;&#x5B89;&#x5168;&#x673A;&#x5236;</h3>
 <p>&#x81EA;&#x5B9A;&#x4E49;string&#x7C7B;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x52A0;&#x8F7D;&#x81EA;&#x5B9A;&#x4E49;String&#x7C7B;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x7387;&#x5148;&#x4F7F;&#x7528;&#x5F15;&#x5BFC;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x52A0;&#x8F7D;&#xFF0C;&#x800C;&#x5F15;&#x5BFC;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x5728;&#x52A0;&#x8F7D;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x5148;&#x52A0;&#x8F7D;jdk&#x81EA;&#x5E26;&#x7684;&#x6587;&#x4EF6;&#xFF08;rt.jar&#x5305;&#x4E2D;java\lang\String.class&#xFF09;&#xFF0C;&#x62A5;&#x9519;&#x4FE1;&#x606F;&#x8BF4;&#x6CA1;&#x6709;main&#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x662F;&#x56E0;&#x4E3A;&#x52A0;&#x8F7D;&#x7684;&#x662F;rt.jar&#x5305;&#x4E2D;&#x7684;string&#x7C7B;&#x3002;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x5BF9;java&#x6838;&#x5FC3;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x4FDD;&#x62A4;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x6C99;&#x7BB1;&#x5B89;&#x5168;&#x673A;&#x5236;&#x3002;</p>
 <h3 id="&#x53CC;&#x4EB2;&#x59D4;&#x6D3E;&#x673A;&#x5236;&#x7684;&#x4F18;&#x52BF;"><a name="&#x53CC;&#x4EB2;&#x59D4;&#x6D3E;&#x673A;&#x5236;&#x7684;&#x4F18;&#x52BF;" class="anchor-navigation-ex-anchor" href="#&#x53CC;&#x4EB2;&#x59D4;&#x6D3E;&#x673A;&#x5236;&#x7684;&#x4F18;&#x52BF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53CC;&#x4EB2;&#x59D4;&#x6D3E;&#x673A;&#x5236;&#x7684;&#x4F18;&#x52BF;</h3>
@@ -6145,8 +6162,11 @@ null
 <li>JDK7&#x5F00;&#x59CB;&#x63D0;&#x4F9B;&#x7684;&#x52A8;&#x6001;&#x8BED;&#x8A00;&#x652F;&#x6301;&#xFF1A;</li>
 <li>java.lang.invoke.MethodHandle&#x5B9E;&#x4F8B;&#x7684;&#x89E3;&#x6790;&#x7ED3;&#x679C;REF getStatic&#x3001;REF putStatic&#x3001;REF invokeStatic&#x53E5;&#x67C4;&#x5BF9;&#x5E94;&#x7684;&#x7C7B;&#x6CA1;&#x6709;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5219;&#x521D;&#x59CB;&#x5316;</li>
 </ul>
-<p>&#x9664;&#x4E86;&#x4EE5;&#x4E0A;&#x4E03;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x5176;&#x4ED6;&#x4F7F;&#x7528;Java&#x7C7B;&#x7684;&#x65B9;&#x5F0F;&#x90FD;&#x88AB;&#x770B;&#x4F5C;&#x662F;&#x5BF9;&#x7C7B;&#x7684;&#x88AB;&#x52A8;&#x4F7F;&#x7528;&#xFF0C;&#x90FD;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4;&#x7C7B;&#x7684;&#x521D;&#x59CB;&#x5316;&#x3002;</p>
-</body></html>
+<p>&#x9664;&#x4E86;&#x4EE5;&#x4E0A;&#x4E03;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x5176;&#x4ED6;&#x4F7F;&#x7528;Java&#x7C7B;&#x7684;&#x65B9;&#x5F0F;&#x90FD;&#x88AB;&#x770B;&#x4F5C;&#x662F;&#x5BF9;&#x7C7B;&#x7684;&#x88AB;&#x52A8;&#x4F7F;&#x7528;&#xFF0C;&#x90FD;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4;&#x7C7B;&#x7684;&#x521D;&#x59CB;&#x5316;&#x3002;</p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script> <p></p>
+<footer class="page-footer"><span class="copyright">victorfengming.gitee.io&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">&#x7F72;&#x540D;4.0&#x56FD;&#x9645;(CC BY 4.0)&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6700;&#x540E;&#x66F4;&#x65B0;&#xFF1A;
+2021-03-17 09:20:05
+</span></footer></body></html>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
                             
@@ -6189,7 +6209,7 @@ null
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"类加载子系统","level":"1.3","depth":1,"next":{"title":"概述","level":"1.3.1","depth":2,"anchor":"#概述","path":"1_内存与垃圾回收篇/2_类加载子系统/README.md","ref":"1_内存与垃圾回收篇/2_类加载子系统/README.md#概述","articles":[]},"previous":{"title":"总结","level":"1.2.17.14","depth":3,"anchor":"#总结_1","path":"1_内存与垃圾回收篇/1_JVM与Java体系结构/README.md","ref":"1_内存与垃圾回收篇/1_JVM与Java体系结构/README.md#总结_1","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count","ancre-navigation"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"ancre-navigation":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":true,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1_内存与垃圾回收篇/2_类加载子系统/README.md","mtime":"2021-03-17T01:20:05.171Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-17T01:31:17.168Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"类加载子系统","level":"1.3","depth":1,"next":{"title":"概述","level":"1.3.1","depth":2,"anchor":"#概述","path":"1_内存与垃圾回收篇/2_类加载子系统/README.md","ref":"1_内存与垃圾回收篇/2_类加载子系统/README.md#概述","articles":[]},"previous":{"title":"总结","level":"1.2.17.14","depth":3,"anchor":"#总结_1","path":"1_内存与垃圾回收篇/1_JVM与Java体系结构/README.md","ref":"1_内存与垃圾回收篇/1_JVM与Java体系结构/README.md#总结_1","articles":[]},"dir":"ltr"},"config":{"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count","ancre-navigation","-search","search-plus","-highlight","popup","prism","prism-themes","-sharing","sharing-plus","tbfed-pagefooter","toolbar-button"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"victorfengming.gitee.io，使用<a href='https://creativecommons.org/licenses/by/4.0/deed.zh'>署名4.0国际(CC BY 4.0)协议</a>发布","modify_label":"最后更新：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"toolbar-button":{"label":"下载PDF","url":"https://victorfengming.gitee.io/jvm/","icon":"fa-file-pdf-o"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"prism-themes":{},"ancre-navigation":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":true,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","line","linkedin","messenger","pocket","qq","qzone","stumbleupon","twitter","viber","vk","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"},"search-plus":{}},"theme":"default","author":"Victor <victorfengming@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jvm","language":"zh-hans","links":{"sidebar":{"文档索引页":"https://victorfengming.gitee.io/index/gitbook/"}},"gitbook":"3.2.3","description":"jvm,Java 虚拟机"},"file":{"path":"1_内存与垃圾回收篇/2_类加载子系统/README.md","mtime":"2021-03-17T01:20:05.171Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-03T02:23:07.405Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -6197,6 +6217,10 @@ null
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
@@ -6223,15 +6247,19 @@ null
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toolbar-button/plugin.js"></script>
         
     
         

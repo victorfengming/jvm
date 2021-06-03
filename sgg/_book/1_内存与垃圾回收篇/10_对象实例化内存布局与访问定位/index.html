@@ -1,20 +1,24 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>对象实例化内存布局与访问定位 · GitBook</title>
+        <title>对象实例化内存布局与访问定位 · jvm</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Victor <victorfengming@163.com>">
         
         
     
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
@@ -41,11 +45,15 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
                 
             
                 
@@ -105,7 +113,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -116,7 +124,16 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://victorfengming.gitee.io/index/gitbook/" target="_blank" class="custom-link">文档索引页</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -5756,7 +5773,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -5789,7 +5806,7 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
@@ -5803,7 +5820,7 @@
 <li>Java&#x5BF9;&#x8C61;&#x5934;&#x6709;&#x4EC0;&#x4E48;&#xFF1F;</li>
 </ul>
 <p>&#x4ECE;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x7684;&#x65B9;&#x5F0F; &#x548C; &#x6B65;&#x9AA4;&#x5F00;&#x59CB;&#x8BF4;</p>
-<p><a href="images/image-20200709095356247.png" data-lightbox="db3e0675-8a43-4e64-9715-5644843a98fc" data-title="image-20200709095356247"><img src="images/image-20200709095356247.png" alt="image-20200709095356247"></a></p>
+<p><a href="images/image-20200709095356247.png" data-lightbox="02133eac-fe1d-44dc-89e1-aea88352e6c2" data-title="image-20200709095356247"><img src="images/image-20200709095356247.png" alt="image-20200709095356247"></a></p>
 <h3 id="&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x65B9;&#x5F0F;"><a name="&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x65B9;&#x5F0F;</h3>
 <ul>
 <li>new&#xFF1A;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x65B9;&#x5F0F;&#x3001;&#x5355;&#x4F8B;&#x7C7B;&#x4E2D;&#x8C03;&#x7528;getInstance&#x7684;&#x9759;&#x6001;&#x7C7B;&#x65B9;&#x6CD5;&#xFF0C;XXXFactory&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;</li>
@@ -5866,7 +5883,7 @@
 <li>&#x5C5E;&#x6027;&#x7684;&#x663E;&#x793A;&#x521D;&#x59CB;&#x5316;&#x3001;&#x4EE3;&#x7801;&#x5757;&#x4E2D;&#x521D;&#x59CB;&#x5316;&#x3001;&#x6784;&#x9020;&#x5668;&#x4E2D;&#x521D;&#x59CB;&#x5316;</li>
 </ul>
 <h2 id="&#x5BF9;&#x8C61;&#x5185;&#x5B58;&#x5E03;&#x5C40;"><a name="&#x5BF9;&#x8C61;&#x5185;&#x5B58;&#x5E03;&#x5C40;" class="anchor-navigation-ex-anchor" href="#&#x5BF9;&#x8C61;&#x5185;&#x5B58;&#x5E03;&#x5C40;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BF9;&#x8C61;&#x5185;&#x5B58;&#x5E03;&#x5C40;</h2>
-<p><a href="images/image-20200709151033237.png" data-lightbox="38838c19-e1a6-4140-80ca-e5ce03877c67" data-title="image-20200709151033237"><img src="images/image-20200709151033237.png" alt="image-20200709151033237"></a></p>
+<p><a href="images/image-20200709151033237.png" data-lightbox="a5379936-3679-4bce-b234-7dc11c1dba35" data-title="image-20200709151033237"><img src="images/image-20200709151033237.png" alt="image-20200709151033237"></a></p>
 <h3 id="&#x5BF9;&#x8C61;&#x5934;"><a name="&#x5BF9;&#x8C61;&#x5934;" class="anchor-navigation-ex-anchor" href="#&#x5BF9;&#x8C61;&#x5934;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BF9;&#x8C61;&#x5934;</h3>
 <p>&#x5BF9;&#x8C61;&#x5934;&#x5305;&#x542B;&#x4E86;&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x5206;&#x522B;&#x662F; &#x8FD0;&#x884C;&#x65F6;&#x5143;&#x6570;&#x636E;&#xFF08;Mark Word&#xFF09;&#x548C; &#x7C7B;&#x578B;&#x6307;&#x9488;</p>
 <blockquote>
@@ -5887,21 +5904,24 @@
 <h4 id="&#x8BF4;&#x660E;"><a name="&#x8BF4;&#x660E;" class="anchor-navigation-ex-anchor" href="#&#x8BF4;&#x660E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BF4;&#x660E;</h4>
 <p>&#x4E0D;&#x662F;&#x5FC5;&#x987B;&#x7684;&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x7279;&#x522B;&#x7684;&#x542B;&#x4E49;&#xFF0C;&#x4EC5;&#x4EC5;&#x8D77;&#x5230;&#x5360;&#x4F4D;&#x7B26;&#x7684;&#x4F5C;&#x7528;</p>
 <h3 id="&#x5C0F;&#x7ED3;"><a name="&#x5C0F;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#&#x5C0F;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C0F;&#x7ED3;</h3>
-<p><a href="images/image-20200709152801713.png" data-lightbox="5866c37d-e68a-4ca2-b2bb-3ce1b8f15429" data-title="image-20200709152801713"><img src="images/image-20200709152801713.png" alt="image-20200709152801713"></a></p>
+<p><a href="images/image-20200709152801713.png" data-lightbox="c4323664-618d-4fe2-a8e8-06b4681518eb" data-title="image-20200709152801713"><img src="images/image-20200709152801713.png" alt="image-20200709152801713"></a></p>
 <h2 id="&#x5BF9;&#x8C61;&#x7684;&#x8BBF;&#x95EE;&#x5B9A;&#x4F4D;"><a name="&#x5BF9;&#x8C61;&#x7684;&#x8BBF;&#x95EE;&#x5B9A;&#x4F4D;" class="anchor-navigation-ex-anchor" href="#&#x5BF9;&#x8C61;&#x7684;&#x8BBF;&#x95EE;&#x5B9A;&#x4F4D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BF9;&#x8C61;&#x7684;&#x8BBF;&#x95EE;&#x5B9A;&#x4F4D;</h2>
 <h3 id="&#x56FE;&#x793A;"><a name="&#x56FE;&#x793A;" class="anchor-navigation-ex-anchor" href="#&#x56FE;&#x793A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56FE;&#x793A;</h3>
 <p>JVM&#x662F;&#x5982;&#x4F55;&#x901A;&#x8FC7;&#x6808;&#x5E27;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x5F15;&#x7528;&#x8BBF;&#x95EE;&#x5230;&#x5176;&#x5185;&#x90E8;&#x7684;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#x5462;&#xFF1F;</p>
-<p><a href="images/image-20200709164149920.png" data-lightbox="37567c7b-5355-44bb-96a8-baabc9298d36" data-title="image-20200709164149920"><img src="images/image-20200709164149920.png" alt="image-20200709164149920"></a></p>
+<p><a href="images/image-20200709164149920.png" data-lightbox="c7a3791b-764a-4efa-a0c8-6cf99446e1eb" data-title="image-20200709164149920"><img src="images/image-20200709164149920.png" alt="image-20200709164149920"></a></p>
 <h3 id="&#x5BF9;&#x8C61;&#x8BBF;&#x95EE;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;"><a name="&#x5BF9;&#x8C61;&#x8BBF;&#x95EE;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x5BF9;&#x8C61;&#x8BBF;&#x95EE;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BF9;&#x8C61;&#x8BBF;&#x95EE;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;</h3>
 <h4 id="&#x53E5;&#x67C4;&#x8BBF;&#x95EE;"><a name="&#x53E5;&#x67C4;&#x8BBF;&#x95EE;" class="anchor-navigation-ex-anchor" href="#&#x53E5;&#x67C4;&#x8BBF;&#x95EE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53E5;&#x67C4;&#x8BBF;&#x95EE;</h4>
-<p><a href="images/image-20200709164342002.png" data-lightbox="ffb2f8f0-9644-426b-9db8-dee7a2d3f342" data-title="image-20200709164342002"><img src="images/image-20200709164342002.png" alt="image-20200709164342002"></a></p>
+<p><a href="images/image-20200709164342002.png" data-lightbox="a19c7c72-8cfd-4f67-a7e3-3c44bb206b04" data-title="image-20200709164342002"><img src="images/image-20200709164342002.png" alt="image-20200709164342002"></a></p>
 <p>&#x53E5;&#x67C4;&#x8BBF;&#x95EE;&#x5C31;&#x662F;&#x8BF4;&#x6808;&#x7684;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x8868;&#x4E2D;&#xFF0C;&#x8BB0;&#x5F55;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x5806;&#x7A7A;&#x95F4;&#x4E2D;&#x5F00;&#x8F9F;&#x4E86;&#x4E00;&#x5757;&#x7A7A;&#x95F4;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x53E5;&#x67C4;&#x6C60;</p>
 <h4 id="&#x4F18;&#x70B9;"><a name="&#x4F18;&#x70B9;" class="anchor-navigation-ex-anchor" href="#&#x4F18;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F18;&#x70B9;</h4>
 <p>reference&#x4E2D;&#x5B58;&#x50A8;&#x7A33;&#x5B9A;&#x53E5;&#x67C4;&#x5730;&#x5740;&#xFF0C;&#x5BF9;&#x8C61;&#x88AB;&#x79FB;&#x52A8;&#xFF08;&#x5783;&#x573E;&#x6536;&#x96C6;&#x65F6;&#x79FB;&#x52A8;&#x5BF9;&#x8C61;&#x5F88;&#x666E;&#x904D;&#xFF09;&#x65F6;&#x53EA;&#x4F1A;&#x6539;&#x53D8;&#x53E5;&#x67C4;&#x4E2D;&#x5B9E;&#x4F8B;&#x6570;&#x636E;&#x6307;&#x9488;&#x5373;&#x53EF;&#xFF0C;reference&#x672C;&#x8EAB;&#x4E0D;&#x9700;&#x8981;&#x88AB;&#x4FEE;&#x6539;</p>
 <h4 id="&#x76F4;&#x63A5;&#x6307;&#x9488;&#xFF08;hotspot&#x91C7;&#x7528;&#xFF09;"><a name="&#x76F4;&#x63A5;&#x6307;&#x9488;&#xFF08;hotspot&#x91C7;&#x7528;&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x76F4;&#x63A5;&#x6307;&#x9488;&#xFF08;hotspot&#x91C7;&#x7528;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76F4;&#x63A5;&#x6307;&#x9488;&#xFF08;HotSpot&#x91C7;&#x7528;&#xFF09;</h4>
-<p><a href="images/image-20200709164350466.png" data-lightbox="33361895-e441-4257-bfb9-95a0e2eb10dd" data-title="image-20200709164350466"><img src="images/image-20200709164350466.png" alt="image-20200709164350466"></a></p>
-<p>&#x76F4;&#x63A5;&#x6307;&#x9488;&#x662F;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x8868;&#x4E2D;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x76F4;&#x63A5;&#x6307;&#x5411;&#x5806;&#x4E2D;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x5728;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#x4E2D;&#x6709;&#x7C7B;&#x578B;&#x6307;&#x9488;&#xFF0C;&#x6307;&#x5411;&#x7684;&#x662F;&#x65B9;&#x6CD5;&#x533A;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x6570;&#x636E;</p>
-</body></html>
+<p><a href="images/image-20200709164350466.png" data-lightbox="30168e72-ad2a-4572-85f8-afe4d4f7b00f" data-title="image-20200709164350466"><img src="images/image-20200709164350466.png" alt="image-20200709164350466"></a></p>
+<p>&#x76F4;&#x63A5;&#x6307;&#x9488;&#x662F;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x8868;&#x4E2D;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x76F4;&#x63A5;&#x6307;&#x5411;&#x5806;&#x4E2D;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x5728;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#x4E2D;&#x6709;&#x7C7B;&#x578B;&#x6307;&#x9488;&#xFF0C;&#x6307;&#x5411;&#x7684;&#x662F;&#x65B9;&#x6CD5;&#x533A;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x6570;&#x636E;</p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script> <p></p>
+<footer class="page-footer"><span class="copyright">victorfengming.gitee.io&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">&#x7F72;&#x540D;4.0&#x56FD;&#x9645;(CC BY 4.0)&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6700;&#x540E;&#x66F4;&#x65B0;&#xFF1A;
+2021-03-17 08:39:19
+</span></footer></body></html>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
                             
@@ -5944,7 +5964,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"对象实例化内存布局与访问定位","level":"1.11","depth":1,"next":{"title":"对象实例化","level":"1.11.1","depth":2,"anchor":"#对象实例化","path":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md","ref":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md#对象实例化","articles":[{"title":"面试题","level":"1.11.1.1","depth":3,"anchor":"#面试题","path":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md","ref":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md#面试题","articles":[]},{"title":"对象创建方式","level":"1.11.1.2","depth":3,"anchor":"#对象创建方式","path":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md","ref":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md#对象创建方式","articles":[]},{"title":"创建对象的步骤","level":"1.11.1.3","depth":3,"anchor":"#创建对象的步骤","path":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md","ref":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md#创建对象的步骤","articles":[]},{"title":"初始化分配到的内存","level":"1.11.1.4","depth":3,"anchor":"#初始化分配到的内存","path":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md","ref":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md#初始化分配到的内存","articles":[]},{"title":"设置对象的对象头","level":"1.11.1.5","depth":3,"anchor":"#设置对象的对象头","path":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md","ref":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md#设置对象的对象头","articles":[]},{"title":"执行init方法进行初始化","level":"1.11.1.6","depth":3,"anchor":"#执行init方法进行初始化","path":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md","ref":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md#执行init方法进行初始化","articles":[]},{"title":"对象实例化的过程","level":"1.11.1.7","depth":3,"anchor":"#对象实例化的过程","path":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md","ref":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md#对象实例化的过程","articles":[]}]},"previous":{"title":"常见面试题","level":"1.10.9.1","depth":3,"anchor":"#常见面试题","path":"1_内存与垃圾回收篇/9_方法区/README.md","ref":"1_内存与垃圾回收篇/9_方法区/README.md#常见面试题","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count","ancre-navigation"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"ancre-navigation":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":true,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md","mtime":"2021-03-17T00:39:19.492Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-17T01:31:17.168Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"对象实例化内存布局与访问定位","level":"1.11","depth":1,"next":{"title":"对象实例化","level":"1.11.1","depth":2,"anchor":"#对象实例化","path":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md","ref":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md#对象实例化","articles":[{"title":"面试题","level":"1.11.1.1","depth":3,"anchor":"#面试题","path":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md","ref":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md#面试题","articles":[]},{"title":"对象创建方式","level":"1.11.1.2","depth":3,"anchor":"#对象创建方式","path":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md","ref":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md#对象创建方式","articles":[]},{"title":"创建对象的步骤","level":"1.11.1.3","depth":3,"anchor":"#创建对象的步骤","path":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md","ref":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md#创建对象的步骤","articles":[]},{"title":"初始化分配到的内存","level":"1.11.1.4","depth":3,"anchor":"#初始化分配到的内存","path":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md","ref":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md#初始化分配到的内存","articles":[]},{"title":"设置对象的对象头","level":"1.11.1.5","depth":3,"anchor":"#设置对象的对象头","path":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md","ref":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md#设置对象的对象头","articles":[]},{"title":"执行init方法进行初始化","level":"1.11.1.6","depth":3,"anchor":"#执行init方法进行初始化","path":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md","ref":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md#执行init方法进行初始化","articles":[]},{"title":"对象实例化的过程","level":"1.11.1.7","depth":3,"anchor":"#对象实例化的过程","path":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md","ref":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md#对象实例化的过程","articles":[]}]},"previous":{"title":"常见面试题","level":"1.10.9.1","depth":3,"anchor":"#常见面试题","path":"1_内存与垃圾回收篇/9_方法区/README.md","ref":"1_内存与垃圾回收篇/9_方法区/README.md#常见面试题","articles":[]},"dir":"ltr"},"config":{"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count","ancre-navigation","-search","search-plus","-highlight","popup","prism","prism-themes","-sharing","sharing-plus","tbfed-pagefooter","toolbar-button"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"victorfengming.gitee.io，使用<a href='https://creativecommons.org/licenses/by/4.0/deed.zh'>署名4.0国际(CC BY 4.0)协议</a>发布","modify_label":"最后更新：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"toolbar-button":{"label":"下载PDF","url":"https://victorfengming.gitee.io/jvm/","icon":"fa-file-pdf-o"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"prism-themes":{},"ancre-navigation":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":true,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","line","linkedin","messenger","pocket","qq","qzone","stumbleupon","twitter","viber","vk","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"},"search-plus":{}},"theme":"default","author":"Victor <victorfengming@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jvm","language":"zh-hans","links":{"sidebar":{"文档索引页":"https://victorfengming.gitee.io/index/gitbook/"}},"gitbook":"3.2.3","description":"jvm,Java 虚拟机"},"file":{"path":"1_内存与垃圾回收篇/10_对象实例化内存布局与访问定位/README.md","mtime":"2021-03-17T00:39:19.492Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-03T02:23:07.405Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -5952,6 +5972,10 @@
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
@@ -5978,15 +6002,19 @@
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toolbar-button/plugin.js"></script>
         
     
         

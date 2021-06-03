@@ -1,20 +1,24 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>垃圾回收概述 · GitBook</title>
+        <title>垃圾回收概述 · jvm</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Victor <victorfengming@163.com>">
         
         
     
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
@@ -41,11 +45,15 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
                 
             
                 
@@ -105,7 +113,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -116,7 +124,16 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://victorfengming.gitee.io/index/gitbook/" target="_blank" class="custom-link">文档索引页</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -5756,7 +5773,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -5789,7 +5806,7 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
@@ -5797,10 +5814,10 @@
                                 <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x5783;&#x573E;&#x56DE;&#x6536;&#x6982;&#x8FF0;"><b></b>&#x5783;&#x573E;&#x56DE;&#x6536;&#x6982;&#x8FF0;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6982;&#x5FF5;"><b></b>&#x6982;&#x5FF5;</a></li><li><span class="title-icon "></span><a href="#&#x4EC0;&#x4E48;&#x662F;&#x5783;&#x573E;"><b></b>&#x4EC0;&#x4E48;&#x662F;&#x5783;&#x573E;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4EC0;&#x4E48;&#x662F;&#x5783;&#x573E;&#xFF1F;"><b></b>&#x4EC0;&#x4E48;&#x662F;&#x5783;&#x573E;&#xFF1F;</a></li><li><span class="title-icon "></span><a href="#&#x78C1;&#x76D8;&#x788E;&#x7247;&#x6574;&#x7406;"><b></b>&#x78C1;&#x76D8;&#x788E;&#x7247;&#x6574;&#x7406;</a></li><li><span class="title-icon "></span><a href="#&#x5927;&#x5382;&#x9762;&#x8BD5;&#x9898;"><b></b>&#x5927;&#x5382;&#x9762;&#x8BD5;&#x9898;</a></li></ul><li><span class="title-icon "></span><a href="#&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;gc"><b></b>&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;GC</a></li><li><span class="title-icon "></span><a href="#&#x65E9;&#x671F;&#x5783;&#x573E;&#x56DE;&#x6536;"><b></b>&#x65E9;&#x671F;&#x5783;&#x573E;&#x56DE;&#x6536;</a></li><li><span class="title-icon "></span><a href="#java&#x5783;&#x573E;&#x56DE;&#x6536;&#x673A;&#x5236;"><b></b>Java&#x5783;&#x573E;&#x56DE;&#x6536;&#x673A;&#x5236;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4F18;&#x70B9;"><b></b>&#x4F18;&#x70B9;</a></li><li><span class="title-icon "></span><a href="#&#x62C5;&#x5FE7;"><b></b>&#x62C5;&#x5FE7;</a></li><li><span class="title-icon "></span><a href="#gc&#x4E3B;&#x8981;&#x5173;&#x6CE8;&#x7684;&#x533A;&#x57DF;"><b></b>GC&#x4E3B;&#x8981;&#x5173;&#x6CE8;&#x7684;&#x533A;&#x57DF;</a></li></ul></ul></ul></div><a href="#&#x5783;&#x573E;&#x56DE;&#x6536;&#x6982;&#x8FF0;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5783;&#x573E;&#x56DE;&#x6536;&#x6982;&#x8FF0;"><a name="&#x5783;&#x573E;&#x56DE;&#x6536;&#x6982;&#x8FF0;" class="anchor-navigation-ex-anchor" href="#&#x5783;&#x573E;&#x56DE;&#x6536;&#x6982;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5783;&#x573E;&#x56DE;&#x6536;&#x6982;&#x8FF0;</h1>
 <h2 id="&#x6982;&#x5FF5;"><a name="&#x6982;&#x5FF5;" class="anchor-navigation-ex-anchor" href="#&#x6982;&#x5FF5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6982;&#x5FF5;</h2>
 <p>&#x8FD9;&#x6B21;&#x6211;&#x4EEC;&#x4E3B;&#x8981;&#x5173;&#x6CE8;&#x7684;&#x662F;&#x9EC4;&#x8272;&#x90E8;&#x5206;&#xFF0C;&#x5185;&#x5B58;&#x7684;&#x5206;&#x914D;&#x4E0E;&#x56DE;&#x6536;</p>
-<p><a href="images/image-20200712084539884.png" data-lightbox="cabbd838-a38e-4e96-b216-9dcde3cb1cca" data-title="image-20200712084539884"><img src="images/image-20200712084539884.png" alt="image-20200712084539884"></a></p>
+<p><a href="images/image-20200712084539884.png" data-lightbox="4213540f-143d-4bef-b23f-314111da560d" data-title="image-20200712084539884"><img src="images/image-20200712084539884.png" alt="image-20200712084539884"></a></p>
 <h2 id="&#x4EC0;&#x4E48;&#x662F;&#x5783;&#x573E;"><a name="&#x4EC0;&#x4E48;&#x662F;&#x5783;&#x573E;" class="anchor-navigation-ex-anchor" href="#&#x4EC0;&#x4E48;&#x662F;&#x5783;&#x573E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EC0;&#x4E48;&#x662F;&#x5783;&#x573E;</h2>
 <p>&#x5728;&#x63D0;&#x5230;&#x4EC0;&#x4E48;&#x662F;&#x5783;&#x573E;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x770B;&#x4E0B;&#x9762;&#x4E00;&#x5F20;&#x56FE;</p>
-<p><a href="images/image-20200712085456113.png" data-lightbox="20940466-2692-4604-9b19-08a3f9be6338" data-title="image-20200712085456113"><img src="images/image-20200712085456113.png" alt="image-20200712085456113"></a></p>
+<p><a href="images/image-20200712085456113.png" data-lightbox="00284e78-ff22-4a41-aaed-31490949f699" data-title="image-20200712085456113"><img src="images/image-20200712085456113.png" alt="image-20200712085456113"></a></p>
 <p>&#x4ECE;&#x4E0A;&#x56FE;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F88;&#x660E;&#x786E;&#x7684;&#x77E5;&#x9053;&#xFF0C;Java &#x548C; C++&#x8BED;&#x8A00;&#x7684;&#x533A;&#x522B;&#xFF0C;&#x5C31;&#x5728;&#x4E8E;&#x5783;&#x573E;&#x6536;&#x96C6;&#x6280;&#x672F;&#x548C;&#x5185;&#x5B58;&#x52A8;&#x6001;&#x5206;&#x914D;&#x4E0A;&#xFF0C;C&#x8BED;&#x8A00;&#x6CA1;&#x6709;&#x5783;&#x573E;&#x6536;&#x96C6;&#x6280;&#x672F;&#xFF0C;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x624B;&#x52A8;&#x7684;&#x6536;&#x96C6;&#x3002;</p>
 <p>&#x5783;&#x573E;&#x6536;&#x96C6;&#xFF0C;&#x4E0D;&#x662F;Java&#x8BED;&#x8A00;&#x7684;&#x4F34;&#x751F;&#x4EA7;&#x7269;&#x3002;&#x65E9;&#x5728;1960&#x5E74;&#xFF0C;&#x7B2C;&#x4E00;&#x95E8;&#x5F00;&#x59CB;&#x4F7F;&#x7528;&#x5185;&#x5B58;&#x52A8;&#x6001;&#x5206;&#x914D;&#x548C;&#x5783;&#x573E;&#x6536;&#x96C6;&#x6280;&#x672F;&#x7684;Lisp&#x8BED;&#x8A00;&#x8BDE;&#x751F;&#x3002;
 &#x5173;&#x4E8E;&#x5783;&#x573E;&#x6536;&#x96C6;&#x6709;&#x4E09;&#x4E2A;&#x7ECF;&#x5178;&#x95EE;&#x9898;&#xFF1A;</p>
@@ -5815,7 +5832,7 @@
 <p>&#x5982;&#x679C;&#x4E0D;&#x53CA;&#x65F6;&#x5BF9;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5783;&#x573E;&#x8FDB;&#x884C;&#x6E05;&#x7406;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x8FD9;&#x4E9B;&#x5783;&#x573E;&#x5BF9;&#x8C61;&#x6240;&#x5360;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x4F1A;&#x4E00;&#x76F4;&#x4FDD;&#x7559;&#x5230;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x7ED3;&#x675F;&#xFF0C;&#x88AB;&#x4FDD;&#x7559;&#x7684;&#x7A7A;&#x95F4;&#x65E0;&#x6CD5;&#x88AB;&#x5176;&#x5B83;&#x5BF9;&#x8C61;&#x4F7F;&#x7528;&#xFF0C;&#x751A;&#x81F3;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x5185;&#x5B58;&#x6EA2;&#x51FA;&#x3002;</p>
 <h3 id="&#x78C1;&#x76D8;&#x788E;&#x7247;&#x6574;&#x7406;"><a name="&#x78C1;&#x76D8;&#x788E;&#x7247;&#x6574;&#x7406;" class="anchor-navigation-ex-anchor" href="#&#x78C1;&#x76D8;&#x788E;&#x7247;&#x6574;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x78C1;&#x76D8;&#x788E;&#x7247;&#x6574;&#x7406;</h3>
 <p>&#x673A;&#x68B0;&#x786C;&#x76D8;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x78C1;&#x76D8;&#x6574;&#x7406;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x6709;&#x574F;&#x9053;</p>
-<p><a href="images/image-20200712090848669.png" data-lightbox="5f3ea7ab-9fc0-44ed-8b4d-655e04b8b2c2" data-title="image-20200712090848669"><img src="images/image-20200712090848669.png" alt="image-20200712090848669"></a></p>
+<p><a href="images/image-20200712090848669.png" data-lightbox="0074076b-98d2-4c75-a600-bada7221c27e" data-title="image-20200712090848669"><img src="images/image-20200712090848669.png" alt="image-20200712090848669"></a></p>
 <h3 id="&#x5927;&#x5382;&#x9762;&#x8BD5;&#x9898;"><a name="&#x5927;&#x5382;&#x9762;&#x8BD5;&#x9898;" class="anchor-navigation-ex-anchor" href="#&#x5927;&#x5382;&#x9762;&#x8BD5;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5927;&#x5382;&#x9762;&#x8BD5;&#x9898;</h3>
 <h4 id="&#x8682;&#x8681;&#x91D1;&#x670D;"><a name="&#x8682;&#x8681;&#x91D1;&#x670D;" class="anchor-navigation-ex-anchor" href="#&#x8682;&#x8681;&#x91D1;&#x670D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8682;&#x8681;&#x91D1;&#x670D;</h4>
 <ul>
@@ -5863,14 +5880,14 @@
 <p>&#x968F;&#x7740;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6240;&#x5E94;&#x4ED8;&#x7684;&#x4E1A;&#x52A1;&#x8D8A;&#x6765;&#x8D8A;&#x5E9E;&#x5927;&#x3001;&#x590D;&#x6742;&#xFF0C;&#x7528;&#x6237;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#xFF0C;&#x6CA1;&#x6709;GC&#x5C31;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x6B63;&#x5E38;&#x8FDB;&#x884C;&#x3002;&#x800C;&#x7ECF;&#x5E38;&#x9020;&#x6210;STW&#x7684;GC&#x53C8;&#x8DDF;&#x4E0D;&#x4E0A;&#x5B9E;&#x9645;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x6240;&#x4EE5;&#x624D;&#x4F1A;&#x4E0D;&#x65AD;&#x5730;&#x5C1D;&#x8BD5;&#x5BF9;GC&#x8FDB;&#x884C;&#x4F18;&#x5316;&#x3002;</p>
 <h2 id="&#x65E9;&#x671F;&#x5783;&#x573E;&#x56DE;&#x6536;"><a name="&#x65E9;&#x671F;&#x5783;&#x573E;&#x56DE;&#x6536;" class="anchor-navigation-ex-anchor" href="#&#x65E9;&#x671F;&#x5783;&#x573E;&#x56DE;&#x6536;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65E9;&#x671F;&#x5783;&#x573E;&#x56DE;&#x6536;</h2>
 <p>&#x5728;&#x65E9;&#x671F;&#x7684;C/C++&#x65F6;&#x4EE3;&#xFF0C;&#x5783;&#x573E;&#x56DE;&#x6536;&#x57FA;&#x672C;&#x4E0A;&#x662F;&#x624B;&#x5DE5;&#x8FDB;&#x884C;&#x7684;&#x3002;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;new&#x5173;&#x952E;&#x5B57;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x7533;&#x8BF7;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;delete&#x5173;&#x952E;&#x5B57;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x91CA;&#x653E;&#x3002;&#x6BD4;&#x5982;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
-<pre><code class="lang-c++">MibBridge *pBridge= <span class="hljs-keyword">new</span> cmBaseGroupBridge&#xFF08;&#xFF09;&#xFF1B;
-<span class="hljs-comment">//&#x5982;&#x679C;&#x6CE8;&#x518C;&#x5931;&#x8D25;&#xFF0C;&#x4F7F;&#x7528;Delete&#x91CA;&#x653E;&#x8BE5;&#x5BF9;&#x8C61;&#x6240;&#x5360;&#x5185;&#x5B58;&#x533A;&#x57DF;</span>
-<span class="hljs-keyword">if</span>&#xFF08;pBridge-&gt;Register&#xFF08;kDestroy&#xFF09;&#xFF01;=NO ERROR&#xFF09;
-    <span class="hljs-keyword">delete</span> pBridge&#xFF1B;
+<pre class="language-"><code class="lang-c++">MibBridge *pBridge= new cmBaseGroupBridge&#xFF08;&#xFF09;&#xFF1B;
+//&#x5982;&#x679C;&#x6CE8;&#x518C;&#x5931;&#x8D25;&#xFF0C;&#x4F7F;&#x7528;Delete&#x91CA;&#x653E;&#x8BE5;&#x5BF9;&#x8C61;&#x6240;&#x5360;&#x5185;&#x5B58;&#x533A;&#x57DF;
+if&#xFF08;pBridge-&gt;Register&#xFF08;kDestroy&#xFF09;&#xFF01;=NO ERROR&#xFF09;
+    delete pBridge&#xFF1B;
 </code></pre>
 <p>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x7075;&#x6D3B;&#x63A7;&#x5236;&#x5185;&#x5B58;&#x91CA;&#x653E;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x4F46;&#x662F;&#x4F1A;&#x7ED9;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x5E26;&#x6765;&#x9891;&#x7E41;&#x7533;&#x8BF7;&#x548C;&#x91CA;&#x653E;&#x5185;&#x5B58;&#x7684;&#x7BA1;&#x7406;&#x8D1F;&#x62C5;&#x3002;&#x5018;&#x82E5;&#x6709;&#x4E00;&#x5904;&#x5185;&#x5B58;&#x533A;&#x95F4;&#x7531;&#x4E8E;&#x7A0B;&#x5E8F;&#x5458;&#x7F16;&#x7801;&#x7684;&#x95EE;&#x9898;&#x5FD8;&#x8BB0;&#x88AB;&#x56DE;&#x6536;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x4EA7;&#x751F;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#xFF0C;&#x5783;&#x573E;&#x5BF9;&#x8C61;&#x6C38;&#x8FDC;&#x65E0;&#x6CD5;&#x88AB;&#x6E05;&#x9664;&#xFF0C;&#x968F;&#x7740;&#x7CFB;&#x7EDF;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#x7684;&#x4E0D;&#x65AD;&#x589E;&#x957F;&#xFF0C;&#x5783;&#x573E;&#x5BF9;&#x8C61;&#x6240;&#x8017;&#x5185;&#x5B58;&#x53EF;&#x80FD;&#x6301;&#x7EED;&#x4E0A;&#x5347;&#xFF0C;&#x76F4;&#x5230;&#x51FA;&#x73B0;&#x5185;&#x5B58;&#x6EA2;&#x51FA;&#x5E76;&#x9020;&#x6210;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5D29;&#x6E83;&#x3002; </p>
 <p>&#x6709;&#x4E86;&#x5783;&#x573E;&#x56DE;&#x6536;&#x673A;&#x5236;&#x540E;&#xFF0C;&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x6781;&#x6709;&#x53EF;&#x80FD;&#x53D8;&#x6210;&#x8FD9;&#x6837;</p>
-<pre><code class="lang-c++">MibBridge *pBridge=<span class="hljs-keyword">new</span> cmBaseGroupBridge(); 
+<pre class="language-"><code class="lang-c++">MibBridge *pBridge=new cmBaseGroupBridge(); 
 pBridge-&gt;Register(kDestroy);
 </code></pre>
 <p>&#x73B0;&#x5728;&#xFF0C;&#x9664;&#x4E86;Java&#x4EE5;&#x5916;&#xFF0C;C#&#x3001;Python&#x3001;Ruby&#x7B49;&#x8BED;&#x8A00;&#x90FD;&#x4F7F;&#x7528;&#x4E86;&#x81EA;&#x52A8;&#x5783;&#x573E;&#x56DE;&#x6536;&#x7684;&#x601D;&#x60F3;&#xFF0C;&#x4E5F;&#x662F;&#x672A;&#x6765;&#x53D1;&#x5C55;&#x8D8B;&#x52BF;&#xFF0C;&#x53EF;&#x4EE5;&#x8BF4;&#x8FD9;&#x79CD;&#x81EA;&#x52A8;&#x5316;&#x7684;&#x5185;&#x5B58;&#x5206;&#x914D;&#x548C;&#x6765;&#x53CA;&#x56DE;&#x6536;&#x65B9;&#x5F0F;&#x5DF2;&#x7ECF;&#x6210;&#x4E3A;&#x4E86;&#x7EBF;&#x4EE3;&#x5F00;&#x53D1;&#x8BED;&#x8A00;&#x5FC5;&#x5907;&#x7684;&#x6807;&#x51C6;&#x3002;</p>
@@ -5887,7 +5904,7 @@ pBridge-&gt;Register(kDestroy);
 <p>&#x5F53;&#x9700;&#x8981;&#x6392;&#x67E5;&#x5404;&#x79CD;&#x5185;&#x5B58;&#x6EA2;&#x51FA;&#x3001;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#x95EE;&#x9898;&#x65F6;&#xFF0C;&#x5F53;&#x5783;&#x573E;&#x6536;&#x96C6;&#x6210;&#x4E3A;&#x7CFB;&#x7EDF;&#x8FBE;&#x5230;&#x66F4;&#x9AD8;&#x5E76;&#x53D1;&#x91CF;&#x7684;&#x74F6;&#x9888;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x5FC5;&#x987B;&#x5BF9;&#x8FD9;&#x4E9B;&#x201C;&#x81EA;&#x52A8;&#x5316;&#x201D;&#x7684;&#x6280;&#x672F;&#x5B9E;&#x65BD;&#x5FC5;&#x8981;&#x7684;&#x76D1;&#x63A7;&#x548C;&#x8C03;&#x8282;&#x3002;</p>
 <h3 id="gc&#x4E3B;&#x8981;&#x5173;&#x6CE8;&#x7684;&#x533A;&#x57DF;"><a name="gc&#x4E3B;&#x8981;&#x5173;&#x6CE8;&#x7684;&#x533A;&#x57DF;" class="anchor-navigation-ex-anchor" href="#gc&#x4E3B;&#x8981;&#x5173;&#x6CE8;&#x7684;&#x533A;&#x57DF;"><i class="fa fa-link" aria-hidden="true"></i></a>GC&#x4E3B;&#x8981;&#x5173;&#x6CE8;&#x7684;&#x533A;&#x57DF;</h3>
 <p>GC&#x4E3B;&#x8981;&#x5173;&#x6CE8;&#x4E8E; &#x65B9;&#x6CD5;&#x533A; &#x548C;&#x5806;&#x4E2D;&#x7684;&#x5783;&#x573E;&#x6536;&#x96C6;</p>
-<p><a href="images/image-20200712092427246.png" data-lightbox="9a77b8b1-85fc-4730-86bf-88cb370c37b0" data-title="image-20200712092427246"><img src="images/image-20200712092427246.png" alt="image-20200712092427246"></a></p>
+<p><a href="images/image-20200712092427246.png" data-lightbox="bcc24cd8-3d30-4249-b427-15f64b1209ef" data-title="image-20200712092427246"><img src="images/image-20200712092427246.png" alt="image-20200712092427246"></a></p>
 <p>&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x53EF;&#x4EE5;&#x5BF9;&#x5E74;&#x8F7B;&#x4EE3;&#x56DE;&#x6536;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5BF9;&#x8001;&#x5E74;&#x4EE3;&#x56DE;&#x6536;&#xFF0C;&#x751A;&#x81F3;&#x662F;&#x5168;&#x6808;&#x548C;&#x65B9;&#x6CD5;&#x533A;&#x7684;&#x56DE;&#x6536;</p>
 <ul>
 <li>&#x5176;&#x4E2D;&#xFF0C;Java&#x5806;&#x662F;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x7684;&#x5DE5;&#x4F5C;&#x91CD;&#x70B9;</li>
@@ -5896,9 +5913,12 @@ pBridge-&gt;Register(kDestroy);
 <ul>
 <li>&#x9891;&#x7E41;&#x6536;&#x96C6;Young&#x533A;</li>
 <li>&#x8F83;&#x5C11;&#x6536;&#x96C6;Old&#x533A;</li>
-<li>&#x57FA;&#x672C;&#x4E0D;&#x6536;&#x96C6;Perm&#x533A;&#xFF08;&#x5143;&#x7A7A;&#x95F4;&#xFF09;</li>
+<li>&#x57FA;&#x672C;&#x4E0D;&#x6536;&#x96C6;Perm&#x533A;&#xFF08;&#x5143;&#x7A7A;&#x95F4;&#xFF09;<hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script> </li>
 </ul>
-</body></html>
+<footer class="page-footer"><span class="copyright">victorfengming.gitee.io&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">&#x7F72;&#x540D;4.0&#x56FD;&#x9645;(CC BY 4.0)&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6700;&#x540E;&#x66F4;&#x65B0;&#xFF1A;
+2021-03-17 08:39:19
+</span></footer></body></html>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
                             
@@ -5941,7 +5961,7 @@ pBridge-&gt;Register(kDestroy);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"垃圾回收概述","level":"1.15","depth":1,"next":{"title":"概念","level":"1.15.1","depth":2,"anchor":"#概念","path":"1_内存与垃圾回收篇/14_垃圾回收概述/README.md","ref":"1_内存与垃圾回收篇/14_垃圾回收概述/README.md#概念","articles":[]},"previous":{"title":"开启","level":"1.14.8.3","depth":3,"anchor":"#开启","path":"1_内存与垃圾回收篇/13_StringTable/README.md","ref":"1_内存与垃圾回收篇/13_StringTable/README.md#开启","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count","ancre-navigation"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"ancre-navigation":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":true,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1_内存与垃圾回收篇/14_垃圾回收概述/README.md","mtime":"2021-03-17T00:39:19.557Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-17T01:31:17.168Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"垃圾回收概述","level":"1.15","depth":1,"next":{"title":"概念","level":"1.15.1","depth":2,"anchor":"#概念","path":"1_内存与垃圾回收篇/14_垃圾回收概述/README.md","ref":"1_内存与垃圾回收篇/14_垃圾回收概述/README.md#概念","articles":[]},"previous":{"title":"开启","level":"1.14.8.3","depth":3,"anchor":"#开启","path":"1_内存与垃圾回收篇/13_StringTable/README.md","ref":"1_内存与垃圾回收篇/13_StringTable/README.md#开启","articles":[]},"dir":"ltr"},"config":{"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count","ancre-navigation","-search","search-plus","-highlight","popup","prism","prism-themes","-sharing","sharing-plus","tbfed-pagefooter","toolbar-button"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"victorfengming.gitee.io，使用<a href='https://creativecommons.org/licenses/by/4.0/deed.zh'>署名4.0国际(CC BY 4.0)协议</a>发布","modify_label":"最后更新：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"toolbar-button":{"label":"下载PDF","url":"https://victorfengming.gitee.io/jvm/","icon":"fa-file-pdf-o"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"prism-themes":{},"ancre-navigation":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":true,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","line","linkedin","messenger","pocket","qq","qzone","stumbleupon","twitter","viber","vk","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"},"search-plus":{}},"theme":"default","author":"Victor <victorfengming@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jvm","language":"zh-hans","links":{"sidebar":{"文档索引页":"https://victorfengming.gitee.io/index/gitbook/"}},"gitbook":"3.2.3","description":"jvm,Java 虚拟机"},"file":{"path":"1_内存与垃圾回收篇/14_垃圾回收概述/README.md","mtime":"2021-03-17T00:39:19.557Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-03T02:23:07.405Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -5949,6 +5969,10 @@ pBridge-&gt;Register(kDestroy);
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
@@ -5975,15 +5999,19 @@ pBridge-&gt;Register(kDestroy);
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toolbar-button/plugin.js"></script>
         
     
         

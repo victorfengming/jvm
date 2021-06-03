@@ -1,20 +1,24 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>垃圾回收相关算法 · GitBook</title>
+        <title>垃圾回收相关算法 · jvm</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Victor <victorfengming@163.com>">
         
         
     
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
@@ -41,11 +45,15 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
                 
             
                 
@@ -105,7 +113,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -116,7 +124,16 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://victorfengming.gitee.io/index/gitbook/" target="_blank" class="custom-link">文档索引页</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -5756,7 +5773,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -5789,7 +5806,7 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
@@ -5809,35 +5826,35 @@
 </blockquote>
 <h3 id="&#x5FAA;&#x73AF;&#x5F15;&#x7528;"><a name="&#x5FAA;&#x73AF;&#x5F15;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x5FAA;&#x73AF;&#x5F15;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5FAA;&#x73AF;&#x5F15;&#x7528;</h3>
 <p>&#x5F53;p&#x7684;&#x6307;&#x9488;&#x65AD;&#x5F00;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5185;&#x90E8;&#x7684;&#x5F15;&#x7528;&#x5F62;&#x6210;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x5FAA;&#x73AF;&#x5F15;&#x7528;&#xFF0C;&#x4ECE;&#x800C;&#x9020;&#x6210;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;</p>
-<p><a href="images/image-20200712102205795.png" data-lightbox="fa8ea529-9eee-469e-b312-a5e7cab4c616" data-title="image-20200712102205795"><img src="images/image-20200712102205795.png" alt="image-20200712102205795"></a></p>
+<p><a href="images/image-20200712102205795.png" data-lightbox="c73324b9-fd32-4f5e-bf00-dd2bb4feca75" data-title="image-20200712102205795"><img src="images/image-20200712102205795.png" alt="image-20200712102205795"></a></p>
 <h3 id="&#x4E3E;&#x4F8B;"><a name="&#x4E3E;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x4E3E;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E3E;&#x4F8B;</h3>
 <p>&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x6848;&#x4F8B;&#x6765;&#x6D4B;&#x8BD5;Java&#x4E2D;&#x662F;&#x5426;&#x91C7;&#x7528;&#x7684;&#x662F;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x7B97;&#x6CD5;</p>
-<pre><code class="lang-java"><span class="hljs-comment">/**
+<pre class="language-"><code class="lang-java"><span class="token comment">/**
  * &#x5F15;&#x7528;&#x8BA1;&#x6570;&#x7B97;&#x6CD5;&#x6D4B;&#x8BD5;
  *
- * <span class="hljs-doctag">@author</span>: Victor
- * <span class="hljs-doctag">@create</span>: 2020-07-12-10:26
+ * @author: Victor
+ * @create: 2020-07-12-10:26
  */</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RefCountGC</span> </span>{
-    <span class="hljs-comment">// &#x8FD9;&#x4E2A;&#x6210;&#x5458;&#x5C5E;&#x6027;&#x7684;&#x552F;&#x4E00;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x5360;&#x7528;&#x4E00;&#x70B9;&#x5185;&#x5B58;</span>
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">byte</span>[] bigSize = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">5</span>*<span class="hljs-number">1024</span>*<span class="hljs-number">1024</span>];
-    <span class="hljs-comment">// &#x5F15;&#x7528;</span>
-    Object reference = <span class="hljs-keyword">null</span>;
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RefCountGC</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x8FD9;&#x4E2A;&#x6210;&#x5458;&#x5C5E;&#x6027;&#x7684;&#x552F;&#x4E00;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x5360;&#x7528;&#x4E00;&#x70B9;&#x5185;&#x5B58;</span>
+    <span class="token keyword">private</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bigSize <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token operator">*</span><span class="token number">1024</span><span class="token operator">*</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token comment">// &#x5F15;&#x7528;</span>
+    <span class="token class-name">Object</span> reference <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
 
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        RefCountGC obj1 = <span class="hljs-keyword">new</span> RefCountGC();
-        RefCountGC obj2 = <span class="hljs-keyword">new</span> RefCountGC();
-        obj1.reference = obj2;
-        obj2.reference = obj1;
-        obj1 = <span class="hljs-keyword">null</span>;
-        obj2 = <span class="hljs-keyword">null</span>;
-        <span class="hljs-comment">// &#x663E;&#x793A;&#x7684;&#x6267;&#x884C;&#x5783;&#x573E;&#x6536;&#x96C6;&#x884C;&#x4E3A;&#xFF0C;&#x5224;&#x65AD;obj1 &#x548C; obj2&#x662F;&#x5426;&#x88AB;&#x56DE;&#x6536;&#xFF1F;</span>
-        System.gc();
-    }
-}
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">RefCountGC</span> obj1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RefCountGC</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">RefCountGC</span> obj2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RefCountGC</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        obj1<span class="token punctuation">.</span>reference <span class="token operator">=</span> obj2<span class="token punctuation">;</span>
+        obj2<span class="token punctuation">.</span>reference <span class="token operator">=</span> obj1<span class="token punctuation">;</span>
+        obj1 <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        obj2 <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x663E;&#x793A;&#x7684;&#x6267;&#x884C;&#x5783;&#x573E;&#x6536;&#x96C6;&#x884C;&#x4E3A;&#xFF0C;&#x5224;&#x65AD;obj1 &#x548C; obj2&#x662F;&#x5426;&#x88AB;&#x56DE;&#x6536;&#xFF1F;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">gc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;</p>
-<pre><code>[GC (System.gc()) [PSYoungGen: 15490K-&gt;808K(76288K)] 15490K-&gt;816K(251392K), 0.0061980 secs] [Times: user=0.00 sys=0.00, real=0.36 secs] 
+<pre class="language-"><code>[GC (System.gc()) [PSYoungGen: 15490K-&gt;808K(76288K)] 15490K-&gt;816K(251392K), 0.0061980 secs] [Times: user=0.00 sys=0.00, real=0.36 secs] 
 [Full GC (System.gc()) [PSYoungGen: 808K-&gt;0K(76288K)] [ParOldGen: 8K-&gt;672K(175104K)] 816K-&gt;672K(251392K), [Metaspace: 3479K-&gt;3479K(1056768K)], 0.0045983 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
 Heap
  PSYoungGen      total 76288K, used 655K [0x000000076b500000, 0x0000000770a00000, 0x00000007c0000000)
@@ -5849,9 +5866,9 @@ Heap
  Metaspace       used 3486K, capacity 4496K, committed 4864K, reserved 1056768K
   class space    used 385K, capacity 388K, committed 512K, reserved 1048576K
 </code></pre><p>&#x6211;&#x4EEC;&#x80FD;&#x591F;&#x770B;&#x5230;&#xFF0C;&#x4E0A;&#x8FF0;&#x8FDB;&#x884C;&#x4E86;GC&#x6536;&#x96C6;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x5C06;&#x4E0A;&#x8FF0;&#x7684;&#x65B0;&#x751F;&#x4EE3;&#x4E2D;&#x7684;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x90FD;&#x8FDB;&#x884C;&#x56DE;&#x6536;&#x4E86;</p>
-<pre><code>PSYoungGen: 15490K-&gt;808K(76288K)] 15490K-&gt;816K(251392K)
+<pre class="language-"><code>PSYoungGen: 15490K-&gt;808K(76288K)] 15490K-&gt;816K(251392K)
 </code></pre><p>&#x5982;&#x679C;&#x4F7F;&#x7528;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x7B97;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x5C06;&#x4F1A;&#x65E0;&#x6CD5;&#x56DE;&#x6536;&#x3002;&#x800C;&#x73B0;&#x5728;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x88AB;&#x56DE;&#x6536;&#x4E86;&#xFF0C;&#x8BF4;&#x660E;Java&#x4F7F;&#x7528;&#x7684;&#x4E0D;&#x662F;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x7B97;&#x6CD5;&#x6765;&#x8FDB;&#x884C;&#x6807;&#x8BB0;&#x7684;&#x3002;</p>
-<p><a href="images/image-20200712103230349.png" data-lightbox="f97c536a-47a6-4edc-b89a-f3503259e49c" data-title="image-20200712103230349"><img src="images/image-20200712103230349.png" alt="image-20200712103230349"></a></p>
+<p><a href="images/image-20200712103230349.png" data-lightbox="e397fa7f-86c8-401f-b168-8230a01ee8f1" data-title="image-20200712103230349"><img src="images/image-20200712103230349.png" alt="image-20200712103230349"></a></p>
 <h3 id="&#x5C0F;&#x7ED3;"><a name="&#x5C0F;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#&#x5C0F;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C0F;&#x7ED3;</h3>
 <p>&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x7B97;&#x6CD5;&#xFF0C;&#x662F;&#x5F88;&#x591A;&#x8BED;&#x8A00;&#x7684;&#x8D44;&#x6E90;&#x56DE;&#x6536;&#x9009;&#x62E9;&#xFF0C;&#x4F8B;&#x5982;&#x56E0;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x800C;&#x66F4;&#x52A0;&#x706B;&#x70ED;&#x7684;Python&#xFF0C;&#x5B83;&#x66F4;&#x662F;&#x540C;&#x65F6;&#x652F;&#x6301;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x548C;&#x5783;&#x573E;&#x6536;&#x96C6;&#x673A;&#x5236;&#x3002;</p>
 <p>&#x5177;&#x4F53;&#x54EA;&#x79CD;&#x6700;&#x4F18;&#x662F;&#x8981;&#x770B;&#x573A;&#x666F;&#x7684;&#xFF0C;&#x4E1A;&#x754C;&#x6709;&#x5927;&#x89C4;&#x6A21;&#x5B9E;&#x8DF5;&#x4E2D;&#x4EC5;&#x4FDD;&#x7559;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x673A;&#x5236;&#xFF0C;&#x4EE5;&#x63D0;&#x9AD8;&#x541E;&#x5410;&#x91CF;&#x7684;&#x5C1D;&#x8BD5;&#x3002;</p>
@@ -5874,9 +5891,9 @@ Heap
 <li>&#x5982;&#x679C;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5F15;&#x7528;&#x94FE;&#x76F8;&#x8FDE;&#xFF0C;&#x5219;&#x662F;&#x4E0D;&#x53EF;&#x8FBE;&#x7684;&#xFF0C;&#x5C31;&#x610F;&#x5473;&#x7740;&#x8BE5;&#x5BF9;&#x8C61;&#x5DF1;&#x7ECF;&#x6B7B;&#x4EA1;&#xFF0C;&#x53EF;&#x4EE5;&#x6807;&#x8BB0;&#x4E3A;&#x5783;&#x573E;&#x5BF9;&#x8C61;&#x3002;</li>
 <li>&#x5728;&#x53EF;&#x8FBE;&#x6027;&#x5206;&#x6790;&#x7B97;&#x6CD5;&#x4E2D;&#xFF0C;&#x53EA;&#x6709;&#x80FD;&#x591F;&#x88AB;&#x6839;&#x5BF9;&#x8C61;&#x96C6;&#x5408;&#x76F4;&#x63A5;&#x6216;&#x8005;&#x95F4;&#x63A5;&#x8FDE;&#x63A5;&#x7684;&#x5BF9;&#x8C61;&#x624D;&#x662F;&#x5B58;&#x6D3B;&#x5BF9;&#x8C61;&#x3002;</li>
 </ul>
-<p><a href="images/image-20200712104149246.png" data-lightbox="80e8312b-348f-4c87-970e-9fd60252988e" data-title="image-20200712104149246"><img src="images/image-20200712104149246.png" alt="image-20200712104149246"></a></p>
+<p><a href="images/image-20200712104149246.png" data-lightbox="62b81c82-34a9-4b8f-8a13-cdb9ee32cfea" data-title="image-20200712104149246"><img src="images/image-20200712104149246.png" alt="image-20200712104149246"></a></p>
 <p>&#x5B98;&#x573A;&#x4E0A;&#x7684;&#x88D9;&#x5E26;&#x5173;&#x7CFB;&#xFF0C;&#x53EF;&#x8FBE;&#x6027;&#x5206;&#x6790;&#x5728;&#x4EBA;&#x7C7B;&#x5173;&#x7CFB;&#x7F51;&#x4E2D;</p>
-<p><a href="images/image-20200712104312406.png" data-lightbox="8b1d76cd-bb33-45ae-b24c-4140f3b1effd" data-title="image-20200712104312406"><img src="images/image-20200712104312406.png" alt="image-20200712104312406"></a></p>
+<p><a href="images/image-20200712104312406.png" data-lightbox="3b756e93-b4c0-476a-9dd3-42afb27d5443" data-title="image-20200712104312406"><img src="images/image-20200712104312406.png" alt="image-20200712104312406"></a></p>
 <h3 id="gc-roots&#x53EF;&#x4EE5;&#x662F;&#x54EA;&#x4E9B;&#xFF1F;"><a name="gc-roots&#x53EF;&#x4EE5;&#x662F;&#x54EA;&#x4E9B;&#xFF1F;" class="anchor-navigation-ex-anchor" href="#gc-roots&#x53EF;&#x4EE5;&#x662F;&#x54EA;&#x4E9B;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>GC Roots&#x53EF;&#x4EE5;&#x662F;&#x54EA;&#x4E9B;&#xFF1F;</h3>
 <ul>
 <li>&#x865A;&#x62DF;&#x673A;&#x6808;&#x4E2D;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;<ul>
@@ -5898,7 +5915,7 @@ Heap
 </li>
 <li>&#x53CD;&#x6620;java&#x865A;&#x62DF;&#x673A;&#x5185;&#x90E8;&#x60C5;&#x51B5;&#x7684;JMXBean&#x3001;JVMTI&#x4E2D;&#x6CE8;&#x518C;&#x7684;&#x56DE;&#x8C03;&#x3001;&#x672C;&#x5730;&#x4EE3;&#x7801;&#x7F13;&#x5B58;&#x7B49;&#x3002;</li>
 </ul>
-<p><a href="images/image-20200712104622677.png" data-lightbox="972fc25f-92a5-4359-8a7b-00349807fcac" data-title="image-20200712104622677"><img src="images/image-20200712104622677.png" alt="image-20200712104622677"></a></p>
+<p><a href="images/image-20200712104622677.png" data-lightbox="47195074-2621-4c6c-becc-c2a9f0eea29e" data-title="image-20200712104622677"><img src="images/image-20200712104622677.png" alt="image-20200712104622677"></a></p>
 <h4 id="&#x603B;&#x7ED3;"><a name="&#x603B;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x603B;&#x7ED3;</h4>
 <p>&#x603B;&#x7ED3;&#x4E00;&#x53E5;&#x8BDD;&#x5C31;&#x662F;&#xFF0C;&#x9664;&#x4E86;&#x5806;&#x7A7A;&#x95F4;&#x5916;&#x7684;&#x4E00;&#x4E9B;&#x7ED3;&#x6784;&#xFF0C;&#x6BD4;&#x5982; &#x865A;&#x62DF;&#x673A;&#x6808;&#x3001;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#x3001;&#x65B9;&#x6CD5;&#x533A;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#x6C60; &#x7B49;&#x5730;&#x65B9;&#x5BF9;&#x5806;&#x7A7A;&#x95F4;&#x8FDB;&#x884C;&#x5F15;&#x7528;&#x7684;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;GC Roots&#x8FDB;&#x884C;&#x53EF;&#x8FBE;&#x6027;&#x5206;&#x6790;</p>
 <p>&#x9664;&#x4E86;&#x8FD9;&#x4E9B;&#x56FA;&#x5B9A;&#x7684;GC Roots&#x96C6;&#x5408;&#x4EE5;&#x5916;&#xFF0C;&#x6839;&#x636E;&#x7528;&#x6237;&#x6240;&#x9009;&#x7528;&#x7684;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x4EE5;&#x53CA;&#x5F53;&#x524D;&#x56DE;&#x6536;&#x7684;&#x5185;&#x5B58;&#x533A;&#x57DF;&#x4E0D;&#x540C;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x6709;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x201C;&#x4E34;&#x65F6;&#x6027;&#x201D;&#x5730;&#x52A0;&#x5165;&#xFF0C;&#x5171;&#x540C;&#x6784;&#x6210;&#x5B8C;&#x6574;GC Roots&#x96C6;&#x5408;&#x3002;&#x6BD4;&#x5982;&#xFF1A;&#x5206;&#x4EE3;&#x6536;&#x96C6;&#x548C;&#x5C40;&#x90E8;&#x56DE;&#x6536;&#xFF08;PartialGC&#xFF09;&#x3002;</p>
@@ -5946,57 +5963,57 @@ Heap
 </ul>
 </li>
 </ul>
-<p><a href="images/image-20200712110411885.png" data-lightbox="71b6ded4-daa2-486d-978a-fc108e1f97c6" data-title="image-20200712110411885"><img src="images/image-20200712110411885.png" alt="image-20200712110411885"></a></p>
+<p><a href="images/image-20200712110411885.png" data-lightbox="f71782eb-f13e-4b45-8a06-d755e7f75321" data-title="image-20200712110411885"><img src="images/image-20200712110411885.png" alt="image-20200712110411885"></a></p>
 <p>&#x4E0A;&#x56FE;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x7684;Finalizer&#x7EBF;&#x7A0B;</p>
 <h3 id="&#x4EE3;&#x7801;&#x6F14;&#x793A;"><a name="&#x4EE3;&#x7801;&#x6F14;&#x793A;" class="anchor-navigation-ex-anchor" href="#&#x4EE3;&#x7801;&#x6F14;&#x793A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EE3;&#x7801;&#x6F14;&#x793A;</h3>
 <p>&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x91CD;&#x5199; finalize()&#x65B9;&#x6CD5;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x65B9;&#x6CD5;&#x7684;&#x5185;&#x90E8;&#xFF0C;&#x91CD;&#x5199;&#x5C06;&#x5176;&#x5B58;&#x653E;&#x5230;GC Roots&#x4E2D;</p>
-<pre><code class="lang-java"><span class="hljs-comment">/**
+<pre class="language-"><code class="lang-java"><span class="token comment">/**
  * &#x6D4B;&#x8BD5;Object&#x7C7B;&#x4E2D;finalize()&#x65B9;&#x6CD5;
  * &#x5BF9;&#x8C61;&#x590D;&#x6D3B;&#x573A;&#x666F;
  *
- * <span class="hljs-doctag">@author</span>: Victor
- * <span class="hljs-doctag">@create</span>: 2020-07-12-11:06
+ * @author: Victor
+ * @create: 2020-07-12-11:06
  */</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CanReliveObj</span> </span>{
-    <span class="hljs-comment">// &#x7C7B;&#x53D8;&#x91CF;&#xFF0C;&#x5C5E;&#x4E8E;GC Roots&#x7684;&#x4E00;&#x90E8;&#x5206;</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> CanReliveObj canReliveObj;
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CanReliveObj</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x7C7B;&#x53D8;&#x91CF;&#xFF0C;&#x5C5E;&#x4E8E;GC Roots&#x7684;&#x4E00;&#x90E8;&#x5206;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">CanReliveObj</span> canReliveObj<span class="token punctuation">;</span>
 
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">finalize</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Throwable </span>{
-        <span class="hljs-keyword">super</span>.finalize();
-        System.out.println(<span class="hljs-string">&quot;&#x8C03;&#x7528;&#x5F53;&#x524D;&#x7C7B;&#x91CD;&#x5199;&#x7684;finalize()&#x65B9;&#x6CD5;&quot;</span>);
-        canReliveObj = <span class="hljs-keyword">this</span>;
-    }
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">finalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Throwable</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">finalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&#x8C03;&#x7528;&#x5F53;&#x524D;&#x7C7B;&#x91CD;&#x5199;&#x7684;finalize()&#x65B9;&#x6CD5;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        canReliveObj <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> InterruptedException </span>{
-        canReliveObj = <span class="hljs-keyword">new</span> CanReliveObj();
-        canReliveObj = <span class="hljs-keyword">null</span>;
-        System.gc();
-        System.out.println(<span class="hljs-string">&quot;-----------------&#x7B2C;&#x4E00;&#x6B21;gc&#x64CD;&#x4F5C;------------&quot;</span>);
-        <span class="hljs-comment">// &#x56E0;&#x4E3A;Finalizer&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x6BD4;&#x8F83;&#x4F4E;&#xFF0C;&#x6682;&#x505C;2&#x79D2;&#xFF0C;&#x4EE5;&#x7B49;&#x5F85;&#x5B83;</span>
-        Thread.sleep(<span class="hljs-number">2000</span>);
-        <span class="hljs-keyword">if</span> (canReliveObj == <span class="hljs-keyword">null</span>) {
-            System.out.println(<span class="hljs-string">&quot;obj is dead&quot;</span>);
-        } <span class="hljs-keyword">else</span> {
-            System.out.println(<span class="hljs-string">&quot;obj is still alive&quot;</span>);
-        }
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">InterruptedException</span> <span class="token punctuation">{</span>
+        canReliveObj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CanReliveObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        canReliveObj <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">gc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;-----------------&#x7B2C;&#x4E00;&#x6B21;gc&#x64CD;&#x4F5C;------------&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x56E0;&#x4E3A;Finalizer&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x6BD4;&#x8F83;&#x4F4E;&#xFF0C;&#x6682;&#x505C;2&#x79D2;&#xFF0C;&#x4EE5;&#x7B49;&#x5F85;&#x5B83;</span>
+        <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>canReliveObj <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;obj is dead&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;obj is still alive&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        System.out.println(<span class="hljs-string">&quot;-----------------&#x7B2C;&#x4E8C;&#x6B21;gc&#x64CD;&#x4F5C;------------&quot;</span>);
-        canReliveObj = <span class="hljs-keyword">null</span>;
-        System.gc();
-        <span class="hljs-comment">// &#x4E0B;&#x9762;&#x4EE3;&#x7801;&#x548C;&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x4F46;&#x662F; canReliveObj&#x5374;&#x81EA;&#x6551;&#x5931;&#x8D25;&#x4E86;</span>
-        Thread.sleep(<span class="hljs-number">2000</span>);
-        <span class="hljs-keyword">if</span> (canReliveObj == <span class="hljs-keyword">null</span>) {
-            System.out.println(<span class="hljs-string">&quot;obj is dead&quot;</span>);
-        } <span class="hljs-keyword">else</span> {
-            System.out.println(<span class="hljs-string">&quot;obj is still alive&quot;</span>);
-        }
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;-----------------&#x7B2C;&#x4E8C;&#x6B21;gc&#x64CD;&#x4F5C;------------&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        canReliveObj <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">gc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x4E0B;&#x9762;&#x4EE3;&#x7801;&#x548C;&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x4F46;&#x662F; canReliveObj&#x5374;&#x81EA;&#x6551;&#x5931;&#x8D25;&#x4E86;</span>
+        <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>canReliveObj <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;obj is dead&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;obj is still alive&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-    }
-}
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x6700;&#x540E;&#x8FD0;&#x884C;&#x7ED3;&#x679C;</p>
-<pre><code>-----------------&#x7B2C;&#x4E00;&#x6B21;gc&#x64CD;&#x4F5C;------------
+<pre class="language-"><code>-----------------&#x7B2C;&#x4E00;&#x6B21;gc&#x64CD;&#x4F5C;------------
 &#x8C03;&#x7528;&#x5F53;&#x524D;&#x7C7B;&#x91CD;&#x5199;&#x7684;finalize()&#x65B9;&#x6CD5;
 obj is still alive
 -----------------&#x7B2C;&#x4E8C;&#x6B21;gc&#x64CD;&#x4F5C;------------
@@ -6008,7 +6025,7 @@ obj is dead
 <p>MAT&#x662F;&#x57FA;&#x4E8E;Eclipse&#x5F00;&#x53D1;&#x7684;&#xFF0C;&#x662F;&#x4E00;&#x6B3E;&#x514D;&#x8D39;&#x7684;&#x6027;&#x80FD;&#x5206;&#x6790;&#x5DE5;&#x5177;&#x3002;</p>
 <p>&#x5927;&#x5BB6;&#x53EF;&#x4EE5;&#x5728;<a href="http://www.eclipse.org/mat/&#x4E0B;&#x8F7D;&#x5E76;&#x4F7F;&#x7528;MAT" target="_blank">http://www.eclipse.org/mat/&#x4E0B;&#x8F7D;&#x5E76;&#x4F7F;&#x7528;MAT</a></p>
 <h3 id="&#x547D;&#x4EE4;&#x884C;&#x4F7F;&#x7528;-jmap"><a name="&#x547D;&#x4EE4;&#x884C;&#x4F7F;&#x7528;-jmap" class="anchor-navigation-ex-anchor" href="#&#x547D;&#x4EE4;&#x884C;&#x4F7F;&#x7528;-jmap"><i class="fa fa-link" aria-hidden="true"></i></a>&#x547D;&#x4EE4;&#x884C;&#x4F7F;&#x7528; jmap</h3>
-<p><a href="images/image-20200712112026317.png" data-lightbox="79efb2e4-22b1-47f2-9b58-304284ed342e" data-title="image-20200712112026317"><img src="images/image-20200712112026317.png" alt="image-20200712112026317"></a></p>
+<p><a href="images/image-20200712112026317.png" data-lightbox="87e359bf-3f5b-4663-b7ba-af70fc28fec7" data-title="image-20200712112026317"><img src="images/image-20200712112026317.png" alt="image-20200712112026317"></a></p>
 <h3 id="&#x4F7F;&#x7528;jvisualvm"><a name="&#x4F7F;&#x7528;jvisualvm" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;jvisualvm"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;JVIsualVM</h3>
 <p>&#x6355;&#x83B7;&#x7684;heap dump&#x6587;&#x4EF6;&#x662F;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#xFF0C;&#x5173;&#x95ED;JVisualVM&#x540E;&#x81EA;&#x52A8;&#x5220;&#x9664;&#xFF0C;&#x82E5;&#x8981;&#x4FDD;&#x7559;&#xFF0C;&#x9700;&#x8981;&#x5C06;&#x5176;&#x53E6;&#x5B58;&#x4E3A;&#x6587;&#x4EF6;&#x3002;&#x53EF;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x65B9;&#x6CD5;&#x6355;&#x83B7;heap dump&#xFF1A;</p>
 <p>&#x5728;&#x5DE6;&#x4FA7;&#x201C;Application&quot;&#xFF08;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF09;&#x5B50;&#x7A97;&#x53E3;&#x4E2D;&#x53F3;&#x51FB;&#x76F8;&#x5E94;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x9009;&#x62E9;Heap Dump&#xFF08;&#x5806;Dump&#xFF09;&#x3002;</p>
@@ -6016,44 +6033,44 @@ obj is dead
 <p>&#x53F3;&#x51FB;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#x9009;&#x62E9;save as&#xFF08;&#x53E6;&#x5B58;&#x4E3A;&#xFF09;&#x5373;&#x53EF;&#x5C06;heap dump&#x4FDD;&#x5B58;&#x5230;&#x672C;&#x5730;&#x3002;</p>
 <h3 id="&#x4F7F;&#x7528;mat&#x6253;&#x5F00;dump&#x6587;&#x4EF6;"><a name="&#x4F7F;&#x7528;mat&#x6253;&#x5F00;dump&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;mat&#x6253;&#x5F00;dump&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;MAT&#x6253;&#x5F00;Dump&#x6587;&#x4EF6;</h3>
 <p>&#x6253;&#x5F00;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6709;&#x54EA;&#x4E9B;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;GC Roots&#x7684;&#x5BF9;&#x8C61;</p>
-<p><a href="images/image-20200712112512720.png" data-lightbox="7f2a29cd-a6dc-403a-b2ea-0155d2e34e98" data-title="image-20200712112512720"><img src="images/image-20200712112512720.png" alt="image-20200712112512720"></a></p>
+<p><a href="images/image-20200712112512720.png" data-lightbox="37144291-7548-468e-9ae6-5a25871cd9b0" data-title="image-20200712112512720"><img src="images/image-20200712112512720.png" alt="image-20200712112512720"></a></p>
 <p>&#x91CC;&#x9762;&#x6211;&#x4EEC;&#x80FD;&#x591F;&#x770B;&#x5230;&#x6709;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;Java&#x7C7B;&#xFF0C;&#x7136;&#x540E;Thread&#x7EBF;&#x7A0B;&#x3002;</p>
 <h3 id="jprofiler&#x7684;gc-roots&#x6EAF;&#x6E90;"><a name="jprofiler&#x7684;gc-roots&#x6EAF;&#x6E90;" class="anchor-navigation-ex-anchor" href="#jprofiler&#x7684;gc-roots&#x6EAF;&#x6E90;"><i class="fa fa-link" aria-hidden="true"></i></a>JProfiler&#x7684;GC Roots&#x6EAF;&#x6E90;</h3>
 <p>&#x6211;&#x4EEC;&#x5728;&#x5B9E;&#x9645;&#x7684;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x4E00;&#x822C;&#x4E0D;&#x4F1A;&#x67E5;&#x627E;&#x5168;&#x90E8;&#x7684;GC Roots&#xFF0C;&#x53EF;&#x80FD;&#x53EA;&#x662F;&#x67E5;&#x627E;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x6574;&#x4E2A;&#x94FE;&#x8DEF;&#xFF0C;&#x6216;&#x8005;&#x79F0;&#x4E3A;GC Roots&#x6EAF;&#x6E90;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;JProfiler</p>
-<p><a href="images/image-20200712113256075.png" data-lightbox="0135f571-4580-4c92-8bbb-77e00d3ce133" data-title="image-20200712113256075"><img src="images/image-20200712113256075.png" alt="image-20200712113256075"></a></p>
+<p><a href="images/image-20200712113256075.png" data-lightbox="fddd4a85-68e9-423b-b956-0e4619a20e05" data-title="image-20200712113256075"><img src="images/image-20200712113256075.png" alt="image-20200712113256075"></a></p>
 <h3 id="&#x5982;&#x4F55;&#x5224;&#x65AD;&#x4EC0;&#x4E48;&#x539F;&#x56E0;&#x9020;&#x6210;oom"><a name="&#x5982;&#x4F55;&#x5224;&#x65AD;&#x4EC0;&#x4E48;&#x539F;&#x56E0;&#x9020;&#x6210;oom" class="anchor-navigation-ex-anchor" href="#&#x5982;&#x4F55;&#x5224;&#x65AD;&#x4EC0;&#x4E48;&#x539F;&#x56E0;&#x9020;&#x6210;oom"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5982;&#x4F55;&#x5224;&#x65AD;&#x4EC0;&#x4E48;&#x539F;&#x56E0;&#x9020;&#x6210;OOM</h3>
 <p>&#x5F53;&#x6211;&#x4EEC;&#x7A0B;&#x5E8F;&#x51FA;&#x73B0;OOM&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x6392;&#x67E5;&#xFF0C;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x8FDB;&#x884C;&#x8BF4;&#x660E;</p>
-<pre><code class="lang-java"><span class="hljs-comment">/**
+<pre class="language-"><code class="lang-java"><span class="token comment">/**
  * &#x5185;&#x5B58;&#x6EA2;&#x51FA;&#x6392;&#x67E5;
  * -Xms8m -Xmx8m -XX:HeapDumpOnOutOfMemoryError
- * <span class="hljs-doctag">@author</span>: Victor
- * <span class="hljs-doctag">@create</span>: 2020-07-12-14:56
+ * @author: Victor
+ * @create: 2020-07-12-14:56
  */</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HeapOOM</span> </span>{
-    <span class="hljs-comment">// &#x521B;&#x5EFA;1M&#x7684;&#x6587;&#x4EF6;</span>
-    <span class="hljs-keyword">byte</span> [] buffer = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">1</span> * <span class="hljs-number">1024</span> * <span class="hljs-number">1024</span>];
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HeapOOM</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x521B;&#x5EFA;1M&#x7684;&#x6587;&#x4EF6;</span>
+    <span class="token keyword">byte</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token operator">*</span> <span class="token number">1024</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        ArrayList&lt;HeapOOM&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
-        <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;
-        <span class="hljs-keyword">try</span> {
-            <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) {
-                list.add(<span class="hljs-keyword">new</span> HeapOOM());
-                count++;
-            }
-        } <span class="hljs-keyword">catch</span> (Exception e) {
-            e.getStackTrace();
-            System.out.println(<span class="hljs-string">&quot;count:&quot;</span> + count);
-        }
-    }
-}
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">HeapOOM</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">HeapOOM</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                count<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">getStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;count:&quot;</span> <span class="token operator">+</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x5C31;&#x662F;&#x4E0D;&#x65AD;&#x7684;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;1M&#x5C0F;&#x5B57;&#x8282;&#x6570;&#x7EC4;&#xFF0C;&#x7136;&#x540E;&#x8BA9;&#x5185;&#x5B58;&#x6EA2;&#x51FA;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x9650;&#x5236;&#x4E00;&#x4E0B;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF0C;&#x540C;&#x65F6;&#x4F7F;&#x7528;HeapDumpOnOutOfMemoryError&#x5C06;&#x51FA;&#x9519;&#x65F6;&#x5019;&#x7684;dump&#x6587;&#x4EF6;&#x8F93;&#x51FA;</p>
-<pre><code>-Xms8m -Xmx8m -XX:HeapDumpOnOutOfMemoryError
+<pre class="language-"><code>-Xms8m -Xmx8m -XX:HeapDumpOnOutOfMemoryError
 </code></pre><p>&#x6211;&#x4EEC;&#x5C06;&#x751F;&#x6210;&#x7684;dump&#x6587;&#x4EF6;&#x6253;&#x5F00;&#xFF0C;&#x7136;&#x540E;&#x70B9;&#x51FB;Biggest Objects&#x5C31;&#x80FD;&#x591F;&#x770B;&#x5230;&#x8D85;&#x5927;&#x5BF9;&#x8C61;</p>
-<p><a href="images/image-20200712150229048.png" data-lightbox="60ffaf67-23d3-4b6c-907f-f46e1a2e9e6d" data-title="image-20200712150229048"><img src="images/image-20200712150229048.png" alt="image-20200712150229048"></a></p>
+<p><a href="images/image-20200712150229048.png" data-lightbox="37bb434c-bcb6-431f-b3e1-a47740089ea5" data-title="image-20200712150229048"><img src="images/image-20200712150229048.png" alt="image-20200712150229048"></a></p>
 <p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x7EBF;&#x7A0B;&#xFF0C;&#x8FD8;&#x80FD;&#x591F;&#x5B9A;&#x4F4D;&#x5230;&#x54EA;&#x91CC;&#x51FA;&#x73B0;OOM</p>
-<p><a href="images/image-20200712150303710.png" data-lightbox="6b635373-977d-478f-bb1b-0f44927310fe" data-title="image-20200712150303710"><img src="images/image-20200712150303710.png" alt="image-20200712150303710"></a></p>
+<p><a href="images/image-20200712150303710.png" data-lightbox="82ecbf0a-64d1-4856-948a-00ee44bd10bd" data-title="image-20200712150303710"><img src="images/image-20200712150303710.png" alt="image-20200712150303710"></a></p>
 <h2 id="&#x6E05;&#x9664;&#x9636;&#x6BB5;&#xFF1A;&#x6807;&#x8BB0;-&#x6E05;&#x9664;&#x7B97;&#x6CD5;"><a name="&#x6E05;&#x9664;&#x9636;&#x6BB5;&#xFF1A;&#x6807;&#x8BB0;-&#x6E05;&#x9664;&#x7B97;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x6E05;&#x9664;&#x9636;&#x6BB5;&#xFF1A;&#x6807;&#x8BB0;-&#x6E05;&#x9664;&#x7B97;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6E05;&#x9664;&#x9636;&#x6BB5;&#xFF1A;&#x6807;&#x8BB0;-&#x6E05;&#x9664;&#x7B97;&#x6CD5;</h2>
 <p>&#x5F53;&#x6210;&#x529F;&#x533A;&#x5206;&#x51FA;&#x5185;&#x5B58;&#x4E2D;&#x5B58;&#x6D3B;&#x5BF9;&#x8C61;&#x548C;&#x6B7B;&#x4EA1;&#x5BF9;&#x8C61;&#x540E;&#xFF0C;GC&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x4EFB;&#x52A1;&#x5C31;&#x662F;&#x6267;&#x884C;&#x5783;&#x573E;&#x56DE;&#x6536;&#xFF0C;&#x91CA;&#x653E;&#x6389;&#x65E0;&#x7528;&#x5BF9;&#x8C61;&#x6240;&#x5360;&#x7528;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#xFF0C;&#x4EE5;&#x4FBF;&#x6709;&#x8DB3;&#x591F;&#x7684;&#x53EF;&#x7528;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x4E3A;&#x65B0;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x5185;&#x5B58;&#x3002;&#x76EE;&#x524D;&#x5728;JVM&#x4E2D;&#x6BD4;&#x8F83;&#x5E38;&#x89C1;&#x7684;&#x4E09;&#x79CD;&#x5783;&#x573E;&#x6536;&#x96C6;&#x7B97;&#x6CD5;&#x662F;</p>
 <ul>
@@ -6071,7 +6088,7 @@ obj is dead
 </li>
 <li><strong>&#x6E05;&#x9664;</strong>&#xFF1A;Collector&#x5BF9;&#x5806;&#x5185;&#x5B58;&#x4ECE;&#x5934;&#x5230;&#x5C3E;&#x8FDB;&#x884C;&#x7EBF;&#x6027;&#x7684;&#x904D;&#x5386;&#xFF0C;&#x5982;&#x679C;&#x53D1;&#x73B0;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x5728;&#x5176;Header&#x4E2D;&#x6CA1;&#x6709;&#x6807;&#x8BB0;&#x4E3A;&#x53EF;&#x8FBE;&#x5BF9;&#x8C61;&#xFF0C;&#x5219;&#x5C06;&#x5176;&#x56DE;&#x6536;</li>
 </ul>
-<p><a href="images/image-20200712150935078.png" data-lightbox="31e92c41-d44f-461a-bf19-98927366d545" data-title="image-20200712150935078"><img src="images/image-20200712150935078.png" alt="image-20200712150935078"></a></p>
+<p><a href="images/image-20200712150935078.png" data-lightbox="2f60c4e3-2a7d-48af-a7cd-73ef1930e595" data-title="image-20200712150935078"><img src="images/image-20200712150935078.png" alt="image-20200712150935078"></a></p>
 <h3 id="&#x4EC0;&#x4E48;&#x662F;&#x6E05;&#x9664;&#xFF1F;"><a name="&#x4EC0;&#x4E48;&#x662F;&#x6E05;&#x9664;&#xFF1F;" class="anchor-navigation-ex-anchor" href="#&#x4EC0;&#x4E48;&#x662F;&#x6E05;&#x9664;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EC0;&#x4E48;&#x662F;&#x6E05;&#x9664;&#xFF1F;</h3>
 <p>&#x8FD9;&#x91CC;&#x6240;&#x8C13;&#x7684;&#x6E05;&#x9664;&#x5E76;&#x4E0D;&#x662F;&#x771F;&#x7684;&#x7F6E;&#x7A7A;&#xFF0C;&#x800C;&#x662F;&#x628A;&#x9700;&#x8981;&#x6E05;&#x9664;&#x7684;&#x5BF9;&#x8C61;&#x5730;&#x5740;&#x4FDD;&#x5B58;&#x5728;&#x7A7A;&#x95F2;&#x7684;&#x5730;&#x5740;&#x5217;&#x8868;&#x91CC;&#x3002;&#x4E0B;&#x6B21;&#x6709;&#x65B0;&#x5BF9;&#x8C61;&#x9700;&#x8981;&#x52A0;&#x8F7D;&#x65F6;&#xFF0C;&#x5224;&#x65AD;&#x5783;&#x573E;&#x7684;&#x4F4D;&#x7F6E;&#x7A7A;&#x95F4;&#x662F;&#x5426;&#x591F;&#xFF0C;&#x5982;&#x679C;&#x591F;&#xFF0C;&#x5C31;&#x5B58;&#x653E;&#x8986;&#x76D6;&#x539F;&#x6709;&#x7684;&#x5730;&#x5740;&#x3002;</p>
 <p>&#x5173;&#x4E8E;&#x7A7A;&#x95F2;&#x5217;&#x8868;&#x662F;&#x5728;&#x4E3A;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x5185;&#x5B58;&#x7684;&#x65F6;&#x5019; &#x63D0;&#x8FC7;</p>
@@ -6097,9 +6114,9 @@ obj is dead
 <p>&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x6807;&#x8BB0;-&#x6E05;&#x9664;&#x7B97;&#x6CD5;&#x5728;&#x5783;&#x573E;&#x6536;&#x96C6;&#x6548;&#x7387;&#x65B9;&#x9762;&#x7684;&#x7F3A;&#x9677;&#xFF0C;M.L.Minsky&#x4E8E;1963&#x5E74;&#x53D1;&#x8868;&#x4E86;&#x8457;&#x540D;&#x7684;&#x8BBA;&#x6587;&#xFF0C;&#x201C;&#x4F7F;&#x7528;&#x53CC;&#x5B58;&#x50A8;&#x533A;&#x7684;Lisp&#x8BED;&#x8A00;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;CA LISP Garbage Collector Algorithm Using Serial Secondary Storage&#xFF09;&#x201D;&#x3002;M.L.Minsky&#x5728;&#x8BE5;&#x8BBA;&#x6587;&#x4E2D;&#x63CF;&#x8FF0;&#x7684;&#x7B97;&#x6CD5;&#x88AB;&#x4EBA;&#x4EEC;&#x79F0;&#x4E3A;&#x590D;&#x5236;&#xFF08;Copying&#xFF09;&#x7B97;&#x6CD5;&#xFF0C;&#x5B83;&#x4E5F;&#x88AB;M.L.Minsky&#x672C;&#x4EBA;&#x6210;&#x529F;&#x5730;&#x5F15;&#x5165;&#x5230;&#x4E86;Lisp&#x8BED;&#x8A00;&#x7684;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x7248;&#x672C;&#x4E2D;&#x3002;</p>
 <h3 id="&#x6838;&#x5FC3;&#x601D;&#x60F3;"><a name="&#x6838;&#x5FC3;&#x601D;&#x60F3;" class="anchor-navigation-ex-anchor" href="#&#x6838;&#x5FC3;&#x601D;&#x60F3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6838;&#x5FC3;&#x601D;&#x60F3;</h3>
 <p>&#x5C06;&#x6D3B;&#x7740;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x5206;&#x4E3A;&#x4E24;&#x5757;&#xFF0C;&#x6BCF;&#x6B21;&#x53EA;&#x4F7F;&#x7528;&#x5176;&#x4E2D;&#x4E00;&#x5757;&#xFF0C;&#x5728;&#x5783;&#x573E;&#x56DE;&#x6536;&#x65F6;&#x5C06;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5B58;&#x6D3B;&#x5BF9;&#x8C61;&#x590D;&#x5236;&#x5230;&#x672A;&#x88AB;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5757;&#x4E2D;&#xFF0C;&#x4E4B;&#x540E;&#x6E05;&#x9664;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5757;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#xFF0C;&#x4EA4;&#x6362;&#x4E24;&#x4E2A;&#x5185;&#x5B58;&#x7684;&#x89D2;&#x8272;&#xFF0C;&#x6700;&#x540E;&#x5B8C;&#x6210;&#x5783;&#x573E;&#x56DE;&#x6536;</p>
-<p><a href="images/image-20200712151916991.png" data-lightbox="de2ab66b-2fb6-4e3b-82c6-25f1f6525cba" data-title="image-20200712151916991"><img src="images/image-20200712151916991.png" alt="image-20200712151916991"></a></p>
+<p><a href="images/image-20200712151916991.png" data-lightbox="e6195d5b-552b-4a8d-8b01-7f3b8755e0eb" data-title="image-20200712151916991"><img src="images/image-20200712151916991.png" alt="image-20200712151916991"></a></p>
 <p>&#x628A;&#x53EF;&#x8FBE;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x76F4;&#x63A5;&#x590D;&#x5236;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x533A;&#x57DF;&#x4E2D;&#x590D;&#x5236;&#x5B8C;&#x6210;&#x540E;&#xFF0C;A&#x533A;&#x5C31;&#x6CA1;&#x6709;&#x7528;&#x4E86;&#xFF0C;&#x91CC;&#x9762;&#x7684;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x6E05;&#x9664;&#x6389;&#xFF0C;&#x5176;&#x5B9E;&#x91CC;&#x9762;&#x7684;&#x65B0;&#x751F;&#x4EE3;&#x91CC;&#x9762;&#x5C31;&#x7528;&#x5230;&#x4E86;&#x590D;&#x5236;&#x7B97;&#x6CD5;</p>
-<p><a href="images/image-20200712152029615.png" data-lightbox="e5232e89-3b2a-44f4-bfb0-40d31b771623" data-title="image-20200712152029615"><img src="images/image-20200712152029615.png" alt="image-20200712152029615"></a></p>
+<p><a href="images/image-20200712152029615.png" data-lightbox="277e2205-942e-49ef-b511-a0c692539ad8" data-title="image-20200712152029615"><img src="images/image-20200712152029615.png" alt="image-20200712152029615"></a></p>
 <h3 id="&#x4F18;&#x70B9;"><a name="&#x4F18;&#x70B9;" class="anchor-navigation-ex-anchor" href="#&#x4F18;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F18;&#x70B9;</h3>
 <ul>
 <li>&#x6CA1;&#x6709;&#x6807;&#x8BB0;&#x548C;&#x6E05;&#x9664;&#x8FC7;&#x7A0B;&#xFF0C;&#x5B9E;&#x73B0;&#x7B80;&#x5355;&#xFF0C;&#x8FD0;&#x884C;&#x9AD8;&#x6548;</li>
@@ -6113,7 +6130,7 @@ obj is dead
 <h3 id="&#x6CE8;&#x610F;_2"><a name="&#x6CE8;&#x610F;_2" class="anchor-navigation-ex-anchor" href="#&#x6CE8;&#x610F;_2"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6CE8;&#x610F;</h3>
 <p>&#x5982;&#x679C;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x5783;&#x573E;&#x5BF9;&#x8C61;&#x5F88;&#x591A;&#xFF0C;&#x590D;&#x5236;&#x7B97;&#x6CD5;&#x9700;&#x8981;&#x590D;&#x5236;&#x7684;&#x5B58;&#x6D3B;&#x5BF9;&#x8C61;&#x6570;&#x91CF;&#x5E76;&#x4E0D;&#x4F1A;&#x592A;&#x5927;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#x975E;&#x5E38;&#x4F4E;&#x624D;&#x884C;&#xFF08;&#x8001;&#x5E74;&#x4EE3;&#x5927;&#x91CF;&#x7684;&#x5BF9;&#x8C61;&#x5B58;&#x6D3B;&#xFF0C;&#x90A3;&#x4E48;&#x590D;&#x5236;&#x7684;&#x5BF9;&#x8C61;&#x5C06;&#x4F1A;&#x6709;&#x5F88;&#x591A;&#xFF0C;&#x6548;&#x7387;&#x4F1A;&#x5F88;&#x4F4E;&#xFF09;</p>
 <p>&#x5728;&#x65B0;&#x751F;&#x4EE3;&#xFF0C;&#x5BF9;&#x5E38;&#x89C4;&#x5E94;&#x7528;&#x7684;&#x5783;&#x573E;&#x56DE;&#x6536;&#xFF0C;&#x4E00;&#x6B21;&#x901A;&#x5E38;&#x53EF;&#x4EE5;&#x56DE;&#x6536;70% - 99% &#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x3002;&#x56DE;&#x6536;&#x6027;&#x4EF7;&#x6BD4;&#x5F88;&#x9AD8;&#x3002;&#x6240;&#x4EE5;&#x73B0;&#x5728;&#x7684;&#x5546;&#x4E1A;&#x865A;&#x62DF;&#x673A;&#x90FD;&#x662F;&#x7528;&#x8FD9;&#x79CD;&#x6536;&#x96C6;&#x7B97;&#x6CD5;&#x56DE;&#x6536;&#x65B0;&#x751F;&#x4EE3;&#x3002;</p>
-<p><a href="images/image-20200712152847218.png" data-lightbox="cc9a8e2c-6d32-4d57-8aed-1074946be7b7" data-title="image-20200712152847218"><img src="images/image-20200712152847218.png" alt="image-20200712152847218"></a></p>
+<p><a href="images/image-20200712152847218.png" data-lightbox="17aa4bf5-6b89-4b02-8c1c-b20a62b0f7d7" data-title="image-20200712152847218"><img src="images/image-20200712152847218.png" alt="image-20200712152847218"></a></p>
 <h2 id="&#x6E05;&#x9664;&#x9636;&#x6BB5;&#xFF1A;&#x6807;&#x8BB0;-&#x6574;&#x7406;&#x7B97;&#x6CD5;"><a name="&#x6E05;&#x9664;&#x9636;&#x6BB5;&#xFF1A;&#x6807;&#x8BB0;-&#x6574;&#x7406;&#x7B97;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x6E05;&#x9664;&#x9636;&#x6BB5;&#xFF1A;&#x6807;&#x8BB0;-&#x6574;&#x7406;&#x7B97;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6E05;&#x9664;&#x9636;&#x6BB5;&#xFF1A;&#x6807;&#x8BB0;-&#x6574;&#x7406;&#x7B97;&#x6CD5;</h2>
 <h3 id="&#x80CC;&#x666F;_1"><a name="&#x80CC;&#x666F;_1" class="anchor-navigation-ex-anchor" href="#&#x80CC;&#x666F;_1"><i class="fa fa-link" aria-hidden="true"></i></a>&#x80CC;&#x666F;</h3>
 <p>&#x590D;&#x5236;&#x7B97;&#x6CD5;&#x7684;&#x9AD8;&#x6548;&#x6027;&#x662F;&#x5EFA;&#x7ACB;&#x5728;&#x5B58;&#x6D3B;&#x5BF9;&#x8C61;&#x5C11;&#x3001;&#x5783;&#x573E;&#x5BF9;&#x8C61;&#x591A;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#x7684;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x5728;&#x65B0;&#x751F;&#x4EE3;&#x7ECF;&#x5E38;&#x53D1;&#x751F;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x8001;&#x5E74;&#x4EE3;&#xFF0C;&#x66F4;&#x5E38;&#x89C1;&#x7684;&#x60C5;&#x51B5;&#x662F;&#x5927;&#x90E8;&#x5206;&#x5BF9;&#x8C61;&#x90FD;&#x662F;&#x5B58;&#x6D3B;&#x5BF9;&#x8C61;&#x3002;&#x5982;&#x679C;&#x4F9D;&#x7136;&#x4F7F;&#x7528;&#x590D;&#x5236;&#x7B97;&#x6CD5;&#xFF0C;&#x7531;&#x4E8E;&#x5B58;&#x6D3B;&#x5BF9;&#x8C61;&#x8F83;&#x591A;&#xFF0C;&#x590D;&#x5236;&#x7684;&#x6210;&#x672C;&#x4E5F;&#x5C06;&#x5F88;&#x9AD8;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x57FA;&#x4E8E;&#x8001;&#x5E74;&#x4EE3;&#x5783;&#x573E;&#x56DE;&#x6536;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x7684;&#x7B97;&#x6CD5;&#x3002;</p>
@@ -6122,7 +6139,7 @@ obj is dead
 <h3 id="&#x6267;&#x884C;&#x8FC7;&#x7A0B;_1"><a name="&#x6267;&#x884C;&#x8FC7;&#x7A0B;_1" class="anchor-navigation-ex-anchor" href="#&#x6267;&#x884C;&#x8FC7;&#x7A0B;_1"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6267;&#x884C;&#x8FC7;&#x7A0B;</h3>
 <p>&#x7B2C;&#x4E00;&#x9636;&#x6BB5;&#x548C;&#x6807;&#x8BB0;&#x6E05;&#x9664;&#x7B97;&#x6CD5;&#x4E00;&#x6837;&#xFF0C;&#x4ECE;&#x6839;&#x8282;&#x70B9;&#x5F00;&#x59CB;&#x6807;&#x8BB0;&#x6240;&#x6709;&#x88AB;&#x5F15;&#x7528;&#x5BF9;&#x8C61;</p>
 <p>&#x7B2C;&#x4E8C;&#x9636;&#x6BB5;&#x5C06;&#x6240;&#x6709;&#x7684;&#x5B58;&#x6D3B;&#x5BF9;&#x8C61;&#x538B;&#x7F29;&#x5230;&#x5185;&#x5B58;&#x7684;&#x4E00;&#x7AEF;&#xFF0C;&#x6309;&#x987A;&#x5E8F;&#x6392;&#x653E;&#x3002;&#x4E4B;&#x540E;&#xFF0C;&#x6E05;&#x7406;&#x8FB9;&#x754C;&#x5916;&#x6240;&#x6709;&#x7684;&#x7A7A;&#x95F4;&#x3002;</p>
-<p><a href="images/image-20200712153236508.png" data-lightbox="639b8a19-dfc4-4a67-9122-9d20ef710066" data-title="image-20200712153236508"><img src="images/image-20200712153236508.png" alt="image-20200712153236508"></a></p>
+<p><a href="images/image-20200712153236508.png" data-lightbox="12545d91-44f9-405e-bb61-d620201a75a3" data-title="image-20200712153236508"><img src="images/image-20200712153236508.png" alt="image-20200712153236508"></a></p>
 <h3 id="&#x6807;&#x6E05;&#x548C;&#x6807;&#x6574;&#x7684;&#x533A;&#x522B;"><a name="&#x6807;&#x6E05;&#x548C;&#x6807;&#x6574;&#x7684;&#x533A;&#x522B;" class="anchor-navigation-ex-anchor" href="#&#x6807;&#x6E05;&#x548C;&#x6807;&#x6574;&#x7684;&#x533A;&#x522B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6807;&#x6E05;&#x548C;&#x6807;&#x6574;&#x7684;&#x533A;&#x522B;</h3>
 <p>&#x6807;&#x8BB0;-&#x538B;&#x7F29;&#x7B97;&#x6CD5;&#x7684;&#x6700;&#x7EC8;&#x6548;&#x679C;&#x7B49;&#x540C;&#x4E8E;&#x6807;&#x8BB0;-&#x6E05;&#x9664;&#x7B97;&#x6CD5;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x518D;&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x5185;&#x5B58;&#x788E;&#x7247;&#x6574;&#x7406;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x628A;&#x5B83;&#x79F0;&#x4E3A;&#x6807;&#x8BB0;-&#x6E05;&#x9664;-&#x538B;&#x7F29;&#xFF08;Mark-Sweep-Compact&#xFF09;&#x7B97;&#x6CD5;&#x3002;</p>
 <p>&#x4E8C;&#x8005;&#x7684;&#x672C;&#x8D28;&#x5DEE;&#x5F02;&#x5728;&#x4E8E;&#x6807;&#x8BB0;-&#x6E05;&#x9664;&#x7B97;&#x6CD5;&#x662F;&#x4E00;&#x79CD;&#x975E;&#x79FB;&#x52A8;&#x5F0F;&#x7684;&#x56DE;&#x6536;&#x7B97;&#x6CD5;&#xFF0C;&#x6807;&#x8BB0;-&#x538B;&#x7F29;&#x662F;&#x79FB;&#x52A8;&#x5F0F;&#x7684;&#x3002;&#x662F;&#x5426;&#x79FB;&#x52A8;&#x56DE;&#x6536;&#x540E;&#x7684;&#x5B58;&#x6D3B;&#x5BF9;&#x8C61;&#x662F;&#x4E00;&#x9879;&#x4F18;&#x7F3A;&#x70B9;&#x5E76;&#x5B58;&#x7684;&#x98CE;&#x9669;&#x51B3;&#x7B56;&#x3002;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x6807;&#x8BB0;&#x7684;&#x5B58;&#x6D3B;&#x5BF9;&#x8C61;&#x5C06;&#x4F1A;&#x88AB;&#x6574;&#x7406;&#xFF0C;&#x6309;&#x7167;&#x5185;&#x5B58;&#x5730;&#x5740;&#x4F9D;&#x6B21;&#x6392;&#x5217;&#xFF0C;&#x800C;&#x672A;&#x88AB;&#x6807;&#x8BB0;&#x7684;&#x5185;&#x5B58;&#x4F1A;&#x88AB;&#x6E05;&#x7406;&#x6389;&#x3002;&#x5982;&#x6B64;&#x4E00;&#x6765;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7ED9;&#x65B0;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x5185;&#x5B58;&#x65F6;&#xFF0C;JVM&#x53EA;&#x9700;&#x8981;&#x6301;&#x6709;&#x4E00;&#x4E2A;&#x5185;&#x5B58;&#x7684;&#x8D77;&#x59CB;&#x5730;&#x5740;&#x5373;&#x53EF;&#xFF0C;&#x8FD9;&#x6BD4;&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;&#x7A7A;&#x95F2;&#x5217;&#x8868;&#x663E;&#x7136;&#x5C11;&#x4E86;&#x8BB8;&#x591A;&#x5F00;&#x9500;&#x3002;</p>
@@ -6206,10 +6223,13 @@ obj is dead
 <p>&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x5728;&#x76F8;&#x540C;&#x6761;&#x4EF6;&#x4E0B;&#xFF0C;&#x5806;&#x7A7A;&#x95F4;&#x8D8A;&#x5927;&#xFF0C;&#x4E00;&#x6B21;Gc&#x65F6;&#x6240;&#x9700;&#x8981;&#x7684;&#x65F6;&#x95F4;&#x5C31;&#x8D8A;&#x957F;&#xFF0C;&#x6709;&#x5173;GC&#x4EA7;&#x751F;&#x7684;&#x505C;&#x987F;&#x4E5F;&#x8D8A;&#x957F;&#x3002;&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x5730;&#x63A7;&#x5236;GC&#x4EA7;&#x751F;&#x7684;&#x505C;&#x987F;&#x65F6;&#x95F4;&#xFF0C;&#x5C06;&#x4E00;&#x5757;&#x5927;&#x7684;&#x5185;&#x5B58;&#x533A;&#x57DF;&#x5206;&#x5272;&#x6210;&#x591A;&#x4E2A;&#x5C0F;&#x5757;&#xFF0C;&#x6839;&#x636E;&#x76EE;&#x6807;&#x7684;&#x505C;&#x987F;&#x65F6;&#x95F4;&#xFF0C;&#x6BCF;&#x6B21;&#x5408;&#x7406;&#x5730;&#x56DE;&#x6536;&#x82E5;&#x5E72;&#x4E2A;&#x5C0F;&#x533A;&#x95F4;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6574;&#x4E2A;&#x5806;&#x7A7A;&#x95F4;&#xFF0C;&#x4ECE;&#x800C;&#x51CF;&#x5C11;&#x4E00;&#x6B21;GC&#x6240;&#x4EA7;&#x751F;&#x7684;&#x505C;&#x987F;&#x3002;</p>
 <p>&#x5206;&#x4EE3;&#x7B97;&#x6CD5;&#x5C06;&#x6309;&#x7167;&#x5BF9;&#x8C61;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x957F;&#x77ED;&#x5212;&#x5206;&#x6210;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#xFF0C;&#x5206;&#x533A;&#x7B97;&#x6CD5;&#x5C06;&#x6574;&#x4E2A;&#x5806;&#x7A7A;&#x95F4;&#x5212;&#x5206;&#x6210;&#x8FDE;&#x7EED;&#x7684;&#x4E0D;&#x540C;&#x5C0F;&#x533A;&#x95F4;&#x3002;
 &#x6BCF;&#x4E00;&#x4E2A;&#x5C0F;&#x533A;&#x95F4;&#x90FD;&#x72EC;&#x7ACB;&#x4F7F;&#x7528;&#xFF0C;&#x72EC;&#x7ACB;&#x56DE;&#x6536;&#x3002;&#x8FD9;&#x79CD;&#x7B97;&#x6CD5;&#x7684;&#x597D;&#x5904;&#x662F;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x4E00;&#x6B21;&#x56DE;&#x6536;&#x591A;&#x5C11;&#x4E2A;&#x5C0F;&#x533A;&#x95F4;&#x3002;</p>
-<p><a href="images/image-20200712165318590.png" data-lightbox="ce3463f6-650e-4239-94f9-96fd829d90b7" data-title="image-20200712165318590"><img src="images/image-20200712165318590.png" alt="image-20200712165318590"></a></p>
+<p><a href="images/image-20200712165318590.png" data-lightbox="f077f5ae-3f63-44fd-baa3-a23b7c8c250e" data-title="image-20200712165318590"><img src="images/image-20200712165318590.png" alt="image-20200712165318590"></a></p>
 <h2 id="&#x5199;&#x5230;&#x6700;&#x540E;"><a name="&#x5199;&#x5230;&#x6700;&#x540E;" class="anchor-navigation-ex-anchor" href="#&#x5199;&#x5230;&#x6700;&#x540E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5199;&#x5230;&#x6700;&#x540E;</h2>
-<p>&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x4E9B;&#x53EA;&#x662F;&#x57FA;&#x672C;&#x7684;&#x7B97;&#x6CD5;&#x601D;&#x8DEF;&#xFF0C;&#x5B9E;&#x9645;GC&#x5B9E;&#x73B0;&#x8FC7;&#x7A0B;&#x8981;&#x590D;&#x6742;&#x7684;&#x591A;&#xFF0C;&#x76EE;&#x524D;&#x8FD8;&#x5728;&#x53D1;&#x5C55;&#x4E2D;&#x7684;&#x524D;&#x6CBF;GC&#x90FD;&#x662F;&#x590D;&#x5408;&#x7B97;&#x6CD5;&#xFF0C;&#x5E76;&#x4E14;&#x5E76;&#x884C;&#x548C;&#x5E76;&#x53D1;&#x517C;&#x5907;&#x3002;</p>
-</body></html>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x4E9B;&#x53EA;&#x662F;&#x57FA;&#x672C;&#x7684;&#x7B97;&#x6CD5;&#x601D;&#x8DEF;&#xFF0C;&#x5B9E;&#x9645;GC&#x5B9E;&#x73B0;&#x8FC7;&#x7A0B;&#x8981;&#x590D;&#x6742;&#x7684;&#x591A;&#xFF0C;&#x76EE;&#x524D;&#x8FD8;&#x5728;&#x53D1;&#x5C55;&#x4E2D;&#x7684;&#x524D;&#x6CBF;GC&#x90FD;&#x662F;&#x590D;&#x5408;&#x7B97;&#x6CD5;&#xFF0C;&#x5E76;&#x4E14;&#x5E76;&#x884C;&#x548C;&#x5E76;&#x53D1;&#x517C;&#x5907;&#x3002;</p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script> <p></p>
+<footer class="page-footer"><span class="copyright">victorfengming.gitee.io&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">&#x7F72;&#x540D;4.0&#x56FD;&#x9645;(CC BY 4.0)&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6700;&#x540E;&#x66F4;&#x65B0;&#xFF1A;
+2021-03-17 09:20:05
+</span></footer></body></html>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
                             
@@ -6252,7 +6272,7 @@ obj is dead
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"垃圾回收相关算法","level":"1.16","depth":1,"next":{"title":"标记阶段：引用计数算法","level":"1.16.1","depth":2,"anchor":"#标记阶段：引用计数算法","path":"1_内存与垃圾回收篇/15_垃圾回收相关算法/README.md","ref":"1_内存与垃圾回收篇/15_垃圾回收相关算法/README.md#标记阶段：引用计数算法","articles":[{"title":"循环引用","level":"1.16.1.1","depth":3,"anchor":"#循环引用","path":"1_内存与垃圾回收篇/15_垃圾回收相关算法/README.md","ref":"1_内存与垃圾回收篇/15_垃圾回收相关算法/README.md#循环引用","articles":[]},{"title":"举例","level":"1.16.1.2","depth":3,"anchor":"#举例","path":"1_内存与垃圾回收篇/15_垃圾回收相关算法/README.md","ref":"1_内存与垃圾回收篇/15_垃圾回收相关算法/README.md#举例","articles":[]},{"title":"小结","level":"1.16.1.3","depth":3,"anchor":"#小结","path":"1_内存与垃圾回收篇/15_垃圾回收相关算法/README.md","ref":"1_内存与垃圾回收篇/15_垃圾回收相关算法/README.md#小结","articles":[]}]},"previous":{"title":"GC主要关注的区域","level":"1.15.5.3","depth":3,"anchor":"#gc主要关注的区域","path":"1_内存与垃圾回收篇/14_垃圾回收概述/README.md","ref":"1_内存与垃圾回收篇/14_垃圾回收概述/README.md#gc主要关注的区域","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count","ancre-navigation"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"ancre-navigation":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":true,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1_内存与垃圾回收篇/15_垃圾回收相关算法/README.md","mtime":"2021-03-17T01:20:05.123Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-17T01:31:17.168Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"垃圾回收相关算法","level":"1.16","depth":1,"next":{"title":"标记阶段：引用计数算法","level":"1.16.1","depth":2,"anchor":"#标记阶段：引用计数算法","path":"1_内存与垃圾回收篇/15_垃圾回收相关算法/README.md","ref":"1_内存与垃圾回收篇/15_垃圾回收相关算法/README.md#标记阶段：引用计数算法","articles":[{"title":"循环引用","level":"1.16.1.1","depth":3,"anchor":"#循环引用","path":"1_内存与垃圾回收篇/15_垃圾回收相关算法/README.md","ref":"1_内存与垃圾回收篇/15_垃圾回收相关算法/README.md#循环引用","articles":[]},{"title":"举例","level":"1.16.1.2","depth":3,"anchor":"#举例","path":"1_内存与垃圾回收篇/15_垃圾回收相关算法/README.md","ref":"1_内存与垃圾回收篇/15_垃圾回收相关算法/README.md#举例","articles":[]},{"title":"小结","level":"1.16.1.3","depth":3,"anchor":"#小结","path":"1_内存与垃圾回收篇/15_垃圾回收相关算法/README.md","ref":"1_内存与垃圾回收篇/15_垃圾回收相关算法/README.md#小结","articles":[]}]},"previous":{"title":"GC主要关注的区域","level":"1.15.5.3","depth":3,"anchor":"#gc主要关注的区域","path":"1_内存与垃圾回收篇/14_垃圾回收概述/README.md","ref":"1_内存与垃圾回收篇/14_垃圾回收概述/README.md#gc主要关注的区域","articles":[]},"dir":"ltr"},"config":{"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count","ancre-navigation","-search","search-plus","-highlight","popup","prism","prism-themes","-sharing","sharing-plus","tbfed-pagefooter","toolbar-button"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"victorfengming.gitee.io，使用<a href='https://creativecommons.org/licenses/by/4.0/deed.zh'>署名4.0国际(CC BY 4.0)协议</a>发布","modify_label":"最后更新：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"toolbar-button":{"label":"下载PDF","url":"https://victorfengming.gitee.io/jvm/","icon":"fa-file-pdf-o"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"prism-themes":{},"ancre-navigation":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":true,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","line","linkedin","messenger","pocket","qq","qzone","stumbleupon","twitter","viber","vk","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"},"search-plus":{}},"theme":"default","author":"Victor <victorfengming@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jvm","language":"zh-hans","links":{"sidebar":{"文档索引页":"https://victorfengming.gitee.io/index/gitbook/"}},"gitbook":"3.2.3","description":"jvm,Java 虚拟机"},"file":{"path":"1_内存与垃圾回收篇/15_垃圾回收相关算法/README.md","mtime":"2021-03-17T01:20:05.123Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-03T02:23:07.405Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -6260,6 +6280,10 @@ obj is dead
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
@@ -6286,15 +6310,19 @@ obj is dead
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toolbar-button/plugin.js"></script>
         
     
         

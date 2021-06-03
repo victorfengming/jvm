@@ -1,20 +1,24 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>本地方法栈 · GitBook</title>
+        <title>本地方法栈 · jvm</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Victor <victorfengming@163.com>">
         
         
     
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
@@ -41,11 +45,15 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
                 
             
                 
@@ -105,7 +113,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -116,7 +124,16 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://victorfengming.gitee.io/index/gitbook/" target="_blank" class="custom-link">文档索引页</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -5756,7 +5773,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -5789,7 +5806,7 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
@@ -5804,7 +5821,7 @@
 </ul>
 <p>&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x662F;&#x4F7F;&#x7528;C&#x8BED;&#x8A00;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
 <p>&#x5B83;&#x7684;&#x5177;&#x4F53;&#x505A;&#x6CD5;&#x662F;Native Method Stack&#x4E2D;&#x767B;&#x8BB0;native&#x65B9;&#x6CD5;&#xFF0C;&#x5728;Execution Engine &#x6267;&#x884C;&#x65F6;&#x52A0;&#x8F7D;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x5E93;&#x3002;</p>
-<p><a href="images/image-20200706174708418.png" data-lightbox="b3c6fb27-bb6a-4c89-92b0-2bb1972c86d5" data-title="image-20200706174708418"><img src="images/image-20200706174708418.png" alt="image-20200706174708418"></a></p>
+<p><a href="images/image-20200706174708418.png" data-lightbox="2b9a28cd-ad5d-4b42-b6b8-88cd79f1abf7" data-title="image-20200706174708418"><img src="images/image-20200706174708418.png" alt="image-20200706174708418"></a></p>
 <p>&#x5F53;&#x67D0;&#x4E2A;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#x4E00;&#x4E2A;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x5B83;&#x5C31;&#x8FDB;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x5168;&#x65B0;&#x7684;&#x5E76;&#x4E14;&#x4E0D;&#x518D;&#x53D7;&#x865A;&#x62DF;&#x673A;&#x9650;&#x5236;&#x7684;&#x4E16;&#x754C;&#x3002;&#x5B83;&#x548C;&#x865A;&#x62DF;&#x673A;&#x62E5;&#x6709;&#x540C;&#x6837;&#x7684;&#x6743;&#x9650;&#x3002;</p>
 <ul>
 <li>&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x63A5;&#x53E3;&#x6765;&#x8BBF;&#x95EE;&#x865A;&#x62DF;&#x673A;&#x5185;&#x90E8;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x6570;&#x636E;&#x533A;&#x3002;</li>
@@ -5812,8 +5829,11 @@
 <li>&#x76F4;&#x63A5;&#x4ECE;&#x672C;&#x5730;&#x5185;&#x5B58;&#x7684;&#x5806;&#x4E2D;&#x5206;&#x914D;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684;&#x5185;&#x5B58;&#x3002;</li>
 </ul>
 <p>&#x5E76;&#x4E0D;&#x662F;&#x6240;&#x6709;&#x7684;JVM&#x90FD;&#x652F;&#x6301;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x3002;&#x56E0;&#x4E3A;Java&#x865A;&#x62DF;&#x673A;&#x89C4;&#x8303;&#x5E76;&#x6CA1;&#x6709;&#x660E;&#x786E;&#x8981;&#x6C42;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#x7684;&#x4F7F;&#x7528;&#x8BED;&#x8A00;&#x3001;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x3001;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x7B49;&#x3002;&#x5982;&#x679C;JVM&#x4EA7;&#x54C1;&#x4E0D;&#x6253;&#x7B97;&#x652F;&#x6301;native&#x65B9;&#x6CD5;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x65E0;&#x9700;&#x5B9E;&#x73B0;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#x3002;</p>
-<p>&#x5728;Hotspot JVM&#x4E2D;&#xFF0C;&#x76F4;&#x63A5;&#x5C06;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#x548C;&#x865A;&#x62DF;&#x673A;&#x6808;&#x5408;&#x4E8C;&#x4E3A;&#x4E00;&#x3002;</p>
-</body></html>
+<p>&#x5728;Hotspot JVM&#x4E2D;&#xFF0C;&#x76F4;&#x63A5;&#x5C06;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#x548C;&#x865A;&#x62DF;&#x673A;&#x6808;&#x5408;&#x4E8C;&#x4E3A;&#x4E00;&#x3002;</p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script> <p></p>
+<footer class="page-footer"><span class="copyright">victorfengming.gitee.io&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">&#x7F72;&#x540D;4.0&#x56FD;&#x9645;(CC BY 4.0)&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6700;&#x540E;&#x66F4;&#x65B0;&#xFF1A;
+2021-03-17 08:39:19
+</span></footer></body></html>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
                             
@@ -5856,7 +5876,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"本地方法栈","level":"1.8","depth":1,"next":{"title":"本地方法栈","level":"1.8.1","depth":2,"anchor":"#本地方法栈","path":"1_内存与垃圾回收篇/7_本地方法栈/README.md","ref":"1_内存与垃圾回收篇/7_本地方法栈/README.md#本地方法栈","articles":[]},"previous":{"title":"现状","level":"1.7.3","depth":2,"anchor":"#现状","path":"1_内存与垃圾回收篇/6_本地方法接口/README.md","ref":"1_内存与垃圾回收篇/6_本地方法接口/README.md#现状","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count","ancre-navigation"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"ancre-navigation":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":true,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1_内存与垃圾回收篇/7_本地方法栈/README.md","mtime":"2021-03-17T00:39:19.739Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-17T01:31:17.168Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"本地方法栈","level":"1.8","depth":1,"next":{"title":"本地方法栈","level":"1.8.1","depth":2,"anchor":"#本地方法栈","path":"1_内存与垃圾回收篇/7_本地方法栈/README.md","ref":"1_内存与垃圾回收篇/7_本地方法栈/README.md#本地方法栈","articles":[]},"previous":{"title":"现状","level":"1.7.3","depth":2,"anchor":"#现状","path":"1_内存与垃圾回收篇/6_本地方法接口/README.md","ref":"1_内存与垃圾回收篇/6_本地方法接口/README.md#现状","articles":[]},"dir":"ltr"},"config":{"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count","ancre-navigation","-search","search-plus","-highlight","popup","prism","prism-themes","-sharing","sharing-plus","tbfed-pagefooter","toolbar-button"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"victorfengming.gitee.io，使用<a href='https://creativecommons.org/licenses/by/4.0/deed.zh'>署名4.0国际(CC BY 4.0)协议</a>发布","modify_label":"最后更新：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"toolbar-button":{"label":"下载PDF","url":"https://victorfengming.gitee.io/jvm/","icon":"fa-file-pdf-o"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"prism-themes":{},"ancre-navigation":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":true,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","line","linkedin","messenger","pocket","qq","qzone","stumbleupon","twitter","viber","vk","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"},"search-plus":{}},"theme":"default","author":"Victor <victorfengming@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jvm","language":"zh-hans","links":{"sidebar":{"文档索引页":"https://victorfengming.gitee.io/index/gitbook/"}},"gitbook":"3.2.3","description":"jvm,Java 虚拟机"},"file":{"path":"1_内存与垃圾回收篇/7_本地方法栈/README.md","mtime":"2021-03-17T00:39:19.739Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-03T02:23:07.405Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -5864,6 +5884,10 @@
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
@@ -5890,15 +5914,19 @@
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toolbar-button/plugin.js"></script>
         
     
         
